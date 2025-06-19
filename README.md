@@ -24,13 +24,15 @@ O **Zabbix** é a ferramenta escolhida para o **monitoramento ativo dos dados si
 
 ## 🗂 Estrutura do Repositório
 
-├── docs/          # Documentação e relatórios técnicos
-├── node-red/      # Fluxos exportados do Node-RED para simulação
-├── zabbix/        # Templates, itens e triggers usados no Zabbix
-├── scripts/       # Scripts de provisionamento e automação
-├── cloud-init/    # Arquivos cloud-init usados para criação das VMs
-├── provisioning/  # Scripts para instalação do Multipass e provisionamento local
-└── README.md      # Este arquivo 
+| Caminho         | Descrição                                                    |
+| --------------- | ------------------------------------------------------------ |
+| `docs/`         | Documentação e relatórios técnicos                           |
+| `node-red/`     | Fluxos exportados do Node-RED para simulação                 |
+| `zabbix/`       | Templates, itens e triggers usados no Zabbix                 |
+| `scripts/`      | Scripts de provisionamento e automação                       |
+| `cloud-init/`   | Arquivos cloud-init usados para criação das VMs              |
+| `provisioning/` | Scripts para instalação do Multipass e provisionamento local |
+| `README.md`     | Este arquivo                                                 |
 
 ## 🚀 Como Executar
 
