@@ -1,6 +1,3 @@
-# airquality-iot-platform
-Plataforma de monitoramento da qualidade do ar baseada em IoT, com sensores de baixo custo, ESP32, Zabbix e Node-RED. Este repositório documenta a infraestrutura, scripts, experimentos e configurações utilizadas na minha pesquisa de mestrado desenvolvida no IMD/UFRN.
-
 # Plataforma de Monitoramento da Qualidade do Ar Baseada em IoT
 
 Este repositório tem como objetivo documentar toda a infraestrutura computacional e os experimentos realizados no contexto do projeto de pesquisa de mestrado desenvolvido no Programa de Pós-Graduação em Tecnologia da Informação da Universidade Federal do Rio Grande do Norte (UFRN), intitulado **"Plataforma de Monitoramento da Qualidade do Ar Baseada em IoT"**.
