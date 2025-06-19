@@ -32,7 +32,6 @@ O **Zabbix** é a ferramenta escolhida para o **monitoramento ativo dos dados si
 | `scripts/`      | Scripts de provisionamento e automação                       |
 | `cloud-init/`   | Arquivos cloud-init usados para criação das VMs              |
 | `provisioning/` | Scripts para instalação do Multipass e provisionamento local |
-| `README.md`     | Este arquivo                                                 |
 
 ## 🚀 Como Executar
 
