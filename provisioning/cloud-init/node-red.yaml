@@ -1,0 +1,41 @@
+---
+# cloud-config
+#
+# Configuração do Node-RED com IP atribuído por DHCP e acesso SSH
+# Autor: Helton Pierre Lucena de Medeiros
+# Local: Campina Grande - PB, Brasil
+# Data: 19 de junho de 2025
+# Requisitos: Ubuntu Server 22.04 LTS ou superior (Multipass/QEMU)
+#
+
+hostname: node-red
+manage_etc_hosts: true
+package_update: true
+package_upgrade: true
+
+# Pacotes necessários
+packages:
+  - snapd
+  - ufw
+
+# Comandos para executar na inicialização
+runcmd:
+  - snap install node-red
+  - ufw allow 22
+  - ufw allow 1880
+  - ufw --force enable
+
+# Mensagem de login
+write_files:
+  - path: /etc/update-motd.d/99-node-red-ip
+    content: |
+      #!/bin/bash
+      echo ""
+      echo "🌐 Acesse o Node-RED em sua interface de rede local (porta 1880)"
+      echo ""
+    permissions: '0755'
+
+final_message: |
+  ✅ Provisionamento concluído!
+  🔐 SSH liberado na porta 22
+  🌐 Acesse o Node-RED via IP atribuído por DHCP na porta 1880

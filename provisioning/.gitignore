@@ -1,0 +1,21 @@
+# Arquivos gerados dinamicamente
+cloud-init/node-red-static.yaml
+
+# Arquivos temporários e de backup
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+
+# Arquivos ocultos criados por editores
+.DS_Store
+.vscode/
+.idea/
+
+# Logs ou saídas locais (se houver)
+*.log
+
+# Diretórios de testes locais ou artefatos
+output/
+generated/
