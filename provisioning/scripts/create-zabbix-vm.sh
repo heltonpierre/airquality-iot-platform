@@ -1,7 +1,18 @@
 #!/bin/bash
-# Script de provisionamento da VM Zabbix com PostgreSQL e TimescaleDB via Multipass
-# Autor: Helton Medeiros
-# Data: 20 de junho de 2025
+#
+# create-zabbix-vm.sh
+#
+# Autor: Helton Pierre Lucena de Medeiros
+# Local: Campina Grande - PB, Brasil
+# Data: 25 de julho de 2025
+#
+# Descrição:
+# Script de provisionamento da VM Zabbix com PostgreSQL via Multipass
+#
+# Uso:
+#   chmod +x create-zabbix-vm.sh
+#   ./create-zabbix-vm.sh
+#
 
 VM_NAME="zabbix"
 CONFIG_FILE="../cloud-init/zabbix.yaml"
