@@ -1,0 +1,167 @@
+[
+    {
+        "id": "6f43226807af0516",
+        "type": "tab",
+        "label": "teste-sensor",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "inject_json_trigger",
+        "type": "inject",
+        "z": "6f43226807af0516",
+        "name": "Iniciar simulação",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 200,
+        "wires": [
+            [
+                "file_in_json"
+            ]
+        ]
+    },
+    {
+        "id": "file_in_json",
+        "type": "file in",
+        "z": "6f43226807af0516",
+        "name": "Ler arquivo JSON PM10",
+        "filename": "/var/snap/node-red/common/data/cetesb_osasco_mp10_2024.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 370,
+        "y": 200,
+        "wires": [
+            [
+                "json_parse"
+            ]
+        ]
+    },
+    {
+        "id": "json_parse",
+        "type": "json",
+        "z": "6f43226807af0516",
+        "name": "Converter JSON → Array",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 610,
+        "y": 200,
+        "wires": [
+            [
+                "split_array"
+            ]
+        ]
+    },
+    {
+        "id": "split_array",
+        "type": "split",
+        "z": "6f43226807af0516",
+        "name": "Separar objetos",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 830,
+        "y": 200,
+        "wires": [
+            [
+                "delay_60s"
+            ]
+        ]
+    },
+    {
+        "id": "delay_60s",
+        "type": "delay",
+        "z": "6f43226807af0516",
+        "name": "Enviar a cada 60s",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "60",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 1060,
+        "y": 200,
+        "wires": [
+            [
+                "mqtt_out",
+                "682da2eec5c03aa1"
+            ]
+        ]
+    },
+    {
+        "id": "mqtt_out",
+        "type": "mqtt out",
+        "z": "6f43226807af0516",
+        "name": "Publicar em MQTT",
+        "topic": "iot/ar/estacao01/pm10",
+        "qos": "",
+        "retain": "",
+        "broker": "broker_mqtt",
+        "x": 1280,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "682da2eec5c03aa1",
+        "type": "debug",
+        "z": "6f43226807af0516",
+        "name": "Exibir JSON publicado",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1320,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "broker_mqtt",
+        "type": "mqtt-broker",
+        "name": "Mosquitto Local",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    }
+]

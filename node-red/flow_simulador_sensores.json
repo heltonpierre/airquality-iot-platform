@@ -1,0 +1,98 @@
+[
+  {
+    "id": "inject-simulacao",
+    "type": "inject",
+    "z": "flow_simulador",
+    "name": "Iniciar simula\u00e7\u00e3o",
+    "props": [
+      {
+        "p": "payload"
+      }
+    ],
+    "repeat": "60",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "1",
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 160,
+    "y": 160,
+    "wires": [
+      [
+        "function-combinar-sensores"
+      ]
+    ]
+  },
+  {
+    "id": "function-combinar-sensores",
+    "type": "function",
+    "z": "flow_simulador",
+    "name": "Montar Payload com todos sensores",
+    "func": "\n// Simula\u00e7\u00e3o de leitura de m\u00faltiplos sensores (dados est\u00e1ticos ou mockados)\nmsg.topic = \"airq/device/esp32_001\";\nmsg.payload = {\n    device: \"esp32_001\",\n    timestamp: new Date().toISOString(),\n    sensors: {\n        \"pm25\": Math.floor(Math.random() * 100),\n        \"pm10\": Math.floor(Math.random() * 100),\n        \"o3\": (Math.random() * 0.1).toFixed(3),\n        \"no2\": (Math.random() * 0.1).toFixed(3),\n        \"so2\": (Math.random() * 0.1).toFixed(3),\n        \"co\": (Math.random() * 5).toFixed(2),\n        \"temperature\": (Math.random() * 15 + 15).toFixed(1),\n        \"humidity\": (Math.random() * 50 + 30).toFixed(1),\n        \"pressure\": (Math.random() * 20 + 990).toFixed(1)\n    }\n};\nreturn msg;\n",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 450,
+    "y": 160,
+    "wires": [
+      [
+        "mqtt-out",
+        "debug-output"
+      ]
+    ]
+  },
+  {
+    "id": "mqtt-out",
+    "type": "mqtt out",
+    "z": "flow_simulador",
+    "name": "Publicar em MQTT",
+    "topic": "",
+    "qos": "",
+    "retain": "",
+    "broker": "mqtt-broker-config",
+    "x": 710,
+    "y": 140,
+    "wires": []
+  },
+  {
+    "id": "debug-output",
+    "type": "debug",
+    "z": "flow_simulador",
+    "name": "Exibir JSON publicado",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 730,
+    "y": 200,
+    "wires": []
+  },
+  {
+    "id": "mqtt-broker-config",
+    "type": "mqtt-broker",
+    "name": "Broker MQTT",
+    "broker": "localhost",
+    "port": "1883",
+    "clientid": "",
+    "usetls": false,
+    "protocolVersion": "4",
+    "keepalive": "60",
+    "cleansession": true,
+    "birthTopic": "",
+    "birthQos": "0",
+    "birthPayload": "",
+    "closeTopic": "",
+    "closeQos": "0",
+    "closePayload": "",
+    "willTopic": "",
+    "willQos": "0",
+    "willPayload": ""
+  }
+]
