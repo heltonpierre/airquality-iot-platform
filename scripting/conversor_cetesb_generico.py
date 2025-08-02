@@ -4,8 +4,8 @@ import json
 import re
 
 # Caminhos de entrada e saída
-csv_path = "../cetesb_data/datalake/cetesb_guaratingueta_pressao_2024.csv"
-json_path = "../cetesb_data/dataset/cetesb_guaratingueta_pressao_2024.json"
+csv_path = "../cetesb_data/datalake/cetesb_carapicuiba_humidity_2024.csv"
+json_path = "../cetesb_data/dataset/station_01/cetesb_carapicuiba_humidity_2024.json"
 
 # Lê as primeiras 9 linhas para extrair metadados e cabeçalhos
 with open(csv_path, "r", encoding="latin1") as f:
