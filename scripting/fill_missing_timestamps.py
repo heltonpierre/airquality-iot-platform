@@ -32,4 +32,8 @@ def fill_missing_timestamps(df, freq="1H", sensor_name=None, unit=None):
 
     # Format timestamp
     df_full["timestamp"] = df_full["timestamp"].dt.strftime("%Y-%m-%dT%H:%M:%S")
+
+    # Corrige os NaN para None
+    df_full = df_full.where(pd.notnull(df_full), None)
+    
     return df_full

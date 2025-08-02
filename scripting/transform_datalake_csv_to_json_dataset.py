@@ -1,13 +1,13 @@
-
 import pandas as pd
 import json
 import re
 import os
+import numpy as np
 from fill_missing_timestamps import fill_missing_timestamps
 
 # Diretórios de entrada e saída
-csv_dir = "../cetesb_data/datalake/station_01/"
-json_dir = "../cetesb_data/dataset/station_01/"
+csv_dir = "../cetesb_data/datalake/group_of_stations_01/"
+json_dir = "../cetesb_data/dataset/device_01/"
 
 # Garante que o diretório de saída exista
 os.makedirs(json_dir, exist_ok=True)
@@ -44,11 +44,26 @@ for nome_arquivo in arquivos_csv:
         df["timestamp"] = pd.to_datetime(df["Data"].dt.strftime("%Y-%m-%d") + " " + df["Hora"])
         df["timestamp"] = df["timestamp"].dt.strftime("%Y-%m-%dT%H:%M:%S")
 
-        df_completo = fill_missing_timestamps(df[["timestamp", "valor"]], freq="1h", sensor_name=sensor_nome, unit=unidade)
+        # Preenche lacunas e obtém DataFrame completo
+        df_completo = fill_missing_timestamps(
+            df[["timestamp", "valor"]],
+            freq="1h",
+            sensor_name=sensor_nome,
+            unit=unidade
+        )
+
+        # Renomeia e seleciona colunas finais
         df_json = df_completo[["sensor", "valor", "unit", "timestamp"]].rename(columns={"unit": "unidade"})
 
+        # Conversão segura de NaN para None (null no JSON)
+        registros = df_json.to_dict(orient="records")
+        for r in registros:
+            for k, v in r.items():
+                if isinstance(v, float) and np.isnan(v):
+                    r[k] = None
+
         with open(json_path, "w", encoding="utf-8") as f:
-            json.dump(df_json.to_dict(orient="records"), f, ensure_ascii=False, indent=2)
+            json.dump(registros, f, ensure_ascii=False, indent=2)
 
         print(f"✅ JSON gerado com sucesso: {json_path}")
 

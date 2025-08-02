@@ -19,11 +19,13 @@ Os arquivos `.json` que já passaram por processamento e estruturação (também
 # 1. Criar o diretório (caso ainda não exista)
 sudo mkdir -p /var/snap/node-red/common/data
 
-# 2. Fazer o download do dataset estruturado
-wget https://raw.githubusercontent.com/heltonpierre/airquality-iot-platform/refs/heads/main/datalake/JSON/cetesb_osasco_mp10_2024.json
+# 2. Usar script para fazer download dos datasets
+cd /var/snap/node-red/common/data/ 
+sudo wget https://raw.githubusercontent.com/heltonpierre/airquality-iot-platform/refs/heads/main/scripting/download_dataset.sh
+sudo chmod +x download_dataset.sh
 
-# 3. Mover o arquivo JSON para o diretório padrão
-sudo mv cetesb_osasco_mp10_2024.json /var/snap/node-red/common/data/
+# 3. Fazer o download dos datasets estruturado
+sudo ./download_dataset.sh device_01
 
 # 4. Ajustar as permissões de leitura
 sudo chmod 644 /var/snap/node-red/common/data/cetesb_osasco_mp10_2024.json
