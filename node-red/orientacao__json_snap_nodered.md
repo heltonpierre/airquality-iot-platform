@@ -28,10 +28,10 @@ sudo chmod +x download_dataset.sh
 sudo ./download_dataset.sh device_01
 
 # 4. Ajustar as permissões de leitura
-sudo chmod 644 /var/snap/node-red/common/data/cetesb_osasco_mp10_2024.json
+sudo chmod 644 /var/snap/node-red/common/data/device_01/* 
 
 # (Se necessário) Ajustar propriedade do arquivo
-sudo chown root:root /var/snap/node-red/common/data/cetesb_osasco_mp10_2024.json
+sudo chown root:root /var/snap/node-red/common/data/device_01/* 
 ```
 
 ## 📂 Configuração no Node-RED
@@ -39,7 +39,7 @@ sudo chown root:root /var/snap/node-red/common/data/cetesb_osasco_mp10_2024.json
 No **nó `file in`** no Node-RED, configure o caminho absoluto do arquivo:
 
 ```
-/var/snap/node-red/common/data/cetesb_osasco_mp10_2024.json
+/var/snap/node-red/common/data/device_01/ 
 ```
 
 Após isso, clique em **"Concluído"** e depois em **"Implementar"** para aplicar o fluxo.
