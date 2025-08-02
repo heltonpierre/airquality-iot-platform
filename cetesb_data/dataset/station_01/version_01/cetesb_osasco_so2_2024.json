@@ -139,12 +139,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-02T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-02T02:00:00"
@@ -280,12 +274,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-03T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-03T01:00:00"
   },
   {
     "sensor": "so2",
@@ -427,12 +415,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-04T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-04T02:00:00"
@@ -568,12 +550,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-05T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-05T01:00:00"
   },
   {
     "sensor": "so2",
@@ -715,12 +691,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-06T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-06T02:00:00"
@@ -856,12 +826,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-07T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-07T01:00:00"
   },
   {
     "sensor": "so2",
@@ -1003,12 +967,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-08T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-08T02:00:00"
@@ -1054,12 +1012,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-08T09:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-08T10:00:00"
   },
   {
     "sensor": "so2",
@@ -1144,12 +1096,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-09T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-09T01:00:00"
   },
   {
     "sensor": "so2",
@@ -1291,12 +1237,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-10T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-10T02:00:00"
@@ -1432,12 +1372,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-11T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-11T01:00:00"
   },
   {
     "sensor": "so2",
@@ -1579,12 +1513,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-12T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-12T02:00:00"
@@ -1720,12 +1648,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-13T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-13T01:00:00"
   },
   {
     "sensor": "so2",
@@ -1867,12 +1789,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-14T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-14T02:00:00"
@@ -2008,12 +1924,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-15T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-15T01:00:00"
   },
   {
     "sensor": "so2",
@@ -2155,12 +2065,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-16T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-16T02:00:00"
@@ -2299,12 +2203,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-17T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-17T02:00:00"
@@ -2407,30 +2305,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-17T19:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-17T20:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-17T21:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-17T22:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-17T23:00:00"
@@ -2440,12 +2314,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-18T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-18T01:00:00"
   },
   {
     "sensor": "so2",
@@ -2587,12 +2455,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-19T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-19T02:00:00"
@@ -2728,12 +2590,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-20T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-20T01:00:00"
   },
   {
     "sensor": "so2",
@@ -2875,12 +2731,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-21T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-21T02:00:00"
@@ -3016,12 +2866,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-22T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-22T01:00:00"
   },
   {
     "sensor": "so2",
@@ -3163,12 +3007,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-23T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-23T02:00:00"
@@ -3304,12 +3142,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-24T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-24T01:00:00"
   },
   {
     "sensor": "so2",
@@ -3451,12 +3283,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-25T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-25T02:00:00"
@@ -3592,12 +3418,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-26T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-26T01:00:00"
   },
   {
     "sensor": "so2",
@@ -3739,12 +3559,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-27T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-27T02:00:00"
@@ -3880,12 +3694,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-28T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-28T01:00:00"
   },
   {
     "sensor": "so2",
@@ -4027,12 +3835,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-29T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-29T02:00:00"
@@ -4168,12 +3970,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-30T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-30T01:00:00"
   },
   {
     "sensor": "so2",
@@ -4315,12 +4111,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-01-31T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 5.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-31T02:00:00"
@@ -4456,12 +4246,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-01T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-01T01:00:00"
   },
   {
     "sensor": "so2",
@@ -4603,12 +4387,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-02T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-02T02:00:00"
@@ -4744,12 +4522,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-03T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-03T01:00:00"
   },
   {
     "sensor": "so2",
@@ -4891,12 +4663,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-04T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-04T02:00:00"
@@ -5032,12 +4798,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-05T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-05T01:00:00"
   },
   {
     "sensor": "so2",
@@ -5179,12 +4939,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-06T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-06T02:00:00"
@@ -5320,12 +5074,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-07T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-07T01:00:00"
   },
   {
     "sensor": "so2",
@@ -5467,12 +5215,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-08T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 4.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-08T02:00:00"
@@ -5608,12 +5350,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-09T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-09T01:00:00"
   },
   {
     "sensor": "so2",
@@ -5755,12 +5491,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-10T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-10T02:00:00"
@@ -5896,12 +5626,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-11T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-11T01:00:00"
   },
   {
     "sensor": "so2",
@@ -6043,12 +5767,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-12T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-12T02:00:00"
@@ -6184,12 +5902,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-13T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-13T01:00:00"
   },
   {
     "sensor": "so2",
@@ -6331,12 +6043,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-14T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-14T02:00:00"
@@ -6472,12 +6178,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-15T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-15T01:00:00"
   },
   {
     "sensor": "so2",
@@ -6619,12 +6319,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-16T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-16T02:00:00"
@@ -6760,12 +6454,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-17T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-17T01:00:00"
   },
   {
     "sensor": "so2",
@@ -6907,12 +6595,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-18T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-18T02:00:00"
@@ -7048,12 +6730,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-19T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-19T01:00:00"
   },
   {
     "sensor": "so2",
@@ -7195,12 +6871,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-20T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-20T02:00:00"
@@ -7336,12 +7006,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-21T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-21T01:00:00"
   },
   {
     "sensor": "so2",
@@ -7483,12 +7147,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-22T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-22T02:00:00"
@@ -7624,12 +7282,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-23T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-23T01:00:00"
   },
   {
     "sensor": "so2",
@@ -7771,12 +7423,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-24T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-24T02:00:00"
@@ -7912,12 +7558,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-25T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-25T01:00:00"
   },
   {
     "sensor": "so2",
@@ -8059,12 +7699,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-26T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-26T02:00:00"
@@ -8200,12 +7834,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-27T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-27T01:00:00"
   },
   {
     "sensor": "so2",
@@ -8347,12 +7975,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-28T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-28T02:00:00"
@@ -8437,126 +8059,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-28T16:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-28T17:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-28T18:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-28T19:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-28T20:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-28T21:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-28T22:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-28T23:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-29T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-29T01:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-29T02:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-29T03:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-29T04:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-29T05:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-29T06:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-29T07:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-29T08:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-29T09:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-29T10:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-02-29T11:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-02-29T12:00:00"
@@ -8632,438 +8134,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-01T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-01T01:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-01T02:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-01T03:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-01T04:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-01T05:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-01T06:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-01T07:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-01T08:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-01T09:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-01T10:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-01T11:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-01T12:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-01T13:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-01T14:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-01T15:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-01T16:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-01T17:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-01T18:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-01T19:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-01T20:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-01T21:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-01T22:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-01T23:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-02T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-02T01:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-02T02:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-02T03:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-02T04:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-02T05:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-02T06:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-02T07:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-02T08:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-02T09:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-02T10:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-02T11:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-02T12:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-02T13:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-02T14:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-02T15:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-02T16:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-02T17:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-02T18:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-02T19:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-02T20:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-02T21:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-02T22:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-02T23:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-03T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-03T01:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-03T02:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-03T03:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-03T04:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-03T05:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-03T06:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-03T07:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-03T08:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-03T09:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-03T10:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-03T11:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-03T12:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-03T13:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-03T14:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-03T15:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-03T16:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-03T17:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-03T18:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-03T19:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-03T20:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-03T21:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-03T22:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-03T23:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-04T00:00:00"
   },
   {
     "sensor": "so2",
@@ -9277,12 +8347,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-05T12:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-05T13:00:00"
@@ -9352,12 +8416,6 @@
     "valor": 0.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-06T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-06T01:00:00"
   },
   {
     "sensor": "so2",
@@ -9499,12 +8557,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-07T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-07T02:00:00"
@@ -9640,12 +8692,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-08T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-08T01:00:00"
   },
   {
     "sensor": "so2",
@@ -9787,12 +8833,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-09T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-09T02:00:00"
@@ -9928,12 +8968,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-10T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-10T01:00:00"
   },
   {
     "sensor": "so2",
@@ -10075,12 +9109,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-11T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-11T02:00:00"
@@ -10216,12 +9244,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-12T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-12T01:00:00"
   },
   {
     "sensor": "so2",
@@ -10363,12 +9385,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-13T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-13T02:00:00"
@@ -10504,12 +9520,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-14T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-14T01:00:00"
   },
   {
     "sensor": "so2",
@@ -10651,12 +9661,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-15T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-15T02:00:00"
@@ -10792,12 +9796,6 @@
     "valor": 4.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-16T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-16T01:00:00"
   },
   {
     "sensor": "so2",
@@ -10939,12 +9937,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-17T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-17T02:00:00"
@@ -11080,12 +10072,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-18T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-18T01:00:00"
   },
   {
     "sensor": "so2",
@@ -11227,12 +10213,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-19T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-19T02:00:00"
@@ -11368,12 +10348,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-20T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-20T01:00:00"
   },
   {
     "sensor": "so2",
@@ -11515,12 +10489,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-21T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-21T02:00:00"
@@ -11656,12 +10624,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-22T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-22T01:00:00"
   },
   {
     "sensor": "so2",
@@ -11803,12 +10765,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-23T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-23T02:00:00"
@@ -11944,12 +10900,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-24T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-24T01:00:00"
   },
   {
     "sensor": "so2",
@@ -12091,12 +11041,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-25T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-25T02:00:00"
@@ -12232,12 +11176,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-26T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-26T01:00:00"
   },
   {
     "sensor": "so2",
@@ -12379,12 +11317,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-27T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-27T02:00:00"
@@ -12520,12 +11452,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-28T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-28T01:00:00"
   },
   {
     "sensor": "so2",
@@ -12667,12 +11593,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-29T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-29T02:00:00"
@@ -12808,12 +11728,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-30T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-30T01:00:00"
   },
   {
     "sensor": "so2",
@@ -12955,12 +11869,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-03-31T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-03-31T02:00:00"
@@ -13096,12 +12004,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-01T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-01T01:00:00"
   },
   {
     "sensor": "so2",
@@ -13243,12 +12145,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-02T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 4.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-02T02:00:00"
@@ -13384,12 +12280,6 @@
     "valor": 4.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-03T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-03T01:00:00"
   },
   {
     "sensor": "so2",
@@ -13531,12 +12421,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-04T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-04T02:00:00"
@@ -13672,12 +12556,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-05T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-05T01:00:00"
   },
   {
     "sensor": "so2",
@@ -13819,12 +12697,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-06T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-06T02:00:00"
@@ -13960,12 +12832,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-07T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-07T01:00:00"
   },
   {
     "sensor": "so2",
@@ -14107,12 +12973,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-08T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-08T02:00:00"
@@ -14248,12 +13108,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-09T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-09T01:00:00"
   },
   {
     "sensor": "so2",
@@ -14395,12 +13249,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-10T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-10T02:00:00"
@@ -14536,12 +13384,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-11T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-11T01:00:00"
   },
   {
     "sensor": "so2",
@@ -14683,12 +13525,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-12T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-12T02:00:00"
@@ -14824,12 +13660,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-13T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-13T01:00:00"
   },
   {
     "sensor": "so2",
@@ -14971,12 +13801,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-14T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-14T02:00:00"
@@ -15112,12 +13936,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-15T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-15T01:00:00"
   },
   {
     "sensor": "so2",
@@ -15259,12 +14077,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-16T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-16T02:00:00"
@@ -15400,12 +14212,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-17T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-17T01:00:00"
   },
   {
     "sensor": "so2",
@@ -15547,12 +14353,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-18T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-18T02:00:00"
@@ -15688,12 +14488,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-19T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-19T01:00:00"
   },
   {
     "sensor": "so2",
@@ -15835,12 +14629,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-20T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-20T02:00:00"
@@ -15976,12 +14764,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-21T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-21T01:00:00"
   },
   {
     "sensor": "so2",
@@ -16123,12 +14905,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-22T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-22T02:00:00"
@@ -16264,12 +15040,6 @@
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-23T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-23T01:00:00"
   },
   {
     "sensor": "so2",
@@ -16411,12 +15181,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-24T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-24T02:00:00"
@@ -16552,12 +15316,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-25T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-25T01:00:00"
   },
   {
     "sensor": "so2",
@@ -16699,12 +15457,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-26T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-26T02:00:00"
@@ -16840,12 +15592,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-27T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-27T01:00:00"
   },
   {
     "sensor": "so2",
@@ -16987,12 +15733,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-28T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-28T02:00:00"
@@ -17131,12 +15871,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-29T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-29T02:00:00"
@@ -17272,12 +16006,6 @@
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-04-30T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-04-30T01:00:00"
   },
   {
     "sensor": "so2",
@@ -17707,12 +16435,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-03T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-03T02:00:00"
@@ -17848,12 +16570,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-04T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-04T01:00:00"
   },
   {
     "sensor": "so2",
@@ -17995,12 +16711,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-05T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 11.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-05T02:00:00"
@@ -18136,12 +16846,6 @@
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-06T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-06T01:00:00"
   },
   {
     "sensor": "so2",
@@ -18283,12 +16987,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-07T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-07T02:00:00"
@@ -18424,12 +17122,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-08T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-08T01:00:00"
   },
   {
     "sensor": "so2",
@@ -18571,12 +17263,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-09T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-09T02:00:00"
@@ -18712,12 +17398,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-10T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-10T01:00:00"
   },
   {
     "sensor": "so2",
@@ -18859,12 +17539,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-11T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-11T02:00:00"
@@ -19000,12 +17674,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-12T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-12T01:00:00"
   },
   {
     "sensor": "so2",
@@ -19147,12 +17815,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-13T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-13T02:00:00"
@@ -19288,12 +17950,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-14T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-14T01:00:00"
   },
   {
     "sensor": "so2",
@@ -19435,12 +18091,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-15T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-15T02:00:00"
@@ -19576,12 +18226,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-16T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-16T01:00:00"
   },
   {
     "sensor": "so2",
@@ -19723,12 +18367,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-17T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-17T02:00:00"
@@ -19864,12 +18502,6 @@
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-18T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-18T01:00:00"
   },
   {
     "sensor": "so2",
@@ -20011,12 +18643,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-19T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-19T02:00:00"
@@ -20152,12 +18778,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-20T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-20T01:00:00"
   },
   {
     "sensor": "so2",
@@ -20299,12 +18919,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-21T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-21T02:00:00"
@@ -20440,12 +19054,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-22T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-22T01:00:00"
   },
   {
     "sensor": "so2",
@@ -20587,12 +19195,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-23T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-23T02:00:00"
@@ -20728,12 +19330,6 @@
     "valor": 6.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-24T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-24T01:00:00"
   },
   {
     "sensor": "so2",
@@ -20875,12 +19471,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-25T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-25T02:00:00"
@@ -21016,12 +19606,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-26T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-26T01:00:00"
   },
   {
     "sensor": "so2",
@@ -21163,12 +19747,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-27T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-27T02:00:00"
@@ -21304,12 +19882,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-28T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-28T01:00:00"
   },
   {
     "sensor": "so2",
@@ -21451,12 +20023,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-29T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 14.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-29T02:00:00"
@@ -21592,12 +20158,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-30T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-30T01:00:00"
   },
   {
     "sensor": "so2",
@@ -21739,12 +20299,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-05-31T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-05-31T02:00:00"
@@ -21880,12 +20434,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-01T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-01T01:00:00"
   },
   {
     "sensor": "so2",
@@ -22027,12 +20575,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-02T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-02T02:00:00"
@@ -22168,12 +20710,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-03T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-03T01:00:00"
   },
   {
     "sensor": "so2",
@@ -22315,12 +20851,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-04T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-04T02:00:00"
@@ -22456,12 +20986,6 @@
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-05T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-05T01:00:00"
   },
   {
     "sensor": "so2",
@@ -22603,12 +21127,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-06T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-06T02:00:00"
@@ -22744,12 +21262,6 @@
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-07T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-07T01:00:00"
   },
   {
     "sensor": "so2",
@@ -22891,12 +21403,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-08T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-08T02:00:00"
@@ -23032,12 +21538,6 @@
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-09T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-09T01:00:00"
   },
   {
     "sensor": "so2",
@@ -23179,12 +21679,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-10T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-10T02:00:00"
@@ -23320,12 +21814,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-11T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-11T01:00:00"
   },
   {
     "sensor": "so2",
@@ -23467,12 +21955,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-12T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-12T02:00:00"
@@ -23608,12 +22090,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-13T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-13T01:00:00"
   },
   {
     "sensor": "so2",
@@ -23755,12 +22231,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-14T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-14T02:00:00"
@@ -23896,12 +22366,6 @@
     "valor": 5.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-15T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-15T01:00:00"
   },
   {
     "sensor": "so2",
@@ -24187,12 +22651,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-17T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-17T02:00:00"
@@ -24328,12 +22786,6 @@
     "valor": 4.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-18T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-18T01:00:00"
   },
   {
     "sensor": "so2",
@@ -24475,12 +22927,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-19T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-19T02:00:00"
@@ -24616,12 +23062,6 @@
     "valor": 5.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-20T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-20T01:00:00"
   },
   {
     "sensor": "so2",
@@ -24763,12 +23203,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-21T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-21T02:00:00"
@@ -24907,12 +23341,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-22T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-22T02:00:00"
@@ -25042,18 +23470,6 @@
     "valor": 8.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-22T23:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-23T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-23T01:00:00"
   },
   {
     "sensor": "so2",
@@ -25195,12 +23611,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-24T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-24T02:00:00"
@@ -25336,12 +23746,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-25T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-25T01:00:00"
   },
   {
     "sensor": "so2",
@@ -25483,12 +23887,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-26T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-26T02:00:00"
@@ -25624,12 +24022,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-27T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-27T01:00:00"
   },
   {
     "sensor": "so2",
@@ -25771,12 +24163,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-28T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-28T02:00:00"
@@ -25912,12 +24298,6 @@
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-29T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-29T01:00:00"
   },
   {
     "sensor": "so2",
@@ -26059,12 +24439,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-06-30T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-06-30T02:00:00"
@@ -26200,12 +24574,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-01T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-01T01:00:00"
   },
   {
     "sensor": "so2",
@@ -26347,12 +24715,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-02T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-02T02:00:00"
@@ -26419,12 +24781,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-02T13:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-02T14:00:00"
@@ -26488,12 +24844,6 @@
     "valor": 4.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-03T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-03T01:00:00"
   },
   {
     "sensor": "so2",
@@ -26635,12 +24985,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-04T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 10.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-04T02:00:00"
@@ -26776,12 +25120,6 @@
     "valor": 5.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-05T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-05T01:00:00"
   },
   {
     "sensor": "so2",
@@ -26923,12 +25261,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-06T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-06T02:00:00"
@@ -27064,12 +25396,6 @@
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-07T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-07T01:00:00"
   },
   {
     "sensor": "so2",
@@ -27211,12 +25537,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-08T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-08T02:00:00"
@@ -27352,12 +25672,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-09T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-09T01:00:00"
   },
   {
     "sensor": "so2",
@@ -27499,12 +25813,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-10T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-10T02:00:00"
@@ -27640,12 +25948,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-11T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-11T01:00:00"
   },
   {
     "sensor": "so2",
@@ -27787,12 +26089,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-12T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-12T02:00:00"
@@ -27928,12 +26224,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-13T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-13T01:00:00"
   },
   {
     "sensor": "so2",
@@ -28075,12 +26365,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-14T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-14T02:00:00"
@@ -28216,12 +26500,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-15T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-15T01:00:00"
   },
   {
     "sensor": "so2",
@@ -28363,12 +26641,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-16T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-16T02:00:00"
@@ -28504,12 +26776,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-17T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-17T01:00:00"
   },
   {
     "sensor": "so2",
@@ -28651,12 +26917,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-18T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-18T02:00:00"
@@ -28792,12 +27052,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-19T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-19T01:00:00"
   },
   {
     "sensor": "so2",
@@ -28939,12 +27193,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-20T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-20T02:00:00"
@@ -29080,12 +27328,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-21T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-21T01:00:00"
   },
   {
     "sensor": "so2",
@@ -29227,12 +27469,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-22T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-22T02:00:00"
@@ -29368,12 +27604,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-23T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-23T01:00:00"
   },
   {
     "sensor": "so2",
@@ -29515,12 +27745,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-24T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 4.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-24T02:00:00"
@@ -29656,12 +27880,6 @@
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-25T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-25T01:00:00"
   },
   {
     "sensor": "so2",
@@ -29803,12 +28021,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-26T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 5.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-26T02:00:00"
@@ -29944,12 +28156,6 @@
     "valor": 5.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-27T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-27T01:00:00"
   },
   {
     "sensor": "so2",
@@ -30091,12 +28297,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-28T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-28T02:00:00"
@@ -30232,12 +28432,6 @@
     "valor": 4.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-29T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-29T01:00:00"
   },
   {
     "sensor": "so2",
@@ -30379,12 +28573,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-30T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-30T02:00:00"
@@ -30520,12 +28708,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-07-31T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-07-31T01:00:00"
   },
   {
     "sensor": "so2",
@@ -30667,12 +28849,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-01T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-01T02:00:00"
@@ -30808,12 +28984,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-02T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-02T01:00:00"
   },
   {
     "sensor": "so2",
@@ -30955,12 +29125,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-03T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-03T02:00:00"
@@ -31096,12 +29260,6 @@
     "valor": 4.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-04T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-04T01:00:00"
   },
   {
     "sensor": "so2",
@@ -31243,12 +29401,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-05T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-05T02:00:00"
@@ -31384,12 +29536,6 @@
     "valor": 5.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-06T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-06T01:00:00"
   },
   {
     "sensor": "so2",
@@ -31531,12 +29677,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-07T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-07T02:00:00"
@@ -31672,12 +29812,6 @@
     "valor": 4.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-08T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-08T01:00:00"
   },
   {
     "sensor": "so2",
@@ -31819,12 +29953,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-09T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-09T02:00:00"
@@ -31960,12 +30088,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-10T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-10T01:00:00"
   },
   {
     "sensor": "so2",
@@ -32107,12 +30229,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-11T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-11T02:00:00"
@@ -32248,12 +30364,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-12T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-12T01:00:00"
   },
   {
     "sensor": "so2",
@@ -32395,12 +30505,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-13T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-13T02:00:00"
@@ -32536,12 +30640,6 @@
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-14T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-14T01:00:00"
   },
   {
     "sensor": "so2",
@@ -32683,12 +30781,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-15T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-15T02:00:00"
@@ -32827,12 +30919,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-16T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-16T02:00:00"
@@ -32923,96 +31009,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-16T17:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-16T18:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-16T19:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-16T20:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-16T21:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-16T22:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-16T23:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-17T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-17T01:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-17T02:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-17T03:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-17T04:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-17T05:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-17T06:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-17T07:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 14.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-17T08:00:00"
@@ -33055,114 +31051,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-17T15:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-17T16:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-17T17:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-17T18:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-17T19:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-17T20:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-17T21:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-17T22:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-17T23:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-18T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-18T01:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-18T02:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-18T03:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-18T04:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-18T05:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-18T06:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-18T07:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-18T08:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 5.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-18T09:00:00"
@@ -33196,114 +31084,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-18T14:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-18T15:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-18T16:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-18T17:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-18T18:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-18T19:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-18T20:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-18T21:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-18T22:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-18T23:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-19T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-19T01:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-19T02:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-19T03:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-19T04:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-19T05:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-19T06:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-19T07:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-19T08:00:00"
   },
   {
     "sensor": "so2",
@@ -33403,12 +31183,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-20T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 7.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-20T02:00:00"
@@ -33442,18 +31216,6 @@
     "valor": 6.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-20T07:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-20T08:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-20T09:00:00"
   },
   {
     "sensor": "so2",
@@ -33544,12 +31306,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-21T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-21T01:00:00"
   },
   {
     "sensor": "so2",
@@ -33691,12 +31447,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-22T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-22T02:00:00"
@@ -33748,12 +31498,6 @@
     "valor": 4.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-22T10:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-22T11:00:00"
   },
   {
     "sensor": "so2",
@@ -33832,12 +31576,6 @@
     "valor": 6.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-23T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-23T01:00:00"
   },
   {
     "sensor": "so2",
@@ -33979,300 +31717,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-24T01:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-24T02:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-24T03:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-24T04:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-24T05:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-24T06:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-24T07:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-24T08:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-24T09:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-24T10:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-24T11:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-24T12:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-24T13:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-24T14:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-24T15:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-24T16:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-24T17:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-24T18:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-24T19:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-24T20:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-24T21:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-24T22:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-24T23:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-25T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-25T01:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-25T02:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-25T03:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-25T04:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-25T05:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-25T06:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-25T07:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-25T08:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-25T09:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-25T10:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-25T11:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-25T12:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-25T13:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-25T14:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-25T15:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-25T16:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-25T17:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-25T18:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-25T19:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-25T20:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-25T21:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-25T22:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-25T23:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-26T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-26T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-26T02:00:00"
@@ -34408,12 +31852,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-27T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-27T01:00:00"
   },
   {
     "sensor": "so2",
@@ -34555,12 +31993,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-28T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-28T02:00:00"
@@ -34696,12 +32128,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-29T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-29T01:00:00"
   },
   {
     "sensor": "so2",
@@ -34843,12 +32269,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-30T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 5.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-30T02:00:00"
@@ -34984,12 +32404,6 @@
     "valor": 4.0,
     "unidade": "µg/m3",
     "timestamp": "2024-08-31T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-08-31T01:00:00"
   },
   {
     "sensor": "so2",
@@ -35131,12 +32545,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-01T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-01T02:00:00"
@@ -35272,12 +32680,6 @@
     "valor": 6.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-02T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-02T01:00:00"
   },
   {
     "sensor": "so2",
@@ -35419,12 +32821,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-03T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-03T02:00:00"
@@ -35560,12 +32956,6 @@
     "valor": 5.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-04T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-04T01:00:00"
   },
   {
     "sensor": "so2",
@@ -35707,12 +33097,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-05T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 4.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-05T02:00:00"
@@ -35848,12 +33232,6 @@
     "valor": 0.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-06T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-06T01:00:00"
   },
   {
     "sensor": "so2",
@@ -35995,12 +33373,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-07T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-07T02:00:00"
@@ -36136,12 +33508,6 @@
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-08T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-08T01:00:00"
   },
   {
     "sensor": "so2",
@@ -36283,12 +33649,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-09T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-09T02:00:00"
@@ -36424,12 +33784,6 @@
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-10T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-10T01:00:00"
   },
   {
     "sensor": "so2",
@@ -36571,12 +33925,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-11T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-11T02:00:00"
@@ -36712,12 +34060,6 @@
     "valor": 20.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-12T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-12T01:00:00"
   },
   {
     "sensor": "so2",
@@ -36859,12 +34201,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-13T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 9.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-13T02:00:00"
@@ -37000,12 +34336,6 @@
     "valor": 7.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-14T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-14T01:00:00"
   },
   {
     "sensor": "so2",
@@ -37147,12 +34477,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-15T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-15T02:00:00"
@@ -37288,12 +34612,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-16T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-16T01:00:00"
   },
   {
     "sensor": "so2",
@@ -37435,12 +34753,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-17T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-17T02:00:00"
@@ -37576,12 +34888,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-18T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-18T01:00:00"
   },
   {
     "sensor": "so2",
@@ -37723,12 +35029,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-19T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-19T02:00:00"
@@ -37864,12 +35164,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-20T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-20T01:00:00"
   },
   {
     "sensor": "so2",
@@ -38011,12 +35305,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-21T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-21T02:00:00"
@@ -38152,12 +35440,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-22T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-22T01:00:00"
   },
   {
     "sensor": "so2",
@@ -38299,12 +35581,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-23T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-23T02:00:00"
@@ -38440,12 +35716,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-24T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-24T01:00:00"
   },
   {
     "sensor": "so2",
@@ -38587,12 +35857,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-25T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-25T02:00:00"
@@ -38728,12 +35992,6 @@
     "valor": 4.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-26T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-26T01:00:00"
   },
   {
     "sensor": "so2",
@@ -38875,12 +36133,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-27T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-27T02:00:00"
@@ -39016,12 +36268,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-28T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-28T01:00:00"
   },
   {
     "sensor": "so2",
@@ -39163,12 +36409,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-29T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-29T02:00:00"
@@ -39304,12 +36544,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-09-30T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-09-30T01:00:00"
   },
   {
     "sensor": "so2",
@@ -39451,12 +36685,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-01T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-01T02:00:00"
@@ -39592,12 +36820,6 @@
     "valor": 6.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-02T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-02T01:00:00"
   },
   {
     "sensor": "so2",
@@ -39739,12 +36961,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-03T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-03T02:00:00"
@@ -39880,12 +37096,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-04T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-04T01:00:00"
   },
   {
     "sensor": "so2",
@@ -40027,12 +37237,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-05T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-05T02:00:00"
@@ -40168,12 +37372,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-06T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-06T01:00:00"
   },
   {
     "sensor": "so2",
@@ -40315,222 +37513,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-07T01:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-07T02:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-07T03:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-07T04:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-07T05:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-07T06:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-07T07:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-07T08:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-07T09:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-07T10:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-07T11:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-07T12:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-07T13:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-07T14:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-07T15:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-07T16:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-07T17:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-07T18:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-07T19:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-07T20:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-07T21:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-07T22:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-07T23:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-08T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-08T01:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-08T02:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-08T03:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-08T04:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-08T05:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-08T06:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-08T07:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-08T08:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-08T09:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-08T10:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-08T11:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-08T12:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-08T13:00:00"
@@ -40600,12 +37582,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-09T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-09T01:00:00"
   },
   {
     "sensor": "so2",
@@ -40747,12 +37723,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-10T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-10T02:00:00"
@@ -40891,12 +37861,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-11T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-11T02:00:00"
@@ -41005,264 +37969,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-11T20:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-11T21:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-11T22:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-11T23:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-12T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-12T01:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-12T02:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-12T03:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-12T04:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-12T05:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-12T06:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-12T07:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-12T08:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-12T09:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-12T10:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-12T11:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-12T12:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-12T13:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-12T14:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-12T15:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-12T16:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-12T17:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-12T18:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-12T19:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-12T20:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-12T21:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-12T22:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-12T23:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-13T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-13T01:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-13T02:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-13T03:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-13T04:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-13T05:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-13T06:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-13T07:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-13T08:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-13T09:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-13T10:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-13T11:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-13T12:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-13T13:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-13T14:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-13T15:00:00"
@@ -41320,54 +38026,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-14T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-14T01:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-14T02:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-14T03:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-14T04:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-14T05:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-14T06:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-14T07:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-14T08:00:00"
   },
   {
     "sensor": "so2",
@@ -41467,12 +38125,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-15T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-15T02:00:00"
@@ -41506,12 +38158,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-15T07:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-15T08:00:00"
   },
   {
     "sensor": "so2",
@@ -41608,12 +38254,6 @@
     "valor": 0.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-16T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-16T01:00:00"
   },
   {
     "sensor": "so2",
@@ -41755,12 +38395,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-17T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-17T02:00:00"
@@ -41896,12 +38530,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-18T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-18T01:00:00"
   },
   {
     "sensor": "so2",
@@ -42043,12 +38671,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-19T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-19T02:00:00"
@@ -42184,12 +38806,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-20T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-20T01:00:00"
   },
   {
     "sensor": "so2",
@@ -42331,12 +38947,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-21T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-21T02:00:00"
@@ -42472,12 +39082,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-22T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-22T01:00:00"
   },
   {
     "sensor": "so2",
@@ -42619,12 +39223,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-23T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-23T02:00:00"
@@ -42763,12 +39361,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-24T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-24T02:00:00"
@@ -42841,30 +39433,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-24T14:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-24T15:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-24T16:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-24T17:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-24T18:00:00"
@@ -42907,12 +39475,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-25T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-25T02:00:00"
@@ -42940,30 +39502,6 @@
     "valor": 0.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-25T06:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-25T07:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-25T08:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-25T09:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-25T10:00:00"
   },
   {
     "sensor": "so2",
@@ -43048,12 +39586,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-26T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-26T01:00:00"
   },
   {
     "sensor": "so2",
@@ -43195,12 +39727,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-27T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-27T02:00:00"
@@ -43336,12 +39862,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-28T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-28T01:00:00"
   },
   {
     "sensor": "so2",
@@ -43483,12 +40003,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-29T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-29T02:00:00"
@@ -43555,12 +40069,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-29T13:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-29T14:00:00"
@@ -43624,12 +40132,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-30T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-30T01:00:00"
   },
   {
     "sensor": "so2",
@@ -43771,12 +40273,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-10-31T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-10-31T02:00:00"
@@ -43912,12 +40408,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-01T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-01T01:00:00"
   },
   {
     "sensor": "so2",
@@ -44059,12 +40549,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-02T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-02T02:00:00"
@@ -44200,12 +40684,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-03T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-03T01:00:00"
   },
   {
     "sensor": "so2",
@@ -44347,12 +40825,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-04T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-04T02:00:00"
@@ -44488,12 +40960,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-05T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-05T01:00:00"
   },
   {
     "sensor": "so2",
@@ -44635,12 +41101,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-06T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-06T02:00:00"
@@ -44779,12 +41239,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-07T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-07T02:00:00"
@@ -44845,30 +41299,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-07T12:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-07T13:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-07T14:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-07T15:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-07T16:00:00"
@@ -44923,12 +41353,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-08T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-08T02:00:00"
@@ -44962,36 +41386,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-08T07:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-08T08:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-08T09:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-08T10:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-08T11:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-08T12:00:00"
   },
   {
     "sensor": "so2",
@@ -45064,12 +41458,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-09T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-09T01:00:00"
   },
   {
     "sensor": "so2",
@@ -45211,12 +41599,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-10T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-10T02:00:00"
@@ -45352,12 +41734,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-11T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-11T01:00:00"
   },
   {
     "sensor": "so2",
@@ -45499,12 +41875,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-12T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 4.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-12T02:00:00"
@@ -45640,12 +42010,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-13T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-13T01:00:00"
   },
   {
     "sensor": "so2",
@@ -45787,12 +42151,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-14T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-14T02:00:00"
@@ -45928,12 +42286,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-15T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-15T01:00:00"
   },
   {
     "sensor": "so2",
@@ -46075,12 +42427,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-16T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-16T02:00:00"
@@ -46216,12 +42562,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-17T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-17T01:00:00"
   },
   {
     "sensor": "so2",
@@ -46363,12 +42703,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-18T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-18T02:00:00"
@@ -46504,12 +42838,6 @@
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-19T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-19T01:00:00"
   },
   {
     "sensor": "so2",
@@ -46651,12 +42979,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-20T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-20T02:00:00"
@@ -46792,12 +43114,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-21T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-21T01:00:00"
   },
   {
     "sensor": "so2",
@@ -46939,12 +43255,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-22T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-22T02:00:00"
@@ -47080,12 +43390,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-23T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-23T01:00:00"
   },
   {
     "sensor": "so2",
@@ -47227,12 +43531,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-24T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-24T02:00:00"
@@ -47368,12 +43666,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-25T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-25T01:00:00"
   },
   {
     "sensor": "so2",
@@ -47515,12 +43807,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-26T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 4.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-26T02:00:00"
@@ -47593,12 +43879,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-26T14:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-26T15:00:00"
@@ -47656,12 +43936,6 @@
     "valor": 4.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-27T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-27T01:00:00"
   },
   {
     "sensor": "so2",
@@ -47725,90 +43999,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-27T12:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-27T13:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-27T14:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-27T15:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-27T16:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-27T17:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-27T18:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-27T19:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-27T20:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-27T21:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-27T22:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-27T23:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-28T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-28T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-28T02:00:00"
@@ -47860,18 +44050,6 @@
     "valor": 5.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-28T10:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-28T11:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-28T12:00:00"
   },
   {
     "sensor": "so2",
@@ -47947,12 +44125,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-29T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-29T02:00:00"
@@ -48004,12 +44176,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-29T10:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-29T11:00:00"
   },
   {
     "sensor": "so2",
@@ -48088,12 +44254,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-11-30T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-11-30T01:00:00"
   },
   {
     "sensor": "so2",
@@ -48235,12 +44395,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-01T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-01T02:00:00"
@@ -48376,12 +44530,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-02T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-02T01:00:00"
   },
   {
     "sensor": "so2",
@@ -48523,12 +44671,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-03T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-03T02:00:00"
@@ -48664,12 +44806,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-04T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-04T01:00:00"
   },
   {
     "sensor": "so2",
@@ -48811,12 +44947,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-05T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-05T02:00:00"
@@ -48952,12 +45082,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-06T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-06T01:00:00"
   },
   {
     "sensor": "so2",
@@ -49099,12 +45223,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-07T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-07T02:00:00"
@@ -49219,18 +45337,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-07T21:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-07T22:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 0.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-07T23:00:00"
@@ -49240,12 +45346,6 @@
     "valor": 0.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-08T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-08T01:00:00"
   },
   {
     "sensor": "so2",
@@ -49387,12 +45487,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-09T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-09T02:00:00"
@@ -49528,12 +45622,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-10T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-10T01:00:00"
   },
   {
     "sensor": "so2",
@@ -49675,12 +45763,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-11T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-11T02:00:00"
@@ -49816,12 +45898,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-12T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-12T01:00:00"
   },
   {
     "sensor": "so2",
@@ -49963,12 +46039,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-13T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-13T02:00:00"
@@ -50104,12 +46174,6 @@
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-14T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-14T01:00:00"
   },
   {
     "sensor": "so2",
@@ -50251,12 +46315,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-15T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-15T02:00:00"
@@ -50392,12 +46450,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-16T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-16T01:00:00"
   },
   {
     "sensor": "so2",
@@ -50539,12 +46591,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-17T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-17T02:00:00"
@@ -50680,12 +46726,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-18T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-18T01:00:00"
   },
   {
     "sensor": "so2",
@@ -50827,12 +46867,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-19T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-19T02:00:00"
@@ -50968,12 +47002,6 @@
     "valor": 4.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-20T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-20T01:00:00"
   },
   {
     "sensor": "so2",
@@ -51115,12 +47143,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-21T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-21T02:00:00"
@@ -51256,12 +47278,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-22T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-22T01:00:00"
   },
   {
     "sensor": "so2",
@@ -51403,12 +47419,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-23T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-23T02:00:00"
@@ -51544,12 +47554,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-24T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-24T01:00:00"
   },
   {
     "sensor": "so2",
@@ -51691,12 +47695,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-25T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-25T02:00:00"
@@ -51832,12 +47830,6 @@
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-26T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-26T01:00:00"
   },
   {
     "sensor": "so2",
@@ -51979,12 +47971,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-27T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-27T02:00:00"
@@ -52120,12 +48106,6 @@
     "valor": 3.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-28T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-28T01:00:00"
   },
   {
     "sensor": "so2",
@@ -52267,12 +48247,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-29T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 2.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-29T02:00:00"
@@ -52411,12 +48385,6 @@
   },
   {
     "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-30T01:00:00"
-  },
-  {
-    "sensor": "so2",
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-30T02:00:00"
@@ -52552,12 +48520,6 @@
     "valor": 1.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-31T00:00:00"
-  },
-  {
-    "sensor": "so2",
-    "valor": NaN,
-    "unidade": "µg/m3",
-    "timestamp": "2024-12-31T01:00:00"
   },
   {
     "sensor": "so2",

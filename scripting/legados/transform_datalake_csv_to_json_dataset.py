@@ -2,17 +2,18 @@
 import pandas as pd
 import json
 import re
+from fill_missing_timestamps import fill_missing_timestamps  # novo import
 
 # Caminhos de entrada e saída
-csv_path = "../cetesb_data/datalake/cetesb_carapicuiba_humidity_2024.csv"
-json_path = "../cetesb_data/dataset/station_01/cetesb_carapicuiba_humidity_2024.json"
+csv_path = "../cetesb_data/datalake/cetesb_osasco_no2_2024.csv"
+json_path = "../cetesb_data/dataset/station_01/cetesb_osasco_no2_2024.json"
 
 # Lê as primeiras 9 linhas para extrair metadados e cabeçalhos
 with open(csv_path, "r", encoding="latin1") as f:
     linhas = [next(f) for _ in range(9)]
 
 # Extrai nome do poluente e unidade da linha 8
-linha_identificacao = linhas[7].strip()  # linha 8 (índice 7)
+linha_identificacao = linhas[7].strip()
 match = re.search(r"([A-Z0-9]+).*?-\s*([^\s]+)", linha_identificacao)
 if match:
     sensor_nome = match.group(1).lower()
@@ -34,14 +35,13 @@ df.loc[df["Hora"] == "00:00", "Data"] += pd.Timedelta(days=1)
 df["timestamp"] = pd.to_datetime(df["Data"].dt.strftime("%Y-%m-%d") + " " + df["Hora"])
 df["timestamp"] = df["timestamp"].dt.strftime("%Y-%m-%dT%H:%M:%S")
 
-# Adiciona colunas fixas
-df["sensor"] = sensor_nome
-df["unidade"] = unidade
+# Aplica preenchimento de lacunas
+df_completo = fill_missing_timestamps(df[["timestamp", "valor"]], freq="1H", sensor_name=sensor_nome, unit=unidade)
 
 # Reorganiza
-df_json = df[["sensor", "valor", "unidade", "timestamp"]]
+df_json = df_completo[["sensor", "valor", "unit", "timestamp"]].rename(columns={"unit": "unidade"})
 
-# Exporta
+# Exporta para JSON
 with open(json_path, "w", encoding="utf-8") as f:
     json.dump(df_json.to_dict(orient="records"), f, ensure_ascii=False, indent=2)
 
