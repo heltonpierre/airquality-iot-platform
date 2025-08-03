@@ -6,8 +6,8 @@ import numpy as np
 from fill_missing_timestamps import fill_missing_timestamps
 
 # Diretórios de entrada e saída
-csv_dir = "../cetesb_data/datalake/group_of_stations_01/"
-json_dir = "../cetesb_data/dataset/device_01/"
+csv_dir = "../cetesb_data/datalake/group_of_stations_06/"
+json_dir = "../cetesb_data/dataset/device_06/"
 
 # Garante que o diretório de saída exista
 os.makedirs(json_dir, exist_ok=True)
