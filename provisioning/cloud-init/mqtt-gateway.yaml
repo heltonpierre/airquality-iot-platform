@@ -7,37 +7,55 @@
 # Requisitos: Ubuntu Server 22.04 LTS ou superior (Multipass/QEMU)
 #
 
-hostname: mqtt-gateway
+hostname: mqtt-gateway2
 manage_etc_hosts: true
 package_update: true
 package_upgrade: true
 
+# Configuração de rede com IP fixo
+network:
+  version: 2
+  ethernets:
+    net0:
+      match:
+        macaddress: "auto"
+      set-name: ens3
+      dhcp4: false
+      addresses:
+        - 10.97.27.20/24
+      gateway4: 10.97.27.1
+      nameservers:
+        addresses:
+          - 8.8.8.8
+          - 1.1.1.1
+# Configuração de pacotes
 packages:
   - mosquitto
   - mosquitto-clients
   - wget
 
+# run commands
 runcmd:
   - |
     bash -c '
-      echo "⏳ Aguardando conectividade de rede...";
+      echo "Aguardando conectividade de rede...";
       until ping -c1 8.8.8.8 > /dev/null 2>&1; do sleep 3; done;
 
-      echo "🔧 Habilitando serviço Mosquitto...";
+      echo "Habilitando serviço Mosquitto...";
       systemctl enable mosquitto;
 
-      echo "📦 Backup do mosquitto.conf original...";
+      echo "Backup do mosquitto.conf original...";
       mv /etc/mosquitto/mosquitto.conf /etc/mosquitto/mosquitto.conf.backup || true;
 
-      echo "⬇️ Baixando arquivos de configuração...";
-      wget --retry-connrefused --waitretry=1 --tries=10 -O /etc/mosquitto/mosquitto.conf https://raw.githubusercontent.com/heltonpierre/airquality-iot-platform/main/mosquitto/mosquitto.conf;
-      wget --retry-connrefused --waitretry=1 --tries=10 -O /etc/mosquitto/acl https://raw.githubusercontent.com/heltonpierre/airquality-iot-platform/main/mosquitto/acl;
+      echo "Baixando arquivos de configuração...";
+      wget --retry-connrefused --waitretry=1 --tries=10 -O /etc/mosquitto/mosquitto.conf https://raw.githubusercontent.com/heltonpierre/airquality-iot-platform/refs/heads/main/mqtt-gateway/mosquitto.conf;
+      wget --retry-connrefused --waitretry=1 --tries=10 -O /etc/mosquitto/acl https://raw.githubusercontent.com/heltonpierre/airquality-iot-platform/refs/heads/main/mqtt-gateway/acl;
 
-      echo "✅ Verificando arquivos...";
+      echo "Verificando arquivos...";
       if [ ! -f /etc/mosquitto/mosquitto.conf ]; then echo "❌ ERRO: mosquitto.conf não foi baixado."; exit 1; fi;
       if [ ! -f /etc/mosquitto/acl ]; then echo "❌ ERRO: acl não foi baixado."; exit 1; fi;
 
-      echo "🔐 Criando usuários Mosquitto...";
+      echo "Criando usuários Mosquitto...";
       mosquitto_passwd -c -b /etc/mosquitto/mosquitto_passwd zabbix senha@123;
       for i in 01 02 03 04 05 06; do
         mosquitto_passwd -b /etc/mosquitto/mosquitto_passwd device$i device@$i;
@@ -45,6 +63,20 @@ runcmd:
       chown mosquitto: /etc/mosquitto/mosquitto_passwd;
       chmod 640 /etc/mosquitto/mosquitto_passwd;
 
-      echo "🔄 Reiniciando Mosquitto...";
+      echo "Reiniciando Mosquitto...";
       systemctl restart mosquitto;
+
+      # echo "Instalando Zabbix Agent...";
+      wget https://repo.zabbix.com/zabbix/7.4/release/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.4+ubuntu22.04_all.deb;
+      dpkg -i zabbix-release_latest_7.4+ubuntu22.04_all.deb;
+      apt update;
+      apt install -y zabbix-agent2;
+
+      # echo "Configurando Zabbix Agent...";
+      mv /etc/zabbix/zabbix_agent2.conf /etc/zabbix/zabbix_agent2.conf.backup;
+      wget --retry-connrefused --waitretry=1 --tries=10 -O /etc/zabbix/zabbix_agent2.conf https://raw.githubusercontent.com/heltonpierre/airquality-iot-platform/refs/heads/main/mqtt-gateway/zabbix_agent2.conf;
+      wget --retry-connrefused --waitretry=1 --tries=10 -O /etc/zabbix/agent2_mqtt-gateway.psk https://github.com/heltonpierre/airquality-iot-platform/blob/main/mqtt-gateway/agent2_mqtt-gateway.psk;
+      sudo systemctl restart zabbix-agent2.service;
+
+
     '
