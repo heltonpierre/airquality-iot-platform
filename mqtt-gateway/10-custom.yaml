@@ -2,15 +2,18 @@
 network:
   version: 2
   ethernets:
-    net0:
+    extra0:
+      dhcp4: no
       match:
         macaddress: "auto"
-      set-name: ens3
+      set-name: eth0
       dhcp4: false
       addresses:
-        - 10.97.27.20/24
-      gateway4: 10.97.27.1
+        - 10.33.33.20/24
       nameservers:
         addresses:
           - 8.8.8.8
           - 1.1.1.1
+      routes:
+        - to: 0.0.0.0/0
+          via: 10.33.33.1

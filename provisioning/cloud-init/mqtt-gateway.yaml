@@ -13,21 +13,28 @@ package_update: true
 package_upgrade: true
 
 # Configuração de rede com IP fixo
-network:
-  version: 2
-  ethernets:
-    net0:
-      match:
-        macaddress: "auto"
-      set-name: ens3
-      dhcp4: false
-      addresses:
-        - 10.97.27.20/24
-      gateway4: 10.97.27.1
-      nameservers:
-        addresses:
-          - 8.8.8.8
-          - 1.1.1.1
+write_files:
+  - path: /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg
+    content: |
+      network: {config: disabled}
+  - path: /etc/netplan/01-netcfg.yaml
+    permissions: '0600'
+    content: |
+      network:
+        version: 2
+        ethernets:
+          ens3:
+            dhcp4: false
+            addresses:
+              - 10.97.27.20/24
+            nameservers:
+              addresses:
+                - 8.8.8.8
+                - 1.1.1.1
+            routes:
+              - to: 0.0.0.0/0
+                via: 10.97.27.1
+
 # Configuração de pacotes
 packages:
   - mosquitto
@@ -38,6 +45,8 @@ packages:
 runcmd:
   - |
     bash -c '
+      netplan apply
+      
       echo "Aguardando conectividade de rede...";
       until ping -c1 8.8.8.8 > /dev/null 2>&1; do sleep 3; done;
 
@@ -75,7 +84,7 @@ runcmd:
       # echo "Configurando Zabbix Agent...";
       mv /etc/zabbix/zabbix_agent2.conf /etc/zabbix/zabbix_agent2.conf.backup;
       wget --retry-connrefused --waitretry=1 --tries=10 -O /etc/zabbix/zabbix_agent2.conf https://raw.githubusercontent.com/heltonpierre/airquality-iot-platform/refs/heads/main/mqtt-gateway/zabbix_agent2.conf;
-      wget --retry-connrefused --waitretry=1 --tries=10 -O /etc/zabbix/agent2_mqtt-gateway.psk https://github.com/heltonpierre/airquality-iot-platform/blob/main/mqtt-gateway/agent2_mqtt-gateway.psk;
+      wget --retry-connrefused --waitretry=1 --tries=10 -O /etc/zabbix/agent2_mqtt-gateway.psk https://raw.githubusercontent.com/heltonpierre/airquality-iot-platform/refs/heads/main/mqtt-gateway/agent2_mqtt-gateway.psk;
       sudo systemctl restart zabbix-agent2.service;
 
 
