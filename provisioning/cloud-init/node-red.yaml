@@ -1,8 +1,7 @@
----
 # cloud-config
 #
 # Configuração do Node-RED com IP atribuído por DHCP e acesso SSH
-# Autor: Helton Pierre Lucena de Medeiros
+# Autor: Helton Medeiros
 # Local: Campina Grande - PB, Brasil
 # Data: 19 de junho de 2025
 # Requisitos: Ubuntu Server 22.04 LTS ou superior (Multipass/QEMU)
