@@ -1,0 +1,16 @@
+# Configuração de rede com IP fixo
+network:
+  version: 2
+  ethernets:
+    net0:
+      match:
+        macaddress: "auto"
+      set-name: ens3
+      dhcp4: false
+      addresses:
+        - 10.97.27.20/24
+      gateway4: 10.97.27.1
+      nameservers:
+        addresses:
+          - 8.8.8.8
+          - 1.1.1.1
