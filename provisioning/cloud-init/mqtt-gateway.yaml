@@ -26,9 +26,16 @@ runcmd:
 
   # Baixa o novo arquivo de configuração
   - sudo wget -O /etc/mosquitto/mosquitto.conf https://raw.githubusercontent.com/heltonpierre/airquality-iot-platform/refs/heads/main/mosquitto/mosquitto.conf
-  - sudo wget /etc/mosquitto/acl 
-  # Criar usuário e senha para autenticação
-  - sudo mosquitto_passwd -c -b /etc/mosquitto/mosquitto_passwd device01 senha123
+  - sudo wget -O /etc/mosquitto/acl https://raw.githubusercontent.com/heltonpierre/airquality-iot-platform/refs/heads/main/mosquitto/acl
+
+  # Criar usuários e senhas para autenticação dos dispositivos e Zabbix
+  - sudo mosquitto_passwd -c -b /etc/mosquitto/mosquitto_passwd zabbix senha@123
+  - sudo mosquitto_passwd -b /etc/mosquitto/mosquitto_passwd device01 device@01
+  - sudo mosquitto_passwd -b /etc/mosquitto/mosquitto_passwd device02 device@02
+  - sudo mosquitto_passwd -b /etc/mosquitto/mosquitto_passwd device03 device@03
+  - sudo mosquitto_passwd -b /etc/mosquitto/mosquitto_passwd device04 device@04
+  - sudo mosquitto_passwd -b /etc/mosquitto/mosquitto_passwd device05 device@05
+  - sudo mosquitto_passwd -b /etc/mosquitto/mosquitto_passwd device06 device@06
   - sudo chown mosquitto: /etc/mosquitto/mosquitto_passwd
   - sudo chmod 640 /etc/mosquitto/mosquitto_passwd
 

@@ -14,11 +14,11 @@
 #   ./create-mqtt-gateway.sh
 #
 
-VM_NAME="mqtt-gateway"
+VM_NAME="mqtt-gateway2"
 CONFIG_FILE="../cloud-init/mqtt-gateway.yaml"
 CPUS=1
 MEMORY=512M
-DISK=2.5G
+DISK=3G
 
 echo "📦 Criando VM '$VM_NAME' com $CPUS CPU(s), $MEMORY RAM e $DISK disco..."
 multipass launch jammy --name "$VM_NAME" \
