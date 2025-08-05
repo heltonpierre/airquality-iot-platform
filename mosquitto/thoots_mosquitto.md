@@ -1,14 +1,3 @@
-snap list mosquitto
+sudo mosquitto -c /etc/mosquitto/mosquitto.conf -v
 
-snap services mosquitto
-
-sudo snap restart mosquitto
-
-sudo snap stop mosquitto
-
-sudo snap start mosquitto
-
-snap logs mosquitto
-
-snap logs mosquitto --tail=100
 
