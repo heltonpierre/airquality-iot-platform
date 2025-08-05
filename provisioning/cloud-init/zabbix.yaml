@@ -23,6 +23,7 @@ packages:
   - postgresql
   - postgresql-contrib
   - ufw
+  - fping
 
 runcmd:
   # Repositório Zabbix
