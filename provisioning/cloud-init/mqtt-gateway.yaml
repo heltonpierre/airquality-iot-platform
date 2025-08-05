@@ -21,14 +21,16 @@ runcmd:
   # Habilita o serviço Mosquitto
   - systemctl enable mosquitto
 
-  # Cria diretório para configurações adicionais
-  #- mkdir -p /etc/mosquitto/conf.d
-
   # Backup do arquivo original (por segurança)
-  #- mv /etc/mosquitto/mosquitto.conf /etc/mosquitto/mosquitto.conf.backup
+  - mv /etc/mosquitto/mosquitto.conf /etc/mosquitto/mosquitto.conf.backup
 
   # Baixa o novo arquivo de configuração
-  #- wget -O /etc/mosquitto/mosquitto.conf https://raw.githubusercontent.com/heltonpierre/airquality-iot-platform/refs/heads/main/mosquitto/mosquitto.conf
+  - sudo wget -O /etc/mosquitto/mosquitto.conf https://raw.githubusercontent.com/heltonpierre/airquality-iot-platform/refs/heads/main/mosquitto/mosquitto.conf
+  - sudo wget /etc/mosquitto/acl 
+  # Criar usuário e senha para autenticação
+  - sudo mosquitto_passwd -c -b /etc/mosquitto/mosquitto_passwd device01 senha123
+  - sudo chown mosquitto: /etc/mosquitto/mosquitto_passwd
+  - sudo chmod 640 /etc/mosquitto/mosquitto_passwd
 
   # Reinicia o serviço para aplicar a nova configuração
   - systemctl restart mosquitto
