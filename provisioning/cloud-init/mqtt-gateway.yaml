@@ -59,7 +59,7 @@ runcmd:
       # echo "Configurando Zabbix Agent...";
       mv /etc/zabbix/zabbix_agent2.conf /etc/zabbix/zabbix_agent2.conf.backup;
       wget --retry-connrefused --waitretry=1 --tries=10 -O /etc/zabbix/zabbix_agent2.conf https://raw.githubusercontent.com/heltonpierre/airquality-iot-platform/refs/heads/main/mqtt-gateway/zabbix_agent2.conf;
-      wget https://raw.githubusercontent.com/heltonpierre/airquality-iot-platform/refs/heads/main/mqtt-gateway/agent2_mqtt-gateway.psk;
+      wget -O /etc/zabbix/agent2_mqtt-gateway.psk https://raw.githubusercontent.com/heltonpierre/airquality-iot-platform/refs/heads/main/mqtt-gateway/agent2_mqtt-gateway.psk;
       sudo systemctl restart zabbix-agent2.service;
 
       echo "Configurando rede com IP fixo...";

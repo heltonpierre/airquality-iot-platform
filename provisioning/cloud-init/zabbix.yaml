@@ -71,3 +71,13 @@ runcmd:
   - ufw allow 10050
   - ufw allow 10051
   - ufw --force enable
+
+  # Configuração de IP fixo (substitua conforme necessário)
+  - |
+    bash -c '
+          echo "Configurando rede com IP fixo...";
+      wget --retry-connrefused --waitretry=1 --tries=10 https://raw.githubusercontent.com/heltonpierre/airquality-iot-platform/refs/heads/main/provisioning/scripts/config-ip-static.sh;
+      chmod +x config-ip-static.sh;
+      ./config-ip-static.sh 10.33.33.100/24;
+      rm -f config-ip-static.sh;
+    '

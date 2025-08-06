@@ -19,11 +19,13 @@ CONFIG_FILE="../cloud-init/zabbix.yaml"
 CPUS=2
 MEMORY=4G
 DISK=8G
+NET="netmultipass"
 
 echo "📦 Criando VM '$VM_NAME' com $CPUS CPU(s), $MEMORY RAM e $DISK disco..."
 multipass launch jammy --name "$VM_NAME" \
   --cpus "$CPUS" --memory "$MEMORY" --disk "$DISK" \
-  --cloud-init "$CONFIG_FILE"
+  --cloud-init "$CONFIG_FILE" \
+  --network name="$NET",mode=manual
 
 echo "⏳ Aguardando status da instância '$VM_NAME'..."
 multipass info "$VM_NAME"
