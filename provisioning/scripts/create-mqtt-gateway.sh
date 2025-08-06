@@ -19,11 +19,13 @@ CONFIG_FILE="../cloud-init/mqtt-gateway.yaml"
 CPUS=1
 MEMORY=512M
 DISK=3G
+NET="netmultipass"
 
 echo "📦 Criando VM '$VM_NAME' com $CPUS CPU(s), $MEMORY RAM e $DISK disco..."
 multipass launch jammy --name "$VM_NAME" \
   --cpus "$CPUS" --memory "$MEMORY" --disk "$DISK" \
-  --cloud-init "$CONFIG_FILE"
+  --cloud-init "$CONFIG_FILE" \
+  --network name="$NET",mode=manual
 
 echo "⏳ Aguardando status da instância '$VM_NAME'..."
 multipass info "$VM_NAME"
