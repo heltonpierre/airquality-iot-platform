@@ -10,13 +10,6 @@ manage_etc_hosts: true
 package_update: true
 package_upgrade: true
 
-# Rede via DHCP (IP fixo será configurado posteriormente)
-network:
-  version: 2
-  ethernets:
-    ens3:
-      dhcp4: true
-
 packages:
   - wget
   - gnupg
@@ -32,7 +25,7 @@ runcmd:
   - apt update
 
   # Instalação Zabbix + TimescaleDB
-  - apt install -y zabbix-server-pgsql zabbix-frontend-php php8.1-pgsql zabbix-apache-conf zabbix-sql-scripts zabbix-agent postgresql postgresql-contrib
+  - apt install -y zabbix-server-pgsql zabbix-frontend-php php8.1-pgsql zabbix-apache-conf zabbix-sql-scripts zabbix-agent postgresql postgresql-contrib fping mosquitto-clients
 
 
   # Configuração do PostgreSQL
@@ -70,7 +63,19 @@ runcmd:
   - ufw allow 80
   - ufw allow 10050
   - ufw allow 10051
+  - ufw allow 3000
   - ufw --force enable
+
+  # Instalação do Grafana
+  - sudo apt-get install -y adduser libfontconfig1 musl
+  - wget https://dl.grafana.com/enterprise/release/grafana-enterprise_12.1.0_amd64.deb
+  - sudo dpkg -i grafana-enterprise_12.1.0_amd64.deb
+  - systemctl daemon-reexec
+  - systemctl daemon-reload
+  - systemctl enable grafana-server
+  - systemctl start grafana-server
+  - grafana-cli plugins install alexanderzobnin-zabbix-app
+  - systemctl restart grafana-server
 
   # Configuração de IP fixo (substitua conforme necessário)
   - |
