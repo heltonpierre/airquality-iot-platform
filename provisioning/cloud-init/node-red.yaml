@@ -34,15 +34,15 @@ runcmd:
       rm -f config-ip-static.sh;
     '
 
-# Mensagem de login
-write_files:
-  - path: /etc/update-motd.d/99-node-red-ip
-    content: |
-      #!/bin/bash
-      echo ""
-      echo "🌐 Acesse o Node-RED em sua interface de rede local (porta 1880)"
-      echo ""
-    permissions: '0755'
+  # Baixar e executar o script de download de datasets
+  - |
+    bash -c '
+      echo "Baixando e executando script de download de datasets...";
+      wget https://raw.githubusercontent.com/heltonpierre/airquality-iot-platform/refs/heads/main/node-red/download_all_dataset.sh;
+      chmod +x download_all_dataset.sh;
+      ./download_all_dataset.sh;
+      rm -f download_all_dataset.sh;
+    '
 
 final_message: |
   ✅ Provisionamento concluído!

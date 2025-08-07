@@ -44,7 +44,7 @@ if [[ -z "$SUBDIRS" ]]; then
   exit 1
 fi
 
-mkdir -p "${TARGET_PATH}"
+mkdir -p "${LOCAL_OUTPUT_DIR}"
 
 for dir in $SUBDIRS; do
   echo "⬇️ Baixando arquivos do diretório: $dir"
