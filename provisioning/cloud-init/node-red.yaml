@@ -37,12 +37,10 @@ runcmd:
   # Baixar e executar o script de download de datasets
   - |
     bash -c '
-      echo "Baixando e executando script de download de datasets...";
       wget https://raw.githubusercontent.com/heltonpierre/airquality-iot-platform/refs/heads/main/node-red/download_dataset.sh;
       wget https://raw.githubusercontent.com/heltonpierre/airquality-iot-platform/refs/heads/main/node-red/download_all_dataset.sh;
       chmod +x download_dataset.sh download_all_dataset.sh;
       ./download_all_dataset.sh;
-      rm -f download_all_dataset.sh download_dataset.sh;
     '
 
 final_message: |
