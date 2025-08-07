@@ -5,20 +5,24 @@
 # Data: 06/08/2025
 # Descrição:
 #   Faz download recursivo de todos os arquivos do diretório /cetesb_data/dataset
-#   no repositório GitHub heltonpierre/airquality-iot-platform.
+#   no repositório GitHub heltonpierre/airquality-iot-platform e os salva no
+#   diretório persistente do Node-RED: /var/snap/node-red/common/data/
 #
 # Uso:
 #   chmod +x download_all_datasets.sh
-#   ./download_all_datasets.sh
+#   sudo ./download_all_datasets.sh
 #
 # Requisitos:
-#   sudo apt install jq
+#   sudo apt update && sudo apt install -y jq
+#
+# Observação:
+#   O script deve ser executado com permissões de superusuário (sudo) para acessar /var/snap
 # ------------------------------------------------------------------------------
 
 REPO="heltonpierre/airquality-iot-platform"
 BRANCH="main"
 ROOT_PATH="cetesb_data/dataset"
-LOCAL_OUTPUT_DIR="/var/snap/node-red/common/data/"
+LOCAL_OUTPUT_DIR="/var/snap/node-red/common/data"
 
 # 🔁 Função para baixar arquivos recursivamente
 download_recursive() {
