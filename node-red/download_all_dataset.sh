@@ -17,9 +17,18 @@
 
 LOCAL_OUTPUT_DIR="/var/snap/node-red/common/data/"
 mkdir -p "$LOCAL_OUTPUT_DIR"
+
+# Diretório do script
+# Obtém o diretório do script atual para garantir que o download_dataset.sh seja chamado corretamente
+# Isso é importante para que o script funcione corretamente, independentemente de onde for chamado
+# O comando `cd` muda o diretório de trabalho atual para o diretório do script
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+# Muda para o diretório de saída local
+# Isso garante que os arquivos baixados sejam salvos no diretório correto
 cd "$LOCAL_OUTPUT_DIR" || exit 1
 
 # Lista de dispositivos a serem baixados
 for i in $(seq -w 1 6); do
-  ./download_dataset.sh device_0$i
+  "${SCRIPT_DIR}/download_dataset.sh" device_0$i
 done
