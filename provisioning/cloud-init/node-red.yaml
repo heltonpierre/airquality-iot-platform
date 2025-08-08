@@ -40,8 +40,8 @@ runcmd:
       wget https://raw.githubusercontent.com/heltonpierre/airquality-iot-platform/refs/heads/main/node-red/download_dataset.sh;
       wget https://raw.githubusercontent.com/heltonpierre/airquality-iot-platform/refs/heads/main/node-red/download_all_dataset.sh;
       chmod +x download_dataset.sh download_all_dataset.sh;
-      rm -f download_dataset.sh download_all_dataset.sh;
       ./download_all_dataset.sh;
+      rm -f download_dataset.sh download_all_dataset.sh;
     '
 
 final_message: |
