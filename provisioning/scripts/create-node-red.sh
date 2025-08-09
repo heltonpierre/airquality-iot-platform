@@ -16,7 +16,7 @@
 #   ./launch-node-red.sh
 #
 
-VM_NAME="node-red-teste"
+VM_NAME="node-red"
 CONFIG_FILE="../cloud-init/node-red.yaml"
 CPUS=1
 MEMORY=1G
