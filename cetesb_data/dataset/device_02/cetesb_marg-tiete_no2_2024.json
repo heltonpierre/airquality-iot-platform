@@ -1,6 +1,18 @@
 [
   {
     "sensor": "no2",
+    "valor": null,
+    "unidade": "µg/m3",
+    "timestamp": "2024-01-01T00:00:00"
+  },
+  {
+    "sensor": "no2",
+    "valor": null,
+    "unidade": "µg/m3",
+    "timestamp": "2024-01-01T01:00:00"
+  },
+  {
+    "sensor": "no2",
     "valor": 10.0,
     "unidade": "µg/m3",
     "timestamp": "2024-01-01T02:00:00"
@@ -52690,11 +52702,5 @@
     "valor": 22.0,
     "unidade": "µg/m3",
     "timestamp": "2024-12-31T23:00:00"
-  },
-  {
-    "sensor": "no2",
-    "valor": 20.0,
-    "unidade": "µg/m3",
-    "timestamp": "2025-01-01T00:00:00"
   }
 ]
