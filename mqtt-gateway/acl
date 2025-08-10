@@ -3,26 +3,26 @@
 # ========================
 
 user device01
-topic write airq/devices/device01
+topic write airq/devices/device01/+
 
 user device02
-topic write airq/devices/device02
+topic write airq/devices/device02/+
 
 user device03
-topic write airq/devices/device03
+topic write airq/devices/device03/+
 
 user device04
-topic write airq/devices/device04
+topic write airq/devices/device04/+
 
 user device05
-topic write airq/devices/device05
+topic write airq/devices/device05/+
 
 user device06
-topic write airq/devices/device06
+topic write airq/devices/device06/+
 
 # ========================
 # ACL para o Zabbix (leitura de todos os tópicos)
 # ========================
 
 user zabbix
-topic read airq/devices/#
+topic read airq/devices/#/+
