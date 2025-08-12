@@ -1,15 +1,15 @@
 // ===== Metadados estáticos do dispositivo =====
 const DEVICE_META = {
-    deviceId: "device06",
-    station: "Aeroporto de Guarulhos",
-    lat: -23.42972112218168,
+    deviceId: "deviceXX", // ID único do dispositivo
+    station: "name_estacao", // Nome da estação
+    lat: -23.42972112218168, // Latitude e Longitude do dispositivo
     lon: -46.47145811899057,   // cuidado com espaços antes do número!
-    model: "ESP32-DEVKITC",
-    fw_version: "1.0.0"
+    model: "Node-RED", // Modelo do dispositivo
+    fw_version: "v3.1.0" // Versão do firmware
 };
 
 // ===== Tópico único de publicação =====
-const OUT_TOPIC = "airq/devices/device06/telemetria";
+// const OUT_TOPIC = "airq/devices/deviceXX/telemetria";
 
 // ===== Mapeamento nomes reais -> padronizados =====
 const mapSensor = {
@@ -70,7 +70,7 @@ if (todosPresentes) {
     flow.set("sensorBuffer", buffer);
 
     // Publica no único tópico
-    msg.topic = OUT_TOPIC;
+    //msg.topic = OUT_TOPIC;
     msg.payload = payloadFinal;
     msg.qos = 1;        // opcional
     msg.retain = false;    // telemetria normalmente não é retida
