@@ -8,9 +8,6 @@ const DEVICE_META = {
     fw_version: "v3.1.0" // Versão do firmware
 };
 
-// ===== Tópico único de publicação =====
-// const OUT_TOPIC = "airq/devices/deviceXX/telemetria";
-
 // ===== Mapeamento nomes reais -> padronizados =====
 const mapSensor = {
     "mp10": "pm10",
@@ -68,9 +65,8 @@ if (todosPresentes) {
     // Limpa o bucket do timestamp
     delete buffer[ts];
     flow.set("sensorBuffer", buffer);
-
-    // Publica no único tópico
-    //msg.topic = OUT_TOPIC;
+    
+    // Playload pronto para envio
     msg.payload = payloadFinal;
     msg.qos = 1;        // opcional
     msg.retain = false;    // telemetria normalmente não é retida

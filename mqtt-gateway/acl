@@ -20,6 +20,24 @@ topic write airq/devices/device05/+
 user device06
 topic write airq/devices/device06/+
 
+user device07
+topic write airq/devices/device07/+
+
+user device08
+topic write airq/devices/device08/+
+
+user device09
+topic write airq/devices/device09/+
+
+user device10
+topic write airq/devices/device10/+
+
+user device11
+topic write airq/devices/device11/+
+
+user device12
+topic write airq/devices/device12/+
+
 # ========================
 # ACL para o Zabbix (leitura de todos os tópicos)
 # ========================
