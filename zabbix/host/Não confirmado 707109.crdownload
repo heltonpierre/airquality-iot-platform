@@ -1,0 +1,23 @@
+zabbix_export:
+  version: '7.4'
+  host_groups:
+    - uuid: 8e9c210064a2431e8420e18023b35c53
+      name: iot-devices
+    - uuid: 0856b55e78e94b8ab3df1c12f23120fb
+      name: node-red
+  hosts:
+    - host: mqtt-gateway-2
+      name: mqtt-gateway-2
+      description: 'Gateway MQTT - Monitoramento da Qualidade do Ar com dispositivos IoT'
+      templates:
+        - name: template-mqtt-devices-iot
+      groups:
+        - name: iot-devices
+        - name: node-red
+      interfaces:
+        - ip: '{$IPMQTTGATEWAY}'
+          interface_ref: if1
+      macros:
+        - macro: '{$IPMQTTGATEWAY}'
+          value: 10.33.33.20
+          description: 'IP Gateway MQTT'
