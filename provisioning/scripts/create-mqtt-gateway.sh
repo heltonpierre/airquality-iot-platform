@@ -14,7 +14,7 @@
 #   ./create-mqtt-gateway.sh
 #
 
-VM_NAME="mqtt-gateway"
+VM_NAME="mqtt-gateway-2"
 CONFIG_FILE="../cloud-init/mqtt-gateway.yaml"
 CPUS=1
 MEMORY=512M

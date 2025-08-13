@@ -43,4 +43,4 @@ topic write airq/devices/device12/+
 # ========================
 
 user zabbix
-topic read airq/devices/#/+
+topic read airq/devices/#

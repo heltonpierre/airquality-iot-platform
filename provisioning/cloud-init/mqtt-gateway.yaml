@@ -7,7 +7,7 @@
 # Requisitos: Ubuntu Server 22.04 LTS ou superior (Multipass/QEMU)
 #
 
-hostname: mqtt-gateway
+hostname: mqtt-gateway-2
 manage_etc_hosts: true
 package_update: true
 package_upgrade: true
@@ -41,7 +41,7 @@ runcmd:
 
       echo "Criando usuários Mosquitto...";
       mosquitto_passwd -c -b /etc/mosquitto/mosquitto_passwd zabbix senha@123;
-      for i in 01 02 03 04 05 06; do
+      for i in 01 02 03 04 05 06 07 08 09 10 11 12; do
         mosquitto_passwd -b /etc/mosquitto/mosquitto_passwd device$i device@$i;
       done;
       chown mosquitto: /etc/mosquitto/mosquitto_passwd;
@@ -65,6 +65,6 @@ runcmd:
       echo "Configurando rede com IP fixo...";
       wget --retry-connrefused --waitretry=1 --tries=10 https://raw.githubusercontent.com/heltonpierre/airquality-iot-platform/refs/heads/main/provisioning/scripts/config-ip-static.sh;
       chmod +x config-ip-static.sh;
-      ./config-ip-static.sh 10.33.33.10/24;
+      ./config-ip-static.sh 10.33.33.20/24;
       rm -f config-ip-static.sh;
     '
