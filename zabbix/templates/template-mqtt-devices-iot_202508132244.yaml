@@ -1,0 +1,1568 @@
+zabbix_export:
+  version: '7.4'
+  template_groups:
+    - uuid: 9606d0fbf903494c822af2acb5ae580b
+      name: iot-devices
+  templates:
+    - uuid: 8ad78bcf27e94db0903407ed5bdfb245
+      template: template-mqtt-devices-iot
+      name: template-mqtt-devices-iot
+      groups:
+        - name: iot-devices
+      items:
+        - uuid: 4241523c2505420ba7effbba85870c8e
+          name: mqtt.telemetry.raw.all_devices
+          type: ZABBIX_ACTIVE
+          key: 'mqtt.get["{$MQTT_SCHEME}://{$IPMQTTGATEWAY}:{$MQTT_PORT}","{$MQTT.TOPIC.TELEMETRY}","{$MQTT_USER}","{$MQTT_PASS}"]'
+          history: 365d
+          value_type: TEXT
+          description: |
+            mqtt.get["{$IPMQTTGATEWAY}:1883","airq/devices/+/telemetria",{$USERMQTTGATEWAY},{$PWDMQTTGATEWAY}]
+            
+            Processamento utiliza o script: mqtt.telemetry.raw.all_devices.js
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  // Zabbix JS (ES5) – remove o envelope do tópico e normaliza números
+                  function toNum(v) {
+                    if (v === null || v === undefined || v === "") return null;
+                    v = String(v).replace(",", ".");
+                    var n = Number(v);
+                    return isNaN(n) ? v : n;
+                  }
+                  
+                  function normalizeNumbers(p) {
+                    // converta apenas os campos esperados
+                    var keys = ["co","temperatura","pressao","pm10","pm25","o3","no2","so2","umidade","lat","lon"];
+                    for (var i = 0; i < keys.length; i++) {
+                      var k = keys[i];
+                      if (p.hasOwnProperty(k)) p[k] = toNum(p[k]);
+                    }
+                    return p;
+                  }
+                  
+                  var raw = value;
+                  
+                  // 1) Tente interpretar 'raw' como objeto envelope { "<topico>": "<json-string>" }
+                  var outer;
+                  try {
+                    outer = JSON.parse(raw);
+                  } catch (e1) {
+                    // Talvez já seja o payload puro
+                    try {
+                      return JSON.stringify(normalizeNumbers(JSON.parse(raw)));
+                    } catch (e2) {
+                      return raw; // não é JSON, devolve como veio
+                    }
+                  }
+                  
+                  // 2) Obtenha o primeiro valor do envelope (payload)
+                  var payloadStr = null;
+                  if (outer && typeof outer === "object") {
+                    for (var prop in outer) {
+                      if (outer.hasOwnProperty(prop)) {
+                        payloadStr = outer[prop];
+                        break;
+                      }
+                    }
+                  }
+                  
+                  // 3) Se já veio objeto, normalize e devolva
+                  if (payloadStr && typeof payloadStr === "object") {
+                    return JSON.stringify(normalizeNumbers(payloadStr));
+                  }
+                  
+                  // 4) Caso geral: é uma string JSON com aspas escapadas → parse de novo
+                  try {
+                    var payload = JSON.parse(payloadStr);
+                    return JSON.stringify(normalizeNumbers(payload));
+                  } catch (e3) {
+                    // Falhou o parse interno: devolve string sem envelope
+                    return payloadStr;
+                  }
+      discovery_rules:
+        - uuid: 6b9c5fe311614147ba5b61a12078a3c8
+          name: iot.devices.discovery.from_telemetry
+          type: DEPENDENT
+          key: lld.device.discovery
+          lifetime_type: DELETE_NEVER
+          enabled_lifetime_type: DISABLE_NEVER
+          item_prototypes:
+            - uuid: f393ed85e1614131a8ef22daa5e9ec03
+              name: '[{#DEVICEID}] - CO (ppm) - Média móvel 1h'
+              type: CALCULATED
+              key: 'airq.co.hourly_mean[{#DEVICEID}]'
+              delay: 0;m0
+              history: 365d
+              value_type: FLOAT
+              units: ppm
+              params: 'avg(//airq.co.now[{#DEVICEID}],1h)'
+              description: 'Média fixa por hora (histórico segmentado): Calcula a média de cada hora do dia.'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: CO
+            - uuid: 8deec903c85a44aaa1f754cba3e22824
+              name: '[{#DEVICEID}] - CO (ppm) - Tempo Real'
+              type: DEPENDENT
+              key: 'airq.co.now[{#DEVICEID}]'
+              history: 365d
+              value_type: FLOAT
+              units: ppm
+              preprocessing:
+                - type: JSONPATH
+                  parameters:
+                    - $.co
+                  error_handler: DISCARD_VALUE
+                - type: JAVASCRIPT
+                  parameters:
+                    - |
+                      if (value === null || value === "" || value === "null") return null; // descarta
+                      return value;
+                - type: MATCHES_REGEX
+                  parameters:
+                    - '^\s*[0-9]+(?:\.[0-9]+)?\s*$'
+                  error_handler: DISCARD_VALUE
+              master_item:
+                key: 'mqtt.get["{$MQTT_SCHEME}://{$IPMQTTGATEWAY}:{$MQTT_PORT}","{#TOPIC_TEL}","{$MQTT_USER}","{$MQTT_PASS}"]'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: CO
+            - uuid: d60537a509244e479f39fbd78f099869
+              name: '[{#DEVICEID}] - CO (ppm) - Média móvel 8h'
+              type: CALCULATED
+              key: 'airq.co.rolling24h[{#DEVICEID}]'
+              delay: 0;m5
+              history: 365d
+              value_type: FLOAT
+              units: ppm
+              params: 'avg(//airq.co.hourly_mean[{#DEVICEID}],8h)'
+              description: 'Calcula a média móvel das últimas 8h'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: CO
+            - uuid: a60758e37c484e1aaff3bbde10742593
+              name: '[{#DEVICEID}] - Umidade do Ar'
+              type: DEPENDENT
+              key: 'airq.humidity.now[{#DEVICEID}]'
+              history: 365d
+              value_type: FLOAT
+              units: '%'
+              preprocessing:
+                - type: JSONPATH
+                  parameters:
+                    - $.umidade
+                  error_handler: DISCARD_VALUE
+                - type: JAVASCRIPT
+                  parameters:
+                    - |
+                      if (value === null || value === "" || value === "null") return null; // descarta
+                      return value;
+                - type: MATCHES_REGEX
+                  parameters:
+                    - '^\s*[0-9]+(?:\.[0-9]+)?\s*$'
+                  error_handler: DISCARD_VALUE
+              master_item:
+                key: 'mqtt.get["{$MQTT_SCHEME}://{$IPMQTTGATEWAY}:{$MQTT_PORT}","{#TOPIC_TEL}","{$MQTT_USER}","{$MQTT_PASS}"]'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: 'Umidade do Ar'
+            - uuid: 1dba7cc672e0409b8dc365378a06f277
+              name: '[{#DEVICEID}] - NO2 (µg/m³) - Máxima de 1h'
+              type: CALCULATED
+              key: 'airq.no2.hourly_mean[{#DEVICEID}]'
+              delay: 0;m0
+              history: 365d
+              value_type: FLOAT
+              units: µg/m³
+              params: 'avg(//airq.no2.now[{#DEVICEID}],1h)'
+              description: 'NO2 máxima de 1 hora.'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: NO2
+            - uuid: 9a508ee039b64718ac0f63d6387611ce
+              name: '[{#DEVICEID}] - NO2 (µg/m³) - Tempo Real'
+              type: DEPENDENT
+              key: 'airq.no2.now[{#DEVICEID}]'
+              history: 365d
+              value_type: FLOAT
+              units: µg/m³
+              preprocessing:
+                - type: JSONPATH
+                  parameters:
+                    - $.no2
+                  error_handler: DISCARD_VALUE
+                - type: JAVASCRIPT
+                  parameters:
+                    - |
+                      if (value === null || value === "" || value === "null") return null; // descarta
+                      return value;
+                - type: MATCHES_REGEX
+                  parameters:
+                    - '^\s*[0-9]+(?:\.[0-9]+)?\s*$'
+                  error_handler: DISCARD_VALUE
+              master_item:
+                key: 'mqtt.get["{$MQTT_SCHEME}://{$IPMQTTGATEWAY}:{$MQTT_PORT}","{#TOPIC_TEL}","{$MQTT_USER}","{$MQTT_PASS}"]'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: NO2
+            - uuid: e81eef24b8764cc8bd2720c871fe8404
+              name: '[{#DEVICEID}] - O3 (µg/m³) - Média móvel 1h'
+              type: CALCULATED
+              key: 'airq.o3.hourly_mean[{#DEVICEID}]'
+              delay: 0;m0
+              history: 365d
+              value_type: FLOAT
+              units: µg/m³
+              params: 'avg(//airq.o3.now[{#DEVICEID}],1h)'
+              description: 'Média fixa por hora (histórico segmentado): Calcula a média de cada hora do dia.'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: O3
+            - uuid: e6be5d0cdef54e6fa157e06c190e5695
+              name: '[{#DEVICEID}] - O3 (µg/m³) - Tempo Real'
+              type: DEPENDENT
+              key: 'airq.o3.now[{#DEVICEID}]'
+              history: 365d
+              value_type: FLOAT
+              units: µg/m³
+              preprocessing:
+                - type: JSONPATH
+                  parameters:
+                    - $.o3
+                  error_handler: DISCARD_VALUE
+                - type: JAVASCRIPT
+                  parameters:
+                    - |
+                      if (value === null || value === "" || value === "null") return null; // descarta
+                      return value;
+                - type: MATCHES_REGEX
+                  parameters:
+                    - '^\s*[0-9]+(?:\.[0-9]+)?\s*$'
+                  error_handler: DISCARD_VALUE
+              master_item:
+                key: 'mqtt.get["{$MQTT_SCHEME}://{$IPMQTTGATEWAY}:{$MQTT_PORT}","{#TOPIC_TEL}","{$MQTT_USER}","{$MQTT_PASS}"]'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: O3
+            - uuid: 06698e577fa641e88d89440d86a71ef3
+              name: '[{#DEVICEID}] - O3 (µg/m³) - Máxima média móvel de 8h'
+              type: CALCULATED
+              key: 'airq.o3.rolling24h[{#DEVICEID}]'
+              delay: 0;m5
+              history: 365d
+              value_type: FLOAT
+              units: µg/m³
+              params: 'max(//airq.o3.hourly_mean[{#DEVICEID}],8h)'
+              description: |
+                Calcula a máxima média de 8 horas.
+                
+                ???média das máximas diárias de 8 h
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: O3
+            - uuid: 84e74179cf534ba3bb4fb5884a05fd49
+              name: '[{#DEVICEID}] - PM10 (µg/m³) - Média móvel 1h'
+              type: CALCULATED
+              key: 'airq.pm10.hourly_mean[{#DEVICEID}]'
+              delay: 0;m0
+              history: 365d
+              value_type: FLOAT
+              units: µg/m³
+              params: 'avg(//airq.pm10.now[{#DEVICEID}],1h)'
+              description: 'Média fixa por hora (histórico segmentado): Calcula a média de cada hora do dia.'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: PM10
+            - uuid: a1e2cdb333944979ae751cab46c694d8
+              name: '[{#DEVICEID}] - PM10 (µg/m³) - Tempo Real'
+              type: DEPENDENT
+              key: 'airq.pm10.now[{#DEVICEID}]'
+              history: 365d
+              value_type: FLOAT
+              units: µg/m³
+              preprocessing:
+                - type: JSONPATH
+                  parameters:
+                    - $.pm10
+                  error_handler: DISCARD_VALUE
+                - type: JAVASCRIPT
+                  parameters:
+                    - |
+                      if (value === null || value === "" || value === "null") return null; // descarta
+                      return value;
+                - type: MATCHES_REGEX
+                  parameters:
+                    - '^\s*[0-9]+(?:\.[0-9]+)?\s*$'
+                  error_handler: DISCARD_VALUE
+              master_item:
+                key: 'mqtt.get["{$MQTT_SCHEME}://{$IPMQTTGATEWAY}:{$MQTT_PORT}","{#TOPIC_TEL}","{$MQTT_USER}","{$MQTT_PASS}"]'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: PM10
+            - uuid: 8531a4dd4ac54a5d8257f28c19664919
+              name: '[{#DEVICEID}] - PM10 (µg/m³) - Média móvel 24h'
+              type: CALCULATED
+              key: 'airq.pm10.rolling24h[{#DEVICEID}]'
+              delay: 0;m5
+              history: 365d
+              value_type: FLOAT
+              units: µg/m³
+              params: 'avg(//airq.pm10.hourly_mean[{#DEVICEID}],24h)'
+              description: 'Calcula a média móvel das últimas 24h'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: PM10
+            - uuid: 33277d8d9e084625a2110bba76bf7635
+              name: '[{#DEVICEID}] - PM10 (µg/m³) - Média móvel 24h (últimas 24)'
+              type: CALCULATED
+              key: 'airq.pm10.rollinglast24[{#DEVICEID}]'
+              delay: 0;m5
+              history: 365d
+              value_type: FLOAT
+              units: µg/m³
+              params: 'avg(//airq.pm10.hourly_mean[{#DEVICEID}],#24)'
+              description: 'Calcula a média móvel das últimas 24h'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: PM10
+            - uuid: 06e8f18dc0c84df4841b82953cd5fbc4
+              name: '[{#DEVICEID}] - PM2.5 (µg/m³) - Média móvel 1h'
+              type: CALCULATED
+              key: 'airq.pm25.hourly_mean[{#DEVICEID}]'
+              delay: 0;m0
+              history: 365d
+              value_type: FLOAT
+              units: µg/m³
+              params: 'avg(//airq.pm25.now[{#DEVICEID}],1h)'
+              description: 'Média fixa por hora (histórico segmentado): Calcula a média de cada hora do dia.'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: PM2.5
+            - uuid: 9dc79ac8caaf440ba18a1ea257f72d20
+              name: '[{#DEVICEID}] - PM2.5 (µg/m³) - Tempo Real'
+              type: DEPENDENT
+              key: 'airq.pm25.now[{#DEVICEID}]'
+              history: 365d
+              value_type: FLOAT
+              units: µg/m³
+              preprocessing:
+                - type: JSONPATH
+                  parameters:
+                    - $.pm25
+                  error_handler: DISCARD_VALUE
+                - type: JAVASCRIPT
+                  parameters:
+                    - |
+                      if (value === null || value === "" || value === "null") return null; // descarta
+                      return value;
+                - type: MATCHES_REGEX
+                  parameters:
+                    - '^\s*[0-9]+(?:\.[0-9]+)?\s*$'
+                  error_handler: DISCARD_VALUE
+              master_item:
+                key: 'mqtt.get["{$MQTT_SCHEME}://{$IPMQTTGATEWAY}:{$MQTT_PORT}","{#TOPIC_TEL}","{$MQTT_USER}","{$MQTT_PASS}"]'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: PM2.5
+            - uuid: 0cbc2dd7047c4463aee86f770a59d64a
+              name: '[{#DEVICEID}] - PM2.5 (µg/m³) - Média móvel 24h'
+              type: CALCULATED
+              key: 'airq.pm25.rolling24h[{#DEVICEID}]'
+              delay: 0;m5
+              history: 365d
+              value_type: FLOAT
+              units: µg/m³
+              params: 'avg(//airq.pm25.hourly_mean[{#DEVICEID}],24h)'
+              description: 'Calcula a média móvel das últimas 24h'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: PM2.5
+            - uuid: 9c3ab1e9fad748c89387ce12128eae64
+              name: '[{#DEVICEID}] - Pressão'
+              type: DEPENDENT
+              key: 'airq.pressure.now[{#DEVICEID}]'
+              history: 365d
+              value_type: FLOAT
+              units: hPa
+              preprocessing:
+                - type: JSONPATH
+                  parameters:
+                    - $.pressao
+                  error_handler: DISCARD_VALUE
+                - type: JAVASCRIPT
+                  parameters:
+                    - |
+                      if (value === null || value === "" || value === "null") return null; // descarta
+                      return value;
+                - type: MATCHES_REGEX
+                  parameters:
+                    - '^\s*[0-9]+(?:\.[0-9]+)?\s*$'
+              master_item:
+                key: 'mqtt.get["{$MQTT_SCHEME}://{$IPMQTTGATEWAY}:{$MQTT_PORT}","{#TOPIC_TEL}","{$MQTT_USER}","{$MQTT_PASS}"]'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: Pressão
+            - uuid: abf3f51890c74200af3bbafb2bae1638
+              name: '[{#DEVICEID}] - SO2 (µg/m³) - Média móvel 1h'
+              type: CALCULATED
+              key: 'airq.so2.hourly_mean[{#DEVICEID}]'
+              delay: 0;m0
+              history: 365d
+              value_type: FLOAT
+              units: µg/m³
+              params: 'avg(//airq.so2.now[{#DEVICEID}],1h)'
+              description: 'Média fixa por hora (histórico segmentado): Calcula a média de cada hora do dia.'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: SO2
+            - uuid: 05f8bad693cd4418a27708a7d185783a
+              name: '[{#DEVICEID}] - SO2 (µg/m³) - Tempo Real'
+              type: DEPENDENT
+              key: 'airq.so2.now[{#DEVICEID}]'
+              history: 365d
+              value_type: FLOAT
+              units: µg/m³
+              preprocessing:
+                - type: JSONPATH
+                  parameters:
+                    - $.so2
+                  error_handler: DISCARD_VALUE
+                - type: JAVASCRIPT
+                  parameters:
+                    - |
+                      if (value === null || value === "" || value === "null") return null; // descarta
+                      return value;
+                - type: MATCHES_REGEX
+                  parameters:
+                    - '^\s*[0-9]+(?:\.[0-9]+)?\s*$'
+                  error_handler: DISCARD_VALUE
+              master_item:
+                key: 'mqtt.get["{$MQTT_SCHEME}://{$IPMQTTGATEWAY}:{$MQTT_PORT}","{#TOPIC_TEL}","{$MQTT_USER}","{$MQTT_PASS}"]'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: SO2
+            - uuid: 8f9448cb5ba3413ea7e27d2f0466501c
+              name: '[{#DEVICEID}] - SO2 (µg/m³) - Média móvel 24h'
+              type: CALCULATED
+              key: 'airq.so2.rolling24h[{#DEVICEID}]'
+              delay: 0;m5
+              history: 365d
+              value_type: FLOAT
+              units: µg/m³
+              params: 'avg(//airq.so2.hourly_mean[{#DEVICEID}],24h)'
+              description: 'Calcula a média móvel das últimas 24h'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: SO2
+            - uuid: 5f9168ce6abb492cb3c1a464645acbfd
+              name: '[{#DEVICEID}] - Temperatura'
+              type: DEPENDENT
+              key: 'airq.temperature.now[{#DEVICEID}]'
+              history: 365d
+              value_type: FLOAT
+              units: ºC
+              preprocessing:
+                - type: JSONPATH
+                  parameters:
+                    - $.temperatura
+                  error_handler: DISCARD_VALUE
+                - type: JAVASCRIPT
+                  parameters:
+                    - |
+                      if (value === null || value === "" || value === "null") return null; // descarta
+                      return value;
+                - type: MATCHES_REGEX
+                  parameters:
+                    - '^\s*[0-9]+(?:\.[0-9]+)?\s*$'
+                  error_handler: DISCARD_VALUE
+              master_item:
+                key: 'mqtt.get["{$MQTT_SCHEME}://{$IPMQTTGATEWAY}:{$MQTT_PORT}","{#TOPIC_TEL}","{$MQTT_USER}","{$MQTT_PASS}"]'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: Temperatura
+            - uuid: 9f8bba6a50e54236952a929f27e9a1d4
+              name: '[{#DEVICEID}] - IQAr - CO'
+              type: DEPENDENT
+              key: 'co.iqar.hour[{#DEVICEID}]'
+              history: 365d
+              value_type: FLOAT
+              description: |
+                ÍNDICE DE QUALIDADE DO AR (IQAr).
+                
+                Processamento utiliza o script iqar-co.js
+              preprocessing:
+                - type: JAVASCRIPT
+                  parameters:
+                    - |
+                      // value = média móvel 8h do CO (ppm)
+                      var C = parseFloat(value);
+                      if (!isFinite(C)) { return; } // sem dado
+                      
+                      // Tabela de faixas (Índice x Concentração) – CO
+                      var bands = [
+                        { Imin: 0,   Imax: 40,  Cmin: 0,    Cmax: 9   },
+                        { Imin: 41,  Imax: 80,  Cmin: 9.0000001, Cmax: 11  },
+                        { Imin: 81,  Imax: 120, Cmin: 11.0000001, Cmax: 13 },
+                        { Imin: 121, Imax: 200, Cmin: 13.0000001, Cmax: 15 },
+                        { Imin: 201, Imax: 400, Cmin: 15.0000001, Cmax: 50 }
+                      ];
+                      
+                      // Encontra a faixa da concentração C
+                      var b = null;
+                      for (var i = 0; i < bands.length; i++) {
+                        var x = bands[i];
+                        if ((C >= x.Cmin) && (C <= x.Cmax)) { b = x; break; }
+                      }
+                      
+                      // Tratamentos de borda
+                      if (!b) {
+                        if (C < 0) { return 0; } // satura inferior
+                        // acima da última faixa: satura em Cmax para limitar o índice
+                        b = bands[bands.length - 1];
+                        C = Math.min(C, b.Cmax);
+                      }
+                      
+                      // IQAr = Iini + (Ifin−Iini)/(Cfin−Cini) * (C−Cini)
+                      var IQAr = b.Imin + ((b.Imax - b.Imin) / (b.Cmax - b.Cmin)) * (C - b.Cmin);
+                      
+                      // Arredonda para inteiro (como nos exemplos); troque para toFixed(1) se quiser 1 casa.
+                      return Math.round(IQAr);
+              master_item:
+                key: 'airq.co.rolling24h[{#DEVICEID}]'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: IQAr
+                  value: CO
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: CO
+              trigger_prototypes:
+                - uuid: 89da86e4ea9d47a380027fec76ceba6c
+                  expression: 'last(/template-mqtt-devices-iot/co.iqar.hour[{#DEVICEID}])>{$IQAR.N3_MAX} and last(/template-mqtt-devices-iot/co.iqar.hour[{#DEVICEID}])<={$IQAR.N4_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: |
+                    last(/template-mqtt-devices-iot/co.iqar.hour[{#DEVICEID}]) <= {$IQAR.N3_MAX}
+                    or
+                    last(/template-mqtt-devices-iot/co.iqar.hour[{#DEVICEID}]) > {$IQAR.N4_MAX}
+                  name: '[{#DEVICEID}] - IQAr - CO: 🔴 N4 - MUITO RUIM'
+                  priority: HIGH
+                  description: 'Efeitos à saúde associado ao IQAr Muito Ruim: Toda a população pode apresentar agravamento dos sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta e ainda falta de ar e respiração ofegante. Efeitos ainda mais graves à saúde de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas).'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🔴 N4 - MUITO RUIM'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                    - tag: Sensor
+                      value: CO
+                - uuid: c25d6b4c3a7c4e34a8e6a2a58e3bb396
+                  expression: 'last(/template-mqtt-devices-iot/co.iqar.hour[{#DEVICEID}])>{$IQAR.N2_MAX} and last(/template-mqtt-devices-iot/co.iqar.hour[{#DEVICEID}])<={$IQAR.N3_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: |
+                    last(/template-mqtt-devices-iot/co.iqar.hour[{#DEVICEID}]) <= {$IQAR.N2_MAX}
+                    or
+                    last(/template-mqtt-devices-iot/co.iqar.hour[{#DEVICEID}]) > {$IQAR.N3_MAX}
+                  name: '[{#DEVICEID}] - IQAr - CO: 🟠 N3 - RUIM'
+                  priority: AVERAGE
+                  description: 'Efeitos à saúde associado ao IQAr Ruim: Toda a população pode apresentar sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta. Pessoas de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas) podem apresentar efeitos mais sérios na saúde.'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🟠 N3 - RUIM'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                    - tag: Sensor
+                      value: CO
+                - uuid: 2d34a26da7554dad92d5b4af07711934
+                  expression: 'last(/template-mqtt-devices-iot/co.iqar.hour[{#DEVICEID}])>{$IQAR.N1_MAX} and last(/template-mqtt-devices-iot/co.iqar.hour[{#DEVICEID}])<={$IQAR.N2_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: |
+                    last(/template-mqtt-devices-iot/co.iqar.hour[{#DEVICEID}]) <= {$IQAR.N1_MAX}
+                    or
+                    last(/template-mqtt-devices-iot/co.iqar.hour[{#DEVICEID}]) > {$IQAR.N2_MAX}
+                  name: '[{#DEVICEID}] - IQAr - CO: 🟡 N2 - MODERADA'
+                  priority: WARNING
+                  description: 'Efeitos à saúde associado ao IQAr Moderado: Pessoas de grupossensíveis(crianças, idosos e pessoas com doençasrespiratórias e cardíacas) podem apresentar sintomas como tosse seca e cansaço. A população em geral não é afetada.'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🟡 N2 - MODERADA'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                    - tag: Sensor
+                      value: CO
+                - uuid: 728be7a81897479cb22497729728fda6
+                  expression: 'last(/template-mqtt-devices-iot/co.iqar.hour[{#DEVICEID}])>{$IQAR.N4_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: 'last(/template-mqtt-devices-iot/co.iqar.hour[{#DEVICEID}]) <= {$IQAR.N4_MAX}'
+                  name: '[{#DEVICEID}] - IQAr - CO: 🟣 N5 - PÉSSIMA'
+                  priority: DISASTER
+                  description: 'Efeitos à saúde associado ao IQAr Péssima: Toda a população pode apresentar sérios riscos de manifestações de doenças respiratórias e cardiovasculares. Aumento de mortes prematuras em pessoas de grupos sensíveis.'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🟣 N5 - PÉSSIMA'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                    - tag: Sensor
+                      value: CO
+            - uuid: 55b4c051614249f2889f782aef894f74
+              name: '[{#DEVICEID}] - IQAr Máximo'
+              type: CALCULATED
+              key: 'iqar.max[{#DEVICEID}]'
+              delay: 0;m10
+              history: 365d
+              value_type: FLOAT
+              params: 'max(last(//pm10.iqar.hour[{#DEVICEID}]),last(//pm25.iqar.hour[{#DEVICEID}]),last(//o3.iqar.hour[{#DEVICEID}]),last(//no2.iqar.hour[{#DEVICEID}]),last(//so2.iqar.hour[{#DEVICEID}]),last(//co.iqar.hour[{#DEVICEID}]))'
+              description: 'Maior valor de IQAr por device.'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: IQAr
+                  value: Máximo
+                - tag: Localidade
+                  value: '{#STATION}'
+              trigger_prototypes:
+                - uuid: 608e8a5595fe4d658d8d23c067e6a3a4
+                  expression: 'last(/template-mqtt-devices-iot/iqar.max[{#DEVICEID}])>{$IQAR.N3_MAX} and last(/template-mqtt-devices-iot/iqar.max[{#DEVICEID}])<={$IQAR.N4_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: |
+                    last(/template-mqtt-devices-iot/iqar.max[{#DEVICEID}]) <= {$IQAR.N3_MAX}
+                    or
+                    last(/template-mqtt-devices-iot/iqar.max[{#DEVICEID}]) > {$IQAR.N4_MAX}
+                  name: '🚨 [{#DEVICEID}] - IQAr Máximo: 🔴 N4 - MUITO RUIM'
+                  priority: HIGH
+                  description: 'Efeitos à saúde associado ao IQAr Muito Ruim: Toda a população pode apresentar agravamento dos sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta e ainda falta de ar e respiração ofegante. Efeitos ainda mais graves à saúde de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas).'
+                  tags:
+                    - tag: Action
+                      value: alert-health
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🔴 N4 - MUITO RUIM'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                - uuid: 6eef99d6fc154d5c9b7b9337278bc6d8
+                  expression: 'last(/template-mqtt-devices-iot/iqar.max[{#DEVICEID}])>{$IQAR.N2_MAX} and last(/template-mqtt-devices-iot/iqar.max[{#DEVICEID}])<={$IQAR.N3_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: |
+                    last(/template-mqtt-devices-iot/iqar.max[{#DEVICEID}]) <= {$IQAR.N2_MAX}
+                    or
+                    last(/template-mqtt-devices-iot/iqar.max[{#DEVICEID}]) > {$IQAR.N3_MAX}
+                  name: '🚨 [{#DEVICEID}] - IQAr Máximo: 🟠 N3 - RUIM'
+                  priority: AVERAGE
+                  description: 'Efeitos à saúde associado ao IQAr Ruim: Toda a população pode apresentar sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta. Pessoas de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas) podem apresentar efeitos mais sérios na saúde.'
+                  tags:
+                    - tag: Action
+                      value: alert-health
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🟠 N3 - RUIM'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                - uuid: a8cd89a0875049a1b569c797141dfddc
+                  expression: 'last(/template-mqtt-devices-iot/iqar.max[{#DEVICEID}])>{$IQAR.N1_MAX} and last(/template-mqtt-devices-iot/iqar.max[{#DEVICEID}])<={$IQAR.N2_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: |
+                    last(/template-mqtt-devices-iot/iqar.max[{#DEVICEID}]) <= {$IQAR.N1_MAX}
+                    or
+                    last(/template-mqtt-devices-iot/iqar.max[{#DEVICEID}]) > {$IQAR.N2_MAX}
+                  name: '🚨 [{#DEVICEID}] - IQAr Máximo: 🟡 N2 - MODERADA'
+                  priority: WARNING
+                  description: 'Efeitos à saúde associado ao IQAr Moderado: Pessoas de grupossensíveis(crianças, idosos e pessoas com doençasrespiratórias e cardíacas) podem apresentar sintomas como tosse seca e cansaço. A população em geral não é afetada.'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🟡 N2 - MODERADA'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                - uuid: fef783dc17da4d1f9b9b9c79d4274984
+                  expression: 'last(/template-mqtt-devices-iot/iqar.max[{#DEVICEID}])>{$IQAR.N4_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: 'last(/template-mqtt-devices-iot/iqar.max[{#DEVICEID}]) <= {$IQAR.N4_MAX}'
+                  name: '🚨 [{#DEVICEID}] - IQAr Máximo: 🟣 N5 - PÉSSIMA'
+                  priority: DISASTER
+                  description: 'Efeitos à saúde associado ao IQAr Péssima: Toda a população pode apresentar sérios riscos de manifestações de doenças respiratórias e cardiovasculares. Aumento de mortes prematuras em pessoas de grupos sensíveis.'
+                  tags:
+                    - tag: Action
+                      value: alert-health
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🟣 N5 - PÉSSIMA'
+                    - tag: Localidade
+                      value: '{#STATION}'
+            - uuid: 4a87391bfe384054a7601bd420dd2f40
+              name: 'mqtt.telemetry.raw[{#DEVICEID}]'
+              type: ZABBIX_ACTIVE
+              key: 'mqtt.get["{$MQTT_SCHEME}://{$IPMQTTGATEWAY}:{$MQTT_PORT}","{#TOPIC_TEL}","{$MQTT_USER}","{$MQTT_PASS}"]'
+              value_type: TEXT
+              description: 'Processamento utilizar o script telemetrysanitizer.js'
+              preprocessing:
+                - type: JAVASCRIPT
+                  parameters:
+                    - |
+                      var obj; 
+                      try { obj = JSON.parse(value); } catch (e) { return value; }
+                      
+                      function toNum(v) {
+                        if (v === null || v === undefined || v === "") return null;
+                        v = String(v).replace(",", ".");
+                        var n = Number(v);
+                        return isNaN(n) ? null : n;
+                      }
+                      
+                      if (obj.co !== undefined) obj.co = toNum(obj.co);
+                      if (obj.temperatura !== undefined) obj.temperatura = toNum(obj.temperatura);
+                      if (obj.pressao !== undefined) obj.pressao = toNum(obj.pressao);
+                      
+                      var keys = ["lat","lon","pm10","pm25","o3","no2","so2","umidade"];
+                      for (var i = 0; i < keys.length; i++) {
+                        var k = keys[i];
+                        if (obj[k] !== undefined) obj[k] = toNum(obj[k]);
+                      }
+                      
+                      return JSON.stringify(obj);
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: Estação
+                  value: '{#STATION}'
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: topic_mqtt
+                  value: '{#TOPIC_TEL}'
+            - uuid: 66c92aa1e82b42f9873e28fe4a507328
+              name: '[{#DEVICEID}] - IQAr - NO2'
+              type: DEPENDENT
+              key: 'no2.iqar.hour[{#DEVICEID}]'
+              history: 365d
+              value_type: FLOAT
+              description: |
+                ÍNDICE DE QUALIDADE DO AR (IQAr).
+                
+                Processamento utiliza o script iqar-no2.js
+              preprocessing:
+                - type: JAVASCRIPT
+                  parameters:
+                    - |
+                      // value = média móvel 1h do NO2 (µg/m³)
+                      var C = parseFloat(value);
+                      if (!isFinite(C)) { return; } // sem dado
+                      
+                      // Tabela de faixas (Índice x Concentração) – NO2
+                      var bands = [
+                        { Imin: 0,   Imax: 40,  Cmin: 0,    Cmax: 200   },
+                        { Imin: 41,  Imax: 80,  Cmin: 200.0000001, Cmax: 240  },
+                        { Imin: 81,  Imax: 120, Cmin: 240.0000001, Cmax: 320 },
+                        { Imin: 121, Imax: 200, Cmin: 320.0000001, Cmax: 1130 },
+                        { Imin: 201, Imax: 400, Cmin: 1130.0000001, Cmax: 3750 }
+                      ];
+                      
+                      // Encontra a faixa da concentração C
+                      var b = null;
+                      for (var i = 0; i < bands.length; i++) {
+                        var x = bands[i];
+                        if ((C >= x.Cmin) && (C <= x.Cmax)) { b = x; break; }
+                      }
+                      
+                      // Tratamentos de borda
+                      if (!b) {
+                        if (C < 0) { return 0; } // satura inferior
+                        // acima da última faixa: satura em Cmax para limitar o índice
+                        b = bands[bands.length - 1];
+                        C = Math.min(C, b.Cmax);
+                      }
+                      
+                      // IQAr = Iini + (Ifin−Iini)/(Cfin−Cini) * (C−Cini)
+                      var IQAr = b.Imin + ((b.Imax - b.Imin) / (b.Cmax - b.Cmin)) * (C - b.Cmin);
+                      
+                      // Arredonda para inteiro (como nos exemplos); troque para toFixed(1) se quiser 1 casa.
+                      return Math.round(IQAr);
+              master_item:
+                key: 'airq.no2.hourly_mean[{#DEVICEID}]'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: IQAr
+                  value: NO2
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: NO2
+              trigger_prototypes:
+                - uuid: ce3d113a642d4f9eaab57062e67fd612
+                  expression: 'last(/template-mqtt-devices-iot/no2.iqar.hour[{#DEVICEID}])>{$IQAR.N3_MAX} and last(/template-mqtt-devices-iot/no2.iqar.hour[{#DEVICEID}])<={$IQAR.N4_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: |
+                    last(/template-mqtt-devices-iot/no2.iqar.hour[{#DEVICEID}]) <= {$IQAR.N3_MAX}
+                    or
+                    last(/template-mqtt-devices-iot/no2.iqar.hour[{#DEVICEID}]) > {$IQAR.N4_MAX}
+                  name: '[{#DEVICEID}] - IQAr - NO2: 🔴 N4 - MUITO RUIM'
+                  priority: HIGH
+                  description: 'Efeitos à saúde associado ao IQAr Muito Ruim: Toda a população pode apresentar agravamento dos sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta e ainda falta de ar e respiração ofegante. Efeitos ainda mais graves à saúde de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas).'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🔴 N4 - MUITO RUIM'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                    - tag: Sensor
+                      value: NO2
+                - uuid: a17b626d10b24d60814f3e5e732b5708
+                  expression: 'last(/template-mqtt-devices-iot/no2.iqar.hour[{#DEVICEID}])>{$IQAR.N2_MAX} and last(/template-mqtt-devices-iot/no2.iqar.hour[{#DEVICEID}])<={$IQAR.N3_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: |
+                    last(/template-mqtt-devices-iot/no2.iqar.hour[{#DEVICEID}]) <= {$IQAR.N2_MAX}
+                    or
+                    last(/template-mqtt-devices-iot/no2.iqar.hour[{#DEVICEID}]) > {$IQAR.N3_MAX}
+                  name: '[{#DEVICEID}] - IQAr - NO2: 🟠 N3 - RUIM'
+                  priority: AVERAGE
+                  description: 'Efeitos à saúde associado ao IQAr Ruim: Toda a população pode apresentar sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta. Pessoas de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas) podem apresentar efeitos mais sérios na saúde.'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🟠 N3 - RUIM'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                    - tag: Sensor
+                      value: NO2
+                - uuid: b8d20331a49f45ab88e27ddf11a40ca6
+                  expression: 'last(/template-mqtt-devices-iot/no2.iqar.hour[{#DEVICEID}])>{$IQAR.N1_MAX} and last(/template-mqtt-devices-iot/no2.iqar.hour[{#DEVICEID}])<={$IQAR.N2_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: |
+                    last(/template-mqtt-devices-iot/no2.iqar.hour[{#DEVICEID}]) <= {$IQAR.N1_MAX}
+                    or
+                    last(/template-mqtt-devices-iot/no2.iqar.hour[{#DEVICEID}]) > {$IQAR.N2_MAX}
+                  name: '[{#DEVICEID}] - IQAr - NO2: 🟡 N2 - MODERADA'
+                  priority: WARNING
+                  description: 'Efeitos à saúde associado ao IQAr Moderado: Pessoas de grupossensíveis(crianças, idosos e pessoas com doençasrespiratórias e cardíacas) podem apresentar sintomas como tosse seca e cansaço. A população em geral não é afetada.'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🟡 N2 - MODERADA'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                    - tag: Sensor
+                      value: NO2
+                - uuid: fecfa96a87b24d028c19ed3a35339628
+                  expression: 'last(/template-mqtt-devices-iot/no2.iqar.hour[{#DEVICEID}])>{$IQAR.N4_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: 'last(/template-mqtt-devices-iot/no2.iqar.hour[{#DEVICEID}]) <= {$IQAR.N4_MAX}'
+                  name: '[{#DEVICEID}] - IQAr - NO2: 🟣 N5 - PÉSSIMA'
+                  priority: DISASTER
+                  description: 'Efeitos à saúde associado ao IQAr Péssima: Toda a população pode apresentar sérios riscos de manifestações de doenças respiratórias e cardiovasculares. Aumento de mortes prematuras em pessoas de grupos sensíveis.'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🟣 N5 - PÉSSIMA'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                    - tag: Sensor
+                      value: NO2
+            - uuid: 6cd9ed5fdb7549a3a0236861390af3cd
+              name: '[{#DEVICEID}] - IQAr - O3'
+              type: DEPENDENT
+              key: 'o3.iqar.hour[{#DEVICEID}]'
+              history: 365d
+              value_type: FLOAT
+              description: |
+                ÍNDICE DE QUALIDADE DO AR (IQAr).
+                
+                Processamento utiliza o script iqar-o3.js
+              preprocessing:
+                - type: JAVASCRIPT
+                  parameters:
+                    - |
+                      // value = média móvel 8h do O3 (µg/m³)
+                      var C = parseFloat(value);
+                      if (!isFinite(C)) { return; } // sem dado
+                      
+                      // Tabela de faixas (Índice x Concentração) – O3
+                      var bands = [
+                        { Imin: 0,   Imax: 40,  Cmin: 0,    Cmax: 100   },
+                        { Imin: 41,  Imax: 80,  Cmin: 100.0000001, Cmax: 130  },
+                        { Imin: 81,  Imax: 120, Cmin: 130.0000001, Cmax: 160 },
+                        { Imin: 121, Imax: 200, Cmin: 160.0000001, Cmax: 200 },
+                        { Imin: 201, Imax: 400, Cmin: 200.0000001, Cmax: 800 }
+                      ];
+                      
+                      // Encontra a faixa da concentração C
+                      var b = null;
+                      for (var i = 0; i < bands.length; i++) {
+                        var x = bands[i];
+                        if ((C >= x.Cmin) && (C <= x.Cmax)) { b = x; break; }
+                      }
+                      
+                      // Tratamentos de borda
+                      if (!b) {
+                        if (C < 0) { return 0; } // satura inferior
+                        // acima da última faixa: satura em Cmax para limitar o índice
+                        b = bands[bands.length - 1];
+                        C = Math.min(C, b.Cmax);
+                      }
+                      
+                      // IQAr = Iini + (Ifin−Iini)/(Cfin−Cini) * (C−Cini)
+                      var IQAr = b.Imin + ((b.Imax - b.Imin) / (b.Cmax - b.Cmin)) * (C - b.Cmin);
+                      
+                      // Arredonda para inteiro (como nos exemplos); troque para toFixed(1) se quiser 1 casa.
+                      return Math.round(IQAr);
+              master_item:
+                key: 'airq.o3.rolling24h[{#DEVICEID}]'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: IQAr
+                  value: O3
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: O3
+              trigger_prototypes:
+                - uuid: 9542c825802643f68f4e558159f5602e
+                  expression: 'last(/template-mqtt-devices-iot/o3.iqar.hour[{#DEVICEID}])>{$IQAR.N3_MAX} and last(/template-mqtt-devices-iot/o3.iqar.hour[{#DEVICEID}])<={$IQAR.N4_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: |
+                    last(/template-mqtt-devices-iot/o3.iqar.hour[{#DEVICEID}]) <= {$IQAR.N3_MAX}
+                    or
+                    last(/template-mqtt-devices-iot/o3.iqar.hour[{#DEVICEID}]) > {$IQAR.N4_MAX}
+                  name: '[{#DEVICEID}] - IQAr - O3: 🔴 N4 - MUITO RUIM'
+                  priority: HIGH
+                  description: 'Efeitos à saúde associado ao IQAr Muito Ruim: Toda a população pode apresentar agravamento dos sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta e ainda falta de ar e respiração ofegante. Efeitos ainda mais graves à saúde de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas).'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🔴 N4 - MUITO RUIM'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                    - tag: Sensor
+                      value: O3
+                - uuid: 5fc02bd39b794ecd8b9145dfd922eac6
+                  expression: 'last(/template-mqtt-devices-iot/o3.iqar.hour[{#DEVICEID}])>{$IQAR.N2_MAX} and last(/template-mqtt-devices-iot/o3.iqar.hour[{#DEVICEID}])<={$IQAR.N3_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: |
+                    last(/template-mqtt-devices-iot/o3.iqar.hour[{#DEVICEID}]) <= {$IQAR.N2_MAX}
+                    or
+                    last(/template-mqtt-devices-iot/o3.iqar.hour[{#DEVICEID}]) > {$IQAR.N3_MAX}
+                  name: '[{#DEVICEID}] - IQAr - O3: 🟠 N3 - RUIM'
+                  priority: AVERAGE
+                  description: 'Efeitos à saúde associado ao IQAr Ruim: Toda a população pode apresentar sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta. Pessoas de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas) podem apresentar efeitos mais sérios na saúde.'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🟠 N3 - RUIM'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                    - tag: Sensor
+                      value: O3
+                - uuid: 6dc4b96eaeab449e80cd4a4c8113a0a6
+                  expression: 'last(/template-mqtt-devices-iot/o3.iqar.hour[{#DEVICEID}])>{$IQAR.N1_MAX} and last(/template-mqtt-devices-iot/o3.iqar.hour[{#DEVICEID}])<={$IQAR.N2_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: |
+                    last(/template-mqtt-devices-iot/o3.iqar.hour[{#DEVICEID}]) <= {$IQAR.N1_MAX}
+                    or
+                    last(/template-mqtt-devices-iot/o3.iqar.hour[{#DEVICEID}]) > {$IQAR.N2_MAX}
+                  name: '[{#DEVICEID}] - IQAr - O3: 🟡 N2 - MODERADA'
+                  priority: WARNING
+                  description: 'Efeitos à saúde associado ao IQAr Moderado: Pessoas de grupossensíveis(crianças, idosos e pessoas com doençasrespiratórias e cardíacas) podem apresentar sintomas como tosse seca e cansaço. A população em geral não é afetada.'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🟡 N2 - MODERADA'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                    - tag: Sensor
+                      value: O3
+                - uuid: 0651a1e16b094549b493051ff0719fee
+                  expression: 'last(/template-mqtt-devices-iot/o3.iqar.hour[{#DEVICEID}])>{$IQAR.N4_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: 'last(/template-mqtt-devices-iot/o3.iqar.hour[{#DEVICEID}]) <= {$IQAR.N4_MAX}'
+                  name: '[{#DEVICEID}] - IQAr - O3: 🟣 N5 - PÉSSIMA'
+                  priority: DISASTER
+                  description: 'Efeitos à saúde associado ao IQAr Péssima: Toda a população pode apresentar sérios riscos de manifestações de doenças respiratórias e cardiovasculares. Aumento de mortes prematuras em pessoas de grupos sensíveis.'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🟣 N5 - PÉSSIMA'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                    - tag: Sensor
+                      value: O3
+            - uuid: bc6ebc9ba91e43428a9772621e9092df
+              name: '[{#DEVICEID}] - IQAr - PM10'
+              type: DEPENDENT
+              key: 'pm10.iqar.hour[{#DEVICEID}]'
+              history: 365d
+              value_type: FLOAT
+              description: |
+                ÍNDICE DE QUALIDADE DO AR (IQAr).
+                
+                Processamento utiliza o script iqar-pm10.js
+              preprocessing:
+                - type: JAVASCRIPT
+                  parameters:
+                    - |
+                      // value = média móvel 24h do PM10 (µg/m³)
+                      var C = parseFloat(value);
+                      if (!isFinite(C)) { return; } // sem dado
+                      
+                      // Tabela de faixas (Índice x Concentração) – PM10
+                      var bands = [
+                        { Imin: 0,   Imax: 40,  Cmin: 0,    Cmax: 45   },
+                        { Imin: 41,  Imax: 80,  Cmin: 45.0000001, Cmax: 100  },
+                        { Imin: 81,  Imax: 120, Cmin: 100.0000001, Cmax: 150 },
+                        { Imin: 121, Imax: 200, Cmin: 150.0000001, Cmax: 250 },
+                        { Imin: 201, Imax: 400, Cmin: 250.0000001, Cmax: 600 }
+                      ];
+                      
+                      // Encontra a faixa da concentração C
+                      var b = null;
+                      for (var i = 0; i < bands.length; i++) {
+                        var x = bands[i];
+                        if ((C >= x.Cmin) && (C <= x.Cmax)) { b = x; break; }
+                      }
+                      
+                      // Tratamentos de borda
+                      if (!b) {
+                        if (C < 0) { return 0; } // satura inferior
+                        // acima da última faixa: satura em Cmax para limitar o índice
+                        b = bands[bands.length - 1];
+                        C = Math.min(C, b.Cmax);
+                      }
+                      
+                      // IQAr = Iini + (Ifin−Iini)/(Cfin−Cini) * (C−Cini)
+                      var IQAr = b.Imin + ((b.Imax - b.Imin) / (b.Cmax - b.Cmin)) * (C - b.Cmin);
+                      
+                      // Arredonda para inteiro (como nos exemplos); troque para toFixed(1) se quiser 1 casa.
+                      return Math.round(IQAr);
+              master_item:
+                key: 'airq.pm10.rolling24h[{#DEVICEID}]'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: IQAr
+                  value: PM10
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: PM10
+              trigger_prototypes:
+                - uuid: b6c30b98ede04481a1eda441d9fe3bba
+                  expression: 'last(/template-mqtt-devices-iot/pm10.iqar.hour[{#DEVICEID}])>{$IQAR.N3_MAX} and last(/template-mqtt-devices-iot/pm10.iqar.hour[{#DEVICEID}])<={$IQAR.N4_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: |
+                    last(/template-mqtt-devices-iot/pm10.iqar.hour[{#DEVICEID}]) <= {$IQAR.N3_MAX}
+                    or
+                    last(/template-mqtt-devices-iot/pm10.iqar.hour[{#DEVICEID}]) > {$IQAR.N4_MAX}
+                  name: '[{#DEVICEID}] - IQAr - PM10: 🔴 N4 - MUITO RUIM'
+                  priority: HIGH
+                  description: 'Efeitos à saúde associado ao IQAr Muito Ruim: Toda a população pode apresentar agravamento dos sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta e ainda falta de ar e respiração ofegante. Efeitos ainda mais graves à saúde de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas).'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🔴 N4 - MUITO RUIM'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                    - tag: Sensor
+                      value: PM10
+                - uuid: 26e366b99bbc4aa984ff215a0be34e5a
+                  expression: 'last(/template-mqtt-devices-iot/pm10.iqar.hour[{#DEVICEID}])>{$IQAR.N2_MAX} and last(/template-mqtt-devices-iot/pm10.iqar.hour[{#DEVICEID}])<={$IQAR.N3_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: |
+                    last(/template-mqtt-devices-iot/pm10.iqar.hour[{#DEVICEID}]) <= {$IQAR.N2_MAX}
+                    or
+                    last(/template-mqtt-devices-iot/pm10.iqar.hour[{#DEVICEID}]) > {$IQAR.N3_MAX}
+                  name: '[{#DEVICEID}] - IQAr - PM10: 🟠 N3 - RUIM'
+                  priority: AVERAGE
+                  description: 'Efeitos à saúde associado ao IQAr Ruim: Toda a população pode apresentar sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta. Pessoas de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas) podem apresentar efeitos mais sérios na saúde.'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🟠 N3 - RUIM'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                    - tag: Sensor
+                      value: PM10
+                - uuid: c0a46e4e252f48d4b5cc88c1aa78b4dc
+                  expression: 'last(/template-mqtt-devices-iot/pm10.iqar.hour[{#DEVICEID}])>{$IQAR.N1_MAX} and last(/template-mqtt-devices-iot/pm10.iqar.hour[{#DEVICEID}])<={$IQAR.N2_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: |
+                    last(/template-mqtt-devices-iot/pm10.iqar.hour[{#DEVICEID}]) <= {$IQAR.N1_MAX}
+                    or
+                    last(/template-mqtt-devices-iot/pm10.iqar.hour[{#DEVICEID}]) > {$IQAR.N2_MAX}
+                  name: '[{#DEVICEID}] - IQAr - PM10: 🟡 N2 - MODERADA'
+                  priority: WARNING
+                  description: 'Efeitos à saúde associado ao IQAr Moderado: Pessoas de grupossensíveis(crianças, idosos e pessoas com doençasrespiratórias e cardíacas) podem apresentar sintomas como tosse seca e cansaço. A população em geral não é afetada.'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🟡 N2 - MODERADA'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                    - tag: Sensor
+                      value: PM10
+                - uuid: 6e5d57cf71384965b1adb95fd0b130e4
+                  expression: 'last(/template-mqtt-devices-iot/pm10.iqar.hour[{#DEVICEID}])>{$IQAR.N4_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: 'last(/template-mqtt-devices-iot/pm10.iqar.hour[{#DEVICEID}]) <= {$IQAR.N4_MAX}'
+                  name: '[{#DEVICEID}] - IQAr - PM10: 🟣 N5 - PÉSSIMA'
+                  priority: DISASTER
+                  description: 'Efeitos à saúde associado ao IQAr Péssima: Toda a população pode apresentar sérios riscos de manifestações de doenças respiratórias e cardiovasculares. Aumento de mortes prematuras em pessoas de grupos sensíveis.'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🟣 N5 - PÉSSIMA'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                    - tag: Sensor
+                      value: PM10
+            - uuid: 59dacd046d2c4680914cfdddfb6b1a75
+              name: '[{#DEVICEID}] - IQAr - PM2.5'
+              type: DEPENDENT
+              key: 'pm25.iqar.hour[{#DEVICEID}]'
+              history: 365d
+              value_type: FLOAT
+              description: |
+                ÍNDICE DE QUALIDADE DO AR (IQAr).
+                
+                Processamento utiliza o script iqar-pm25.js
+              preprocessing:
+                - type: JAVASCRIPT
+                  parameters:
+                    - |
+                      // value = média móvel 24h do PM2.5 (µg/m³)
+                      var C = parseFloat(value);
+                      if (!isFinite(C)) { return; } // sem dado
+                      
+                      // Tabela de faixas (Índice x Concentração) – PM2.5
+                      var bands = [
+                        { Imin: 0,   Imax: 40,  Cmin: 0,    Cmax: 15   },
+                        { Imin: 41,  Imax: 80,  Cmin: 15.0000001, Cmax: 50  },
+                        { Imin: 81,  Imax: 120, Cmin: 50.0000001, Cmax: 75 },
+                        { Imin: 121, Imax: 200, Cmin: 75.0000001, Cmax: 125 },
+                        { Imin: 201, Imax: 400, Cmin: 125.0000001, Cmax: 300 }
+                      ];
+                      
+                      // Encontra a faixa da concentração C
+                      var b = null;
+                      for (var i = 0; i < bands.length; i++) {
+                        var x = bands[i];
+                        if ((C >= x.Cmin) && (C <= x.Cmax)) { b = x; break; }
+                      }
+                      
+                      // Tratamentos de borda
+                      if (!b) {
+                        if (C < 0) { return 0; } // satura inferior
+                        // acima da última faixa: satura em Cmax para limitar o índice
+                        b = bands[bands.length - 1];
+                        C = Math.min(C, b.Cmax);
+                      }
+                      
+                      // IQAr = Iini + (Ifin−Iini)/(Cfin−Cini) * (C−Cini)
+                      var IQAr = b.Imin + ((b.Imax - b.Imin) / (b.Cmax - b.Cmin)) * (C - b.Cmin);
+                      
+                      // Arredonda para inteiro (como nos exemplos); troque para toFixed(1) se quiser 1 casa.
+                      return Math.round(IQAr);
+              master_item:
+                key: 'airq.pm25.rolling24h[{#DEVICEID}]'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: IQAr
+                  value: PM2.5
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: PM2.5
+              trigger_prototypes:
+                - uuid: 0669b3dfbaf74e99864ad483b7b474cf
+                  expression: 'last(/template-mqtt-devices-iot/pm25.iqar.hour[{#DEVICEID}])>{$IQAR.N3_MAX} and last(/template-mqtt-devices-iot/pm25.iqar.hour[{#DEVICEID}])<={$IQAR.N4_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: |
+                    last(/template-mqtt-devices-iot/pm25.iqar.hour[{#DEVICEID}]) <= {$IQAR.N3_MAX}
+                    or
+                    last(/template-mqtt-devices-iot/pm25.iqar.hour[{#DEVICEID}]) > {$IQAR.N4_MAX}
+                  name: '[{#DEVICEID}] - IQAr - PM2.5: 🔴 N4 - MUITO RUIM'
+                  priority: HIGH
+                  description: 'Efeitos à saúde associado ao IQAr Muito Ruim: Toda a população pode apresentar agravamento dos sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta e ainda falta de ar e respiração ofegante. Efeitos ainda mais graves à saúde de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas).'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🔴 N4 - MUITO RUIM'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                    - tag: Sensor
+                      value: PM2.5
+                - uuid: 83df7df880f44623b87378d1709c39c1
+                  expression: 'last(/template-mqtt-devices-iot/pm25.iqar.hour[{#DEVICEID}])>{$IQAR.N2_MAX} and last(/template-mqtt-devices-iot/pm25.iqar.hour[{#DEVICEID}])<={$IQAR.N3_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: |
+                    last(/template-mqtt-devices-iot/pm25.iqar.hour[{#DEVICEID}]) <= {$IQAR.N2_MAX}
+                    or
+                    last(/template-mqtt-devices-iot/pm25.iqar.hour[{#DEVICEID}]) > {$IQAR.N3_MAX}
+                  name: '[{#DEVICEID}] - IQAr - PM2.5: 🟠 N3 - RUIM'
+                  priority: AVERAGE
+                  description: 'Efeitos à saúde associado ao IQAr Ruim: Toda a população pode apresentar sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta. Pessoas de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas) podem apresentar efeitos mais sérios na saúde.'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🟠 N3 - RUIM'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                    - tag: Sensor
+                      value: PM2.5
+                - uuid: 747e3ce617274e0689b1c54c32996eee
+                  expression: 'last(/template-mqtt-devices-iot/pm25.iqar.hour[{#DEVICEID}])>{$IQAR.N1_MAX} and last(/template-mqtt-devices-iot/pm25.iqar.hour[{#DEVICEID}])<={$IQAR.N2_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: |
+                    last(/template-mqtt-devices-iot/pm25.iqar.hour[{#DEVICEID}]) <= {$IQAR.N1_MAX}
+                    or
+                    last(/template-mqtt-devices-iot/pm25.iqar.hour[{#DEVICEID}]) > {$IQAR.N2_MAX}
+                  name: '[{#DEVICEID}] - IQAr - PM2.5: 🟡 N2 - MODERADA'
+                  priority: WARNING
+                  description: 'Efeitos à saúde associado ao IQAr Moderado: Pessoas de grupossensíveis(crianças, idosos e pessoas com doençasrespiratórias e cardíacas) podem apresentar sintomas como tosse seca e cansaço. A população em geral não é afetada.'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🟡 N2 - MODERADA'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                    - tag: Sensor
+                      value: PM2.5
+                - uuid: ba756adc19444d79b49df13606ecaa98
+                  expression: 'last(/template-mqtt-devices-iot/pm25.iqar.hour[{#DEVICEID}])>{$IQAR.N4_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: 'last(/template-mqtt-devices-iot/pm25.iqar.hour[{#DEVICEID}]) <= {$IQAR.N4_MAX}'
+                  name: '[{#DEVICEID}] - IQAr - PM2.5: 🟣 N5 - PÉSSIMA'
+                  priority: DISASTER
+                  description: 'Efeitos à saúde associado ao IQAr Péssima: Toda a população pode apresentar sérios riscos de manifestações de doenças respiratórias e cardiovasculares. Aumento de mortes prematuras em pessoas de grupos sensíveis.'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🟣 N5 - PÉSSIMA'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                    - tag: Sensor
+                      value: PM2.5
+            - uuid: 4a47fe07af834ad19d36be1f349381a3
+              name: '[{#DEVICEID}] - IQAr - SO2'
+              type: DEPENDENT
+              key: 'so2.iqar.hour[{#DEVICEID}]'
+              history: 365d
+              value_type: FLOAT
+              description: |
+                ÍNDICE DE QUALIDADE DO AR (IQAr).
+                
+                Processamento utiliza o script iqar-so2.js
+              preprocessing:
+                - type: JAVASCRIPT
+                  parameters:
+                    - |
+                      // value = média móvel 24h do SO2 (µg/m³)
+                      var C = parseFloat(value);
+                      if (!isFinite(C)) { return; } // sem dado
+                      
+                      // Tabela de faixas (Índice x Concentração) – SO2
+                      var bands = [
+                        { Imin: 0,   Imax: 40,  Cmin: 0,    Cmax: 40   },
+                        { Imin: 41,  Imax: 80,  Cmin: 40.0000001, Cmax: 50  },
+                        { Imin: 81,  Imax: 120, Cmin: 50.0000001, Cmax: 125 },
+                        { Imin: 121, Imax: 200, Cmin: 125.0000001, Cmax: 800 },
+                        { Imin: 201, Imax: 400, Cmin: 800.0000001, Cmax: 2620 }
+                      ];
+                      
+                      // Encontra a faixa da concentração C
+                      var b = null;
+                      for (var i = 0; i < bands.length; i++) {
+                        var x = bands[i];
+                        if ((C >= x.Cmin) && (C <= x.Cmax)) { b = x; break; }
+                      }
+                      
+                      // Tratamentos de borda
+                      if (!b) {
+                        if (C < 0) { return 0; } // satura inferior
+                        // acima da última faixa: satura em Cmax para limitar o índice
+                        b = bands[bands.length - 1];
+                        C = Math.min(C, b.Cmax);
+                      }
+                      
+                      // IQAr = Iini + (Ifin−Iini)/(Cfin−Cini) * (C−Cini)
+                      var IQAr = b.Imin + ((b.Imax - b.Imin) / (b.Cmax - b.Cmin)) * (C - b.Cmin);
+                      
+                      // Arredonda para inteiro (como nos exemplos); troque para toFixed(1) se quiser 1 casa.
+                      return Math.round(IQAr);
+              master_item:
+                key: 'airq.so2.rolling24h[{#DEVICEID}]'
+              tags:
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: IQAr
+                  value: SO2
+                - tag: Localidade
+                  value: '{#STATION}'
+                - tag: Sensor
+                  value: SO2
+              trigger_prototypes:
+                - uuid: 7221727368164d20832aa2b11ad97086
+                  expression: 'last(/template-mqtt-devices-iot/so2.iqar.hour[{#DEVICEID}])>{$IQAR.N3_MAX} and last(/template-mqtt-devices-iot/so2.iqar.hour[{#DEVICEID}])<={$IQAR.N4_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: |
+                    last(/template-mqtt-devices-iot/so2.iqar.hour[{#DEVICEID}]) <= {$IQAR.N3_MAX}
+                    or
+                    last(/template-mqtt-devices-iot/so2.iqar.hour[{#DEVICEID}]) > {$IQAR.N4_MAX}
+                  name: '[{#DEVICEID}] - IQAr - SO2: 🔴 N4 - MUITO RUIM'
+                  priority: HIGH
+                  description: 'Efeitos à saúde associado ao IQAr Muito Ruim: Toda a população pode apresentar agravamento dos sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta e ainda falta de ar e respiração ofegante. Efeitos ainda mais graves à saúde de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas).'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🔴 N4 - MUITO RUIM'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                    - tag: Sensor
+                      value: SO2
+                - uuid: 145b44dba7a040c8aaf5f70e0df295ff
+                  expression: 'last(/template-mqtt-devices-iot/so2.iqar.hour[{#DEVICEID}])>{$IQAR.N2_MAX} and last(/template-mqtt-devices-iot/so2.iqar.hour[{#DEVICEID}])<={$IQAR.N3_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: |
+                    last(/template-mqtt-devices-iot/so2.iqar.hour[{#DEVICEID}]) <= {$IQAR.N2_MAX}
+                    or
+                    last(/template-mqtt-devices-iot/so2.iqar.hour[{#DEVICEID}]) > {$IQAR.N3_MAX}
+                  name: '[{#DEVICEID}] - IQAr - SO2: 🟠 N3 - RUIM'
+                  priority: AVERAGE
+                  description: 'Efeitos à saúde associado ao IQAr Ruim: Toda a população pode apresentar sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta. Pessoas de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas) podem apresentar efeitos mais sérios na saúde.'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🟠 N3 - RUIM'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                    - tag: Sensor
+                      value: SO2
+                - uuid: f82e5d0264e641b4821219c6eebc9204
+                  expression: 'last(/template-mqtt-devices-iot/so2.iqar.hour[{#DEVICEID}])>{$IQAR.N1_MAX} and last(/template-mqtt-devices-iot/so2.iqar.hour[{#DEVICEID}])<={$IQAR.N2_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: |
+                    last(/template-mqtt-devices-iot/so2.iqar.hour[{#DEVICEID}]) <= {$IQAR.N1_MAX}
+                    or
+                    last(/template-mqtt-devices-iot/so2.iqar.hour[{#DEVICEID}]) > {$IQAR.N2_MAX}
+                  name: '[{#DEVICEID}] - IQAr - SO2: 🟡 N2 - MODERADA'
+                  priority: WARNING
+                  description: 'Efeitos à saúde associado ao IQAr Moderado: Pessoas de grupossensíveis(crianças, idosos e pessoas com doençasrespiratórias e cardíacas) podem apresentar sintomas como tosse seca e cansaço. A população em geral não é afetada.'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🟡 N2 - MODERADA'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                    - tag: Sensor
+                      value: SO2
+                - uuid: 8fe12b64a08e42fe858169eaa2da5662
+                  expression: 'last(/template-mqtt-devices-iot/so2.iqar.hour[{#DEVICEID}])>{$IQAR.N4_MAX}'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: 'last(/template-mqtt-devices-iot/so2.iqar.hour[{#DEVICEID}]) <= {$IQAR.N4_MAX}'
+                  name: '[{#DEVICEID}] - IQAr - SO2: 🟣 N5 - PÉSSIMA'
+                  priority: DISASTER
+                  description: 'Efeitos à saúde associado ao IQAr Péssima: Toda a população pode apresentar sérios riscos de manifestações de doenças respiratórias e cardiovasculares. Aumento de mortes prematuras em pessoas de grupos sensíveis.'
+                  tags:
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: IQAr
+                      value: '🟣 N5 - PÉSSIMA'
+                    - tag: Localidade
+                      value: '{#STATION}'
+                    - tag: Sensor
+                      value: SO2
+          graph_prototypes:
+            - uuid: 556c7ed92daa470fac403332d8e5495a
+              name: '[{#DEVICEID}] - PM10'
+              graph_items:
+                - drawtype: GRADIENT_LINE
+                  color: 00FF00
+                  calc_fnc: MAX
+                  item:
+                    host: template-mqtt-devices-iot
+                    key: 'airq.pm10.now[{#DEVICEID}]'
+                - sortorder: '1'
+                  color: 00FFFF
+                  yaxisside: RIGHT
+                  calc_fnc: MAX
+                  item:
+                    host: template-mqtt-devices-iot
+                    key: 'airq.pm10.hourly_mean[{#DEVICEID}]'
+                - sortorder: '2'
+                  color: 0040FF
+                  yaxisside: RIGHT
+                  calc_fnc: MAX
+                  item:
+                    host: template-mqtt-devices-iot
+                    key: 'airq.pm10.rolling24h[{#DEVICEID}]'
+                - sortorder: '3'
+                  color: FF0000
+                  yaxisside: RIGHT
+                  calc_fnc: MAX
+                  item:
+                    host: template-mqtt-devices-iot
+                    key: 'pm10.iqar.hour[{#DEVICEID}]'
+          master_item:
+            key: 'mqtt.get["{$MQTT_SCHEME}://{$IPMQTTGATEWAY}:{$MQTT_PORT}","{$MQTT.TOPIC.TELEMETRY}","{$MQTT_USER}","{$MQTT_PASS}"]'
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  // Gera {data:[{#DEVICEID}, {#STATION}, {#TOPIC_TEL}, {#LAT}, {#LON}]}
+                  function toStr(v){ return (v===undefined||v===null) ? "" : String(v); }
+                  var p;
+                  try { p = JSON.parse(value); } catch(e) { return null; }
+                  if (!p || !p.deviceId) return null;
+                  
+                  var out = { data: [ {
+                    "{#DEVICEID}": toStr(p.deviceId),
+                    "{#STATION}": toStr(p.station),
+                    "{#TOPIC_TEL}": "airq/devices/"+toStr(p.deviceId)+"/telemetria",
+                    "{#LAT}": toStr(p.lat),
+                    "{#LON}": toStr(p.lon)
+                  } ] };
+                  return JSON.stringify(out);
+      macros:
+        - macro: '{$IPMQTTGATEWAY}'
+          value: 10.33.33.10
+          description: 'IP Gateway MQTT'
+        - macro: '{$IQAR.HYSTERESIS}'
+          value: '1'
+        - macro: '{$IQAR.N1_MAX}'
+          value: '40'
+        - macro: '{$IQAR.N2_MAX}'
+          value: '80'
+        - macro: '{$IQAR.N3_MAX}'
+          value: '120'
+        - macro: '{$IQAR.N4_MAX}'
+          value: '200'
+        - macro: '{$IQAR.N5_MAX}'
+          value: '400'
+        - macro: '{$MQTT.TOPIC.TELEMETRY}'
+          value: airq/devices/+/telemetria
+        - macro: '{$MQTT_PASS}'
+          value: senha@123
+          description: 'Senha MQTT Client'
+        - macro: '{$MQTT_PORT}'
+          value: '1883'
+          description: '1883 (ou 8883)'
+        - macro: '{$MQTT_SCHEME}'
+          value: tcp
+          description: 'tcp (ou ssl, ws, wss)'
+        - macro: '{$MQTT_USER}'
+          value: zabbix
+          description: 'Usuário MQTT Client'
