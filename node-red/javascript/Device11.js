@@ -1,6 +1,6 @@
 // ===== Metadados estáticos do dispositivo =====
 const DEVICE_META = {
-    deviceId: "Device11", // ID único do dispositivo
+    deviceId: "device11", // ID único do dispositivo
     station: "Aquário Natal", // Nome da estação
     lat: -5.731375011927249, // Latitude e Longitude do dispositivo
     lon: -35.20455897242044, // cuidado com espaços antes do número!

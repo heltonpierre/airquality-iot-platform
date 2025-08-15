@@ -1,6 +1,6 @@
 // ===== Metadados estáticos do dispositivo =====
 const DEVICE_META = {
-    deviceId: "Device04", // ID único do dispositivo
+    deviceId: "device04", // ID único do dispositivo
     station: "UFRN - HUOL", // Nome da estação
     lat: -5.78049163257284, // Latitude e Longitude do dispositivo
     lon: -35.19627357781805,   // cuidado com espaços antes do número!

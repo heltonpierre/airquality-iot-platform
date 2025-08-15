@@ -1,6 +1,6 @@
 // ===== Metadados estáticos do dispositivo =====
 const DEVICE_META = {
-    deviceId: "Device03", // ID único do dispositivo
+    deviceId: "device03", // ID único do dispositivo
     station: "Ponta Negra", // Nome da estação
     lat: -5.880163040096386, // Latitude e Longitude do dispositivo
     lon: -35.172308682874814,   // cuidado com espaços antes do número!

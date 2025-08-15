@@ -1,6 +1,6 @@
 // ===== Metadados estáticos do dispositivo =====
 const DEVICE_META = {
-    deviceId: "Device06", // ID único do dispositivo
+    deviceId: "device06", // ID único do dispositivo
     station: "Parque da Cidade", // Nome da estação
     lat: -5.8502776666693554, // Latitude e Longitude do dispositivo
     lon: -35.22641684099438,  // cuidado com espaços antes do número!

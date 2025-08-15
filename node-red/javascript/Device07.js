@@ -1,6 +1,6 @@
 // ===== Metadados estáticos do dispositivo =====
 const DEVICE_META = {
-    deviceId: "Device07", // ID único do dispositivo
+    deviceId: "device07", // ID único do dispositivo
     station: "Ponte Newton Navarro", // Nome da estação
     lat: -5.756245088927569, // Latitude e Longitude do dispositivo
     lon: -35.2022248957448,  // cuidado com espaços antes do número!

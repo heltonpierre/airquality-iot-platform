@@ -1,6 +1,6 @@
 // ===== Metadados estáticos do dispositivo =====
 const DEVICE_META = {
-    deviceId: "Device12", // ID único do dispositivo
+    deviceId: "device12", // ID único do dispositivo
     station: "Hospital Infantil Maria Alice", // Nome da estação
     lat: -5.763483396042317, // Latitude e Longitude do dispositivo
     lon: -35.282321778592525, // cuidado com espaços antes do número!

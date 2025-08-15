@@ -1,6 +1,6 @@
 // ===== Metadados estáticos do dispositivo =====
 const DEVICE_META = {
-    deviceId: "Device05", // ID único do dispositivo
+    deviceId: "device05", // ID único do dispositivo
     station: "Hospital Giselda Trigueiro", // Nome da estação
     lat: -5.797181720435641, // Latitude e Longitude do dispositivo
     lon: -35.226140634915325,   // cuidado com espaços antes do número!

@@ -1,6 +1,6 @@
 // ===== Metadados estáticos do dispositivo =====
 const DEVICE_META = {
-    deviceId: "Device02", // ID único do dispositivo
+    deviceId: "device02", // ID único do dispositivo
     station: "IFRN", // Nome da estação
     lat: -5.8125393763550575, // Latitude e Longitude do dispositivo
     lon: -35.20291139119372,   // cuidado com espaços antes do número!

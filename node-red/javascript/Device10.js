@@ -1,6 +1,6 @@
 // ===== Metadados estáticos do dispositivo =====
 const DEVICE_META = {
-    deviceId: "Device10", // ID único do dispositivo
+    deviceId: "device10", // ID único do dispositivo
     station: "Ginásio Nélio Dias", // Nome da estação
     lat: -5.7334706433766005, // Latitude e Longitude do dispositivo
     lon: -35.2539450178753, // cuidado com espaços antes do número!
