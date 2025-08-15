@@ -18,9 +18,9 @@
 
 VM_NAME="node-red"
 CONFIG_FILE="../cloud-init/node-red.yaml"
-CPUS=1
-MEMORY=1G
-DISK=4G
+CPUS=2
+MEMORY=2G
+DISK=3G
 NET="netmultipass"
 
 echo "📦 Criando VM '$VM_NAME' com $CPUS CPU(s), $MEMORY RAM e $DISK disco..."

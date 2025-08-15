@@ -1,9 +1,9 @@
 // ===== Metadados estáticos do dispositivo =====
 const DEVICE_META = {
-    deviceId: "deviceXX", // ID único do dispositivo
-    station: "name_estacao", // Nome da estação
-    lat: -xx.xxxx, // Latitude e Longitude do dispositivo
-    lon: -yy.yyyy,   // cuidado com espaços antes do número!
+    deviceId: "Device10", // ID único do dispositivo
+    station: "Ginásio Nélio Dias", // Nome da estação
+    lat: -5.7334706433766005, // Latitude e Longitude do dispositivo
+    lon: -35.2539450178753, // cuidado com espaços antes do número!
     model: "Node-RED", // Modelo do dispositivo
     fw_version: "v3.1.0" // Versão do firmware
 };

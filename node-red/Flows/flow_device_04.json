@@ -1,0 +1,851 @@
+[
+    {
+        "id": "2b0ccb33173561a2",
+        "type": "tab",
+        "label": "Device04",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7ac1f43df93f17e7",
+        "type": "file in",
+        "z": "2b0ccb33173561a2",
+        "name": "MP10",
+        "filename": "/var/snap/node-red/common/data/device_04/cetesb_congonhas_mp10_2024.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 470,
+        "y": 80,
+        "wires": [
+            [
+                "f474bc7b06edfa3d"
+            ]
+        ]
+    },
+    {
+        "id": "db94e31892d129b2",
+        "type": "file in",
+        "z": "2b0ccb33173561a2",
+        "name": "MP2.5",
+        "filename": "/var/snap/node-red/common/data/device_04/cetesb_interlagos_mp25_2024.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 470,
+        "y": 160,
+        "wires": [
+            [
+                "10fba13e135f405c"
+            ]
+        ]
+    },
+    {
+        "id": "339cdcff956b6447",
+        "type": "file in",
+        "z": "2b0ccb33173561a2",
+        "name": "O3",
+        "filename": "/var/snap/node-red/common/data/device_04/cetesb_santo-amaro_o3_2024.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 470,
+        "y": 240,
+        "wires": [
+            [
+                "c2c1ce37c92f7438"
+            ]
+        ]
+    },
+    {
+        "id": "93a6a6802276d44a",
+        "type": "file in",
+        "z": "2b0ccb33173561a2",
+        "name": "NO2",
+        "filename": "/var/snap/node-red/common/data/device_04/cetesb_congonhas_no2_2024.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 470,
+        "y": 320,
+        "wires": [
+            [
+                "a57d311e2c1a1a52"
+            ]
+        ]
+    },
+    {
+        "id": "e0542b085abce2b9",
+        "type": "file in",
+        "z": "2b0ccb33173561a2",
+        "name": "SO2",
+        "filename": "/var/snap/node-red/common/data/device_04/cetesb_interlagos_so2_2024.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 470,
+        "y": 400,
+        "wires": [
+            [
+                "3af529fb75f424d1"
+            ]
+        ]
+    },
+    {
+        "id": "42cbb3709a040bc5",
+        "type": "file in",
+        "z": "2b0ccb33173561a2",
+        "name": "CO",
+        "filename": "/var/snap/node-red/common/data/device_04/cetesb_santo-amaro_co_2024.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 470,
+        "y": 480,
+        "wires": [
+            [
+                "ec1ca621389a378d"
+            ]
+        ]
+    },
+    {
+        "id": "bdfa0c0326d17574",
+        "type": "file in",
+        "z": "2b0ccb33173561a2",
+        "name": "Temperatura",
+        "filename": "/var/snap/node-red/common/data/device_04/cetesb_interlagos_temperature_2024.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 490,
+        "y": 560,
+        "wires": [
+            [
+                "2180cd4cf6956ad3"
+            ]
+        ]
+    },
+    {
+        "id": "df595aaf6ff8a8c7",
+        "type": "file in",
+        "z": "2b0ccb33173561a2",
+        "name": "Umidade do Ar",
+        "filename": "/var/snap/node-red/common/data/device_04/cetesb_sao-bernado_humidity_2024.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 500,
+        "y": 640,
+        "wires": [
+            [
+                "6d6626784a92beae"
+            ]
+        ]
+    },
+    {
+        "id": "26f78a1c7e30e94e",
+        "type": "file in",
+        "z": "2b0ccb33173561a2",
+        "name": "Pressão",
+        "filename": "/var/snap/node-red/common/data/device_04/cetesb_sao-bernado_pressure_2024.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 480,
+        "y": 720,
+        "wires": [
+            [
+                "f7a75f92da81415c"
+            ]
+        ]
+    },
+    {
+        "id": "707f5bcb90838fe3",
+        "type": "function",
+        "z": "2b0ccb33173561a2",
+        "name": "Device04",
+        "func": "// ===== Metadados estáticos do dispositivo =====\nconst DEVICE_META = {\n    deviceId: \"Device04\", // ID único do dispositivo\n    station: \"UFRN - HUOL\", // Nome da estação\n    lat: -5.78049163257284, // Latitude e Longitude do dispositivo\n    lon: -35.19627357781805,   // cuidado com espaços antes do número!\n    model: \"Node-RED\", // Modelo do dispositivo\n    fw_version: \"v3.1.0\" // Versão do firmware\n};\n\n// ===== Mapeamento nomes reais -> padronizados =====\nconst mapSensor = {\n    \"mp10\": \"pm10\",\n    \"mp2\": \"pm25\",\n    \"o3\": \"o3\",\n    \"no2\": \"no2\",\n    \"so2\": \"so2\",\n    \"co\": \"co\",\n    \"temp\": \"temperatura\",\n    \"ur\": \"umidade\",\n    \"press\": \"pressao\"\n};\n\nconst sensoresEsperados = Object.values(mapSensor);\n\n// Buffer por timestamp no flow context\nlet buffer = flow.get(\"sensorBuffer\") || {};\n\nconst dado = msg.payload;\nconst ts = dado.timestamp;                // ISO8601/epoch conforme sua entrada\nconst nomeSensor = mapSensor[dado.sensor];\n\nif (!nomeSensor) return null; // ignora sensores desconhecidos\n\n// Cria bucket do timestamp se necessário\nif (!buffer[ts]) buffer[ts] = {};\n\n// Armazena valor padronizado\nbuffer[ts][nomeSensor] = dado.valor;\nflow.set(\"sensorBuffer\", buffer);\n\n// Verifica se todos os sensores chegaram\nconst sensoresPresentes = Object.keys(buffer[ts]);\nconst todosPresentes = sensoresEsperados.every(s => sensoresPresentes.includes(s));\n\nif (todosPresentes) {\n    // Payload final: metadados + geolocalização + timestamp + leituras\n    const payloadFinal = {\n        // --- metadados (topo) ---\n        deviceId: DEVICE_META.deviceId,\n        station: DEVICE_META.station,\n        lat: Number(DEVICE_META.lat),\n        lon: Number(DEVICE_META.lon),\n        model: DEVICE_META.model,\n        fw_version: DEVICE_META.fw_version,\n        // --- tempo ---\n        timestamp: ts\n    };\n\n    // Leituras (flatten para facilitar consumo / Grafana)\n    sensoresEsperados.forEach(s => {\n        payloadFinal[s] = buffer[ts][s] ?? null;\n    });\n\n    // Limpa o bucket do timestamp\n    delete buffer[ts];\n    flow.set(\"sensorBuffer\", buffer);\n\n    // Playload pronto para envio\n    msg.payload = payloadFinal;\n    msg.qos = 1;        // opcional\n    msg.retain = false;    // telemetria normalmente não é retida\n    return msg;\n}\n\n// Ainda aguardando outros sensores desse timestamp\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nflow.set(\"index\", 0);\nflow.set(\"buffers\", {});\n\n",
+        "finalize": "",
+        "libs": [],
+        "x": 1480,
+        "y": 400,
+        "wires": [
+            [
+                "3919f4e93b3969cb",
+                "2eaf9f6e245d74b5"
+            ]
+        ]
+    },
+    {
+        "id": "3919f4e93b3969cb",
+        "type": "mqtt out",
+        "z": "2b0ccb33173561a2",
+        "name": "MQTT Client - Publish Telemetria",
+        "topic": "airq/devices/device04/telemetria",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "332963a58fb0bacf",
+        "x": 1760,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "f474bc7b06edfa3d",
+        "type": "json",
+        "z": "2b0ccb33173561a2",
+        "name": "Converter JSON → Array",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 730,
+        "y": 80,
+        "wires": [
+            [
+                "0a157df372e1a9f8"
+            ]
+        ]
+    },
+    {
+        "id": "0a157df372e1a9f8",
+        "type": "split",
+        "z": "2b0ccb33173561a2",
+        "name": "Separar objetos",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 950,
+        "y": 80,
+        "wires": [
+            [
+                "58fcfb7921bb593e"
+            ]
+        ]
+    },
+    {
+        "id": "58fcfb7921bb593e",
+        "type": "delay",
+        "z": "2b0ccb33173561a2",
+        "name": "Enviar a cada 60s",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "60",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1190,
+        "y": 80,
+        "wires": [
+            [
+                "707f5bcb90838fe3"
+            ]
+        ]
+    },
+    {
+        "id": "871c46060fb94911",
+        "type": "inject",
+        "z": "2b0ccb33173561a2",
+        "name": "Iniciar simulação",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 400,
+        "wires": [
+            [
+                "7ac1f43df93f17e7",
+                "db94e31892d129b2",
+                "339cdcff956b6447",
+                "93a6a6802276d44a",
+                "e0542b085abce2b9",
+                "42cbb3709a040bc5",
+                "bdfa0c0326d17574",
+                "df595aaf6ff8a8c7",
+                "26f78a1c7e30e94e"
+            ]
+        ]
+    },
+    {
+        "id": "10fba13e135f405c",
+        "type": "json",
+        "z": "2b0ccb33173561a2",
+        "name": "Converter JSON → Array",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 730,
+        "y": 160,
+        "wires": [
+            [
+                "47baa6ca64b88c2f"
+            ]
+        ]
+    },
+    {
+        "id": "47baa6ca64b88c2f",
+        "type": "split",
+        "z": "2b0ccb33173561a2",
+        "name": "Separar objetos",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 940,
+        "y": 160,
+        "wires": [
+            [
+                "926e44d3544b8862"
+            ]
+        ]
+    },
+    {
+        "id": "926e44d3544b8862",
+        "type": "delay",
+        "z": "2b0ccb33173561a2",
+        "name": "Enviar a cada 60s",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "60",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1190,
+        "y": 160,
+        "wires": [
+            [
+                "707f5bcb90838fe3"
+            ]
+        ]
+    },
+    {
+        "id": "c2c1ce37c92f7438",
+        "type": "json",
+        "z": "2b0ccb33173561a2",
+        "name": "Converter JSON → Array",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 730,
+        "y": 240,
+        "wires": [
+            [
+                "2a9e1222649aaf3a"
+            ]
+        ]
+    },
+    {
+        "id": "2a9e1222649aaf3a",
+        "type": "split",
+        "z": "2b0ccb33173561a2",
+        "name": "Separar objetos",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 940,
+        "y": 240,
+        "wires": [
+            [
+                "780719aec30f4c05"
+            ]
+        ]
+    },
+    {
+        "id": "780719aec30f4c05",
+        "type": "delay",
+        "z": "2b0ccb33173561a2",
+        "name": "Enviar a cada 60s",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "60",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1190,
+        "y": 240,
+        "wires": [
+            [
+                "707f5bcb90838fe3"
+            ]
+        ]
+    },
+    {
+        "id": "a57d311e2c1a1a52",
+        "type": "json",
+        "z": "2b0ccb33173561a2",
+        "name": "Converter JSON → Array",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 730,
+        "y": 320,
+        "wires": [
+            [
+                "e5b842f130920c3c"
+            ]
+        ]
+    },
+    {
+        "id": "e5b842f130920c3c",
+        "type": "split",
+        "z": "2b0ccb33173561a2",
+        "name": "Separar objetos",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 940,
+        "y": 320,
+        "wires": [
+            [
+                "ffe571d4709920ea"
+            ]
+        ]
+    },
+    {
+        "id": "ffe571d4709920ea",
+        "type": "delay",
+        "z": "2b0ccb33173561a2",
+        "name": "Enviar a cada 60s",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "60",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1190,
+        "y": 320,
+        "wires": [
+            [
+                "707f5bcb90838fe3"
+            ]
+        ]
+    },
+    {
+        "id": "3af529fb75f424d1",
+        "type": "json",
+        "z": "2b0ccb33173561a2",
+        "name": "Converter JSON → Array",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 730,
+        "y": 400,
+        "wires": [
+            [
+                "c21f4e32f44fcbaa"
+            ]
+        ]
+    },
+    {
+        "id": "c21f4e32f44fcbaa",
+        "type": "split",
+        "z": "2b0ccb33173561a2",
+        "name": "Separar objetos",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 940,
+        "y": 400,
+        "wires": [
+            [
+                "6dc910379081874f"
+            ]
+        ]
+    },
+    {
+        "id": "6dc910379081874f",
+        "type": "delay",
+        "z": "2b0ccb33173561a2",
+        "name": "Enviar a cada 60s",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "60",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1190,
+        "y": 400,
+        "wires": [
+            [
+                "707f5bcb90838fe3"
+            ]
+        ]
+    },
+    {
+        "id": "ec1ca621389a378d",
+        "type": "json",
+        "z": "2b0ccb33173561a2",
+        "name": "Converter JSON → Array",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 730,
+        "y": 480,
+        "wires": [
+            [
+                "bd4a7d167517b0eb"
+            ]
+        ]
+    },
+    {
+        "id": "bd4a7d167517b0eb",
+        "type": "split",
+        "z": "2b0ccb33173561a2",
+        "name": "Separar objetos",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 940,
+        "y": 480,
+        "wires": [
+            [
+                "2e88d29214b9f60b"
+            ]
+        ]
+    },
+    {
+        "id": "2e88d29214b9f60b",
+        "type": "delay",
+        "z": "2b0ccb33173561a2",
+        "name": "Enviar a cada 60s",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "60",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1190,
+        "y": 480,
+        "wires": [
+            [
+                "707f5bcb90838fe3"
+            ]
+        ]
+    },
+    {
+        "id": "2180cd4cf6956ad3",
+        "type": "json",
+        "z": "2b0ccb33173561a2",
+        "name": "Converter JSON → Array",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 730,
+        "y": 560,
+        "wires": [
+            [
+                "f38f8dda69e37753"
+            ]
+        ]
+    },
+    {
+        "id": "f38f8dda69e37753",
+        "type": "split",
+        "z": "2b0ccb33173561a2",
+        "name": "Separar objetos",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 960,
+        "y": 560,
+        "wires": [
+            [
+                "8cb9ddc031a35d6d"
+            ]
+        ]
+    },
+    {
+        "id": "8cb9ddc031a35d6d",
+        "type": "delay",
+        "z": "2b0ccb33173561a2",
+        "name": "Enviar a cada 60s",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "60",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1190,
+        "y": 560,
+        "wires": [
+            [
+                "707f5bcb90838fe3"
+            ]
+        ]
+    },
+    {
+        "id": "6d6626784a92beae",
+        "type": "json",
+        "z": "2b0ccb33173561a2",
+        "name": "Converter JSON → Array",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 730,
+        "y": 640,
+        "wires": [
+            [
+                "9fee6dcae73f589a"
+            ]
+        ]
+    },
+    {
+        "id": "9fee6dcae73f589a",
+        "type": "split",
+        "z": "2b0ccb33173561a2",
+        "name": "Separar objetos",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 960,
+        "y": 640,
+        "wires": [
+            [
+                "e405785dc94b3a9f"
+            ]
+        ]
+    },
+    {
+        "id": "e405785dc94b3a9f",
+        "type": "delay",
+        "z": "2b0ccb33173561a2",
+        "name": "Enviar a cada 60s",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "60",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1190,
+        "y": 640,
+        "wires": [
+            [
+                "707f5bcb90838fe3"
+            ]
+        ]
+    },
+    {
+        "id": "f7a75f92da81415c",
+        "type": "json",
+        "z": "2b0ccb33173561a2",
+        "name": "Converter JSON → Array",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 730,
+        "y": 720,
+        "wires": [
+            [
+                "33e7ccc5a109c073"
+            ]
+        ]
+    },
+    {
+        "id": "33e7ccc5a109c073",
+        "type": "split",
+        "z": "2b0ccb33173561a2",
+        "name": "Separar objetos",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 960,
+        "y": 720,
+        "wires": [
+            [
+                "0972fef6f50f0313"
+            ]
+        ]
+    },
+    {
+        "id": "0972fef6f50f0313",
+        "type": "delay",
+        "z": "2b0ccb33173561a2",
+        "name": "Enviar a cada 60s",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "60",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1190,
+        "y": 720,
+        "wires": [
+            [
+                "707f5bcb90838fe3"
+            ]
+        ]
+    },
+    {
+        "id": "2eaf9f6e245d74b5",
+        "type": "debug",
+        "z": "2b0ccb33173561a2",
+        "d": true,
+        "name": "Payload - device 04",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1710,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "332963a58fb0bacf",
+        "type": "mqtt-broker",
+        "name": "mqtt-client-device04",
+        "broker": "10.33.33.10",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]
