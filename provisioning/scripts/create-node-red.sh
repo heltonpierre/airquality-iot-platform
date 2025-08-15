@@ -18,8 +18,8 @@
 
 VM_NAME="node-red"
 CONFIG_FILE="../cloud-init/node-red.yaml"
-CPUS=2
-MEMORY=2G
+CPUS=1
+MEMORY=1G
 DISK=3G
 NET="netmultipass"
 
