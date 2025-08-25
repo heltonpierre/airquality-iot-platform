@@ -3,6 +3,8 @@ zabbix_export:
   host_groups:
     - uuid: 8e9c210064a2431e8420e18023b35c53
       name: iot-devices
+    - uuid: 3884ed1cf1694d02bddfe5313b7d794d
+      name: monitoramento-do-ar
     - uuid: 0856b55e78e94b8ab3df1c12f23120fb
       name: node-red
   hosts:
@@ -13,6 +15,7 @@ zabbix_export:
         - name: template-mqtt-devices-iot
       groups:
         - name: iot-devices
+        - name: monitoramento-do-ar
         - name: node-red
       interfaces:
         - ip: '{$IPMQTTGATEWAY}'
