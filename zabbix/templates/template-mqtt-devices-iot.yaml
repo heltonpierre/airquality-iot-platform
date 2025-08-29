@@ -99,6 +99,12 @@ zabbix_export:
               units: ppm
               params: 'avg(//airq.co.now[{#DEVICEID}],1h)'
               description: 'Média fixa por hora (histórico segmentado): Calcula a média de cada hora do dia.'
+              preprocessing:
+                - type: CHECK_NOT_SUPPORTED
+                  parameters:
+                    - '-1'
+                  error_handler: CUSTOM_VALUE
+                  error_handler_params: '0'
               tags:
                 - tag: Dispositivo
                   value: '{#DEVICEID}'
@@ -136,6 +142,19 @@ zabbix_export:
                   value: '{#STATION}'
                 - tag: Sensor
                   value: CO
+              trigger_prototypes:
+                - uuid: ace639abfa624009aa75e12968b0a2e9
+                  expression: 'nodata(/template-mqtt-devices-iot/airq.co.now[{#DEVICEID}],{$SENSOR.MISS})=1'
+                  name: '[{#STATION} - {#DEVICEID}] - Sensor CO - Sem dados válidos'
+                  priority: WARNING
+                  description: 'Não foram recebidos dados válidos do sensor de CO no período {$SENSOR.MISS}; verifique conectividade, alimentação e integridade do dispositivo.'
+                  tags:
+                    - tag: Action
+                      value: iot-device-monitor
+                    - tag: Categoria
+                      value: gerenciamento
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
             - uuid: d60537a509244e479f39fbd78f099869
               name: '[{#DEVICEID}] - CO (ppm) - Média móvel 8h'
               type: CALCULATED
@@ -183,6 +202,19 @@ zabbix_export:
                   value: '{#STATION}'
                 - tag: Sensor
                   value: 'Umidade do Ar'
+              trigger_prototypes:
+                - uuid: b378438a49d94ec0aa519ce68b886bb0
+                  expression: 'nodata(/template-mqtt-devices-iot/airq.humidity.now[{#DEVICEID}],{$SENSOR.MISS})=1'
+                  name: '[{#STATION} - {#DEVICEID}] - Sensor de Umidade - Sem dados válidos'
+                  priority: WARNING
+                  description: 'Não foram recebidos dados válidos do sensor de Umidade do Ar no período {$SENSOR.MISS}; verifique conectividade, alimentação e integridade do dispositivo.'
+                  tags:
+                    - tag: Action
+                      value: iot-device-monitor
+                    - tag: Categoria
+                      value: gerenciamento
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
             - uuid: 1dba7cc672e0409b8dc365378a06f277
               name: '[{#DEVICEID}] - NO2 (µg/m³) - Máxima de 1h'
               type: CALCULATED
@@ -193,6 +225,12 @@ zabbix_export:
               units: µg/m³
               params: 'avg(//airq.no2.now[{#DEVICEID}],1h)'
               description: 'NO2 máxima de 1 hora.'
+              preprocessing:
+                - type: CHECK_NOT_SUPPORTED
+                  parameters:
+                    - '-1'
+                  error_handler: CUSTOM_VALUE
+                  error_handler_params: '0'
               tags:
                 - tag: Dispositivo
                   value: '{#DEVICEID}'
@@ -230,6 +268,19 @@ zabbix_export:
                   value: '{#STATION}'
                 - tag: Sensor
                   value: NO2
+              trigger_prototypes:
+                - uuid: db9f0b495c3f4225a6b0d03c8a2f1e8b
+                  expression: 'nodata(/template-mqtt-devices-iot/airq.no2.now[{#DEVICEID}],{$SENSOR.MISS})=1'
+                  name: '[{#STATION} - {#DEVICEID}] - Sensor NO2 - Sem dados válidos'
+                  priority: WARNING
+                  description: 'Não foram recebidos dados válidos do sensor de NO2 no período {$SENSOR.MISS}; verifique conectividade, alimentação e integridade do dispositivo.'
+                  tags:
+                    - tag: Action
+                      value: iot-device-monitor
+                    - tag: Categoria
+                      value: gerenciamento
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
             - uuid: e81eef24b8764cc8bd2720c871fe8404
               name: '[{#DEVICEID}] - O3 (µg/m³) - Média móvel 1h'
               type: CALCULATED
@@ -240,6 +291,12 @@ zabbix_export:
               units: µg/m³
               params: 'avg(//airq.o3.now[{#DEVICEID}],1h)'
               description: 'Média fixa por hora (histórico segmentado): Calcula a média de cada hora do dia.'
+              preprocessing:
+                - type: CHECK_NOT_SUPPORTED
+                  parameters:
+                    - '-1'
+                  error_handler: CUSTOM_VALUE
+                  error_handler_params: '0'
               tags:
                 - tag: Dispositivo
                   value: '{#DEVICEID}'
@@ -277,6 +334,19 @@ zabbix_export:
                   value: '{#STATION}'
                 - tag: Sensor
                   value: O3
+              trigger_prototypes:
+                - uuid: 36700fa6bc6349a0a01ba77c62e3b689
+                  expression: 'nodata(/template-mqtt-devices-iot/airq.o3.now[{#DEVICEID}],{$SENSOR.MISS})=1'
+                  name: '[{#STATION} - {#DEVICEID}] - Sensor O3 - Sem dados válidos'
+                  priority: WARNING
+                  description: 'Não foram recebidos dados válidos do sensor de O3 no período {$SENSOR.MISS}; verifique conectividade, alimentação e integridade do dispositivo.'
+                  tags:
+                    - tag: Action
+                      value: iot-device-monitor
+                    - tag: Categoria
+                      value: gerenciamento
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
             - uuid: 06698e577fa641e88d89440d86a71ef3
               name: '[{#DEVICEID}] - O3 (µg/m³) - Máxima média móvel de 8h'
               type: CALCULATED
@@ -307,6 +377,12 @@ zabbix_export:
               units: µg/m³
               params: 'avg(//airq.pm10.now[{#DEVICEID}],1h)'
               description: 'Média fixa por hora (histórico segmentado): Calcula a média de cada hora do dia.'
+              preprocessing:
+                - type: CHECK_NOT_SUPPORTED
+                  parameters:
+                    - '-1'
+                  error_handler: CUSTOM_VALUE
+                  error_handler_params: '0'
               tags:
                 - tag: Dispositivo
                   value: '{#DEVICEID}'
@@ -344,6 +420,19 @@ zabbix_export:
                   value: '{#STATION}'
                 - tag: Sensor
                   value: PM10
+              trigger_prototypes:
+                - uuid: a0ae9d06cf5c4f41b3839ce25a8b7a4f
+                  expression: 'nodata(/template-mqtt-devices-iot/airq.pm10.now[{#DEVICEID}],{$SENSOR.MISS})=1'
+                  name: '[{#STATION} - {#DEVICEID}] - Sensor PM10 - Sem dados válidos'
+                  priority: WARNING
+                  description: 'Não foram recebidos dados válidos do sensor de PM10 no período {$SENSOR.MISS}; verifique conectividade, alimentação e integridade do dispositivo.'
+                  tags:
+                    - tag: Action
+                      value: iot-device-monitor
+                    - tag: Categoria
+                      value: gerenciamento
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
             - uuid: 8531a4dd4ac54a5d8257f28c19664919
               name: '[{#DEVICEID}] - PM10 (µg/m³) - Média móvel 24h'
               type: CALCULATED
@@ -353,23 +442,6 @@ zabbix_export:
               value_type: FLOAT
               units: µg/m³
               params: 'avg(//airq.pm10.hourly_mean[{#DEVICEID}],24h)'
-              description: 'Calcula a média móvel das últimas 24h'
-              tags:
-                - tag: Dispositivo
-                  value: '{#DEVICEID}'
-                - tag: Localidade
-                  value: '{#STATION}'
-                - tag: Sensor
-                  value: PM10
-            - uuid: 33277d8d9e084625a2110bba76bf7635
-              name: '[{#DEVICEID}] - PM10 (µg/m³) - Média móvel 24h (últimas 24)'
-              type: CALCULATED
-              key: 'airq.pm10.rollinglast24[{#DEVICEID}]'
-              delay: 0;m5
-              history: 365d
-              value_type: FLOAT
-              units: µg/m³
-              params: 'avg(//airq.pm10.hourly_mean[{#DEVICEID}],#24)'
               description: 'Calcula a média móvel das últimas 24h'
               tags:
                 - tag: Dispositivo
@@ -388,6 +460,12 @@ zabbix_export:
               units: µg/m³
               params: 'avg(//airq.pm25.now[{#DEVICEID}],1h)'
               description: 'Média fixa por hora (histórico segmentado): Calcula a média de cada hora do dia.'
+              preprocessing:
+                - type: CHECK_NOT_SUPPORTED
+                  parameters:
+                    - '-1'
+                  error_handler: CUSTOM_VALUE
+                  error_handler_params: '0'
               tags:
                 - tag: Dispositivo
                   value: '{#DEVICEID}'
@@ -425,6 +503,19 @@ zabbix_export:
                   value: '{#STATION}'
                 - tag: Sensor
                   value: PM2.5
+              trigger_prototypes:
+                - uuid: e0bcb463c24842ba9a82ae641439b903
+                  expression: 'nodata(/template-mqtt-devices-iot/airq.pm25.now[{#DEVICEID}],{$SENSOR.MISS})=1'
+                  name: '[{#STATION} - {#DEVICEID}] - Sensor PM2.5 - Sem dados válidos'
+                  priority: WARNING
+                  description: 'Não foram recebidos dados válidos do sensor de PM2.5 no período {$SENSOR.MISS}; verifique conectividade, alimentação e integridade do dispositivo.'
+                  tags:
+                    - tag: Action
+                      value: iot-device-monitor
+                    - tag: Categoria
+                      value: gerenciamento
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
             - uuid: 0cbc2dd7047c4463aee86f770a59d64a
               name: '[{#DEVICEID}] - PM2.5 (µg/m³) - Média móvel 24h'
               type: CALCULATED
@@ -471,6 +562,19 @@ zabbix_export:
                   value: '{#STATION}'
                 - tag: Sensor
                   value: Pressão
+              trigger_prototypes:
+                - uuid: 14194d36185140e1a234275e09cb4dbb
+                  expression: 'nodata(/template-mqtt-devices-iot/airq.pressure.now[{#DEVICEID}],{$SENSOR.MISS})=1'
+                  name: '[{#STATION} - {#DEVICEID}] - Sensor de Pressão - Sem dados válidos'
+                  priority: WARNING
+                  description: 'Não foram recebidos dados válidos do sensor de Pressão no período {$SENSOR.MISS}; verifique conectividade, alimentação e integridade do dispositivo.'
+                  tags:
+                    - tag: Action
+                      value: iot-device-monitor
+                    - tag: Categoria
+                      value: gerenciamento
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
             - uuid: abf3f51890c74200af3bbafb2bae1638
               name: '[{#DEVICEID}] - SO2 (µg/m³) - Média móvel 1h'
               type: CALCULATED
@@ -481,6 +585,12 @@ zabbix_export:
               units: µg/m³
               params: 'avg(//airq.so2.now[{#DEVICEID}],1h)'
               description: 'Média fixa por hora (histórico segmentado): Calcula a média de cada hora do dia.'
+              preprocessing:
+                - type: CHECK_NOT_SUPPORTED
+                  parameters:
+                    - '-1'
+                  error_handler: CUSTOM_VALUE
+                  error_handler_params: '0'
               tags:
                 - tag: Dispositivo
                   value: '{#DEVICEID}'
@@ -518,6 +628,19 @@ zabbix_export:
                   value: '{#STATION}'
                 - tag: Sensor
                   value: SO2
+              trigger_prototypes:
+                - uuid: a08121d6c2454a448d066aaeaad6f723
+                  expression: 'nodata(/template-mqtt-devices-iot/airq.so2.now[{#DEVICEID}],{$SENSOR.MISS})=1'
+                  name: '[{#STATION} - {#DEVICEID}] - Sensor SO2 - Sem dados válidos'
+                  priority: WARNING
+                  description: 'Não foram recebidos dados válidos do sensor de SO2 no período {$SENSOR.MISS}; verifique conectividade, alimentação e integridade do dispositivo.'
+                  tags:
+                    - tag: Action
+                      value: iot-device-monitor
+                    - tag: Categoria
+                      value: gerenciamento
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
             - uuid: 8f9448cb5ba3413ea7e27d2f0466501c
               name: '[{#DEVICEID}] - SO2 (µg/m³) - Média móvel 24h'
               type: CALCULATED
@@ -565,6 +688,19 @@ zabbix_export:
                   value: '{#STATION}'
                 - tag: Sensor
                   value: Temperatura
+              trigger_prototypes:
+                - uuid: 2fe76d6ee95f4a1ea9c70384efc76408
+                  expression: 'nodata(/template-mqtt-devices-iot/airq.temperature.now[{#DEVICEID}],{$SENSOR.MISS})=1'
+                  name: '[{#STATION} - {#DEVICEID}] - Sensor de Temperatura - Sem dados válidos'
+                  priority: WARNING
+                  description: 'Não foram recebidos dados válidos do sensor de Temperatura no período {$SENSOR.MISS}; verifique conectividade, alimentação e integridade do dispositivo.'
+                  tags:
+                    - tag: Action
+                      value: iot-device-monitor
+                    - tag: Categoria
+                      value: gerenciamento
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
             - uuid: 9f8bba6a50e54236952a929f27e9a1d4
               name: '[{#DEVICEID}] - IQAr - CO'
               type: DEPENDENT
@@ -631,7 +767,7 @@ zabbix_export:
                     last(/template-mqtt-devices-iot/co.iqar.hour[{#DEVICEID}]) <= {$IQAR.N3_MAX}
                     or
                     last(/template-mqtt-devices-iot/co.iqar.hour[{#DEVICEID}]) > {$IQAR.N4_MAX}
-                  name: '[{#DEVICEID}] - IQAr - CO: 🔴 N4 - MUITO RUIM'
+                  name: '[{#STATION} - {#DEVICEID}] - IQAr - CO: 🔴 N4 - MUITO RUIM'
                   priority: HIGH
                   description: 'Efeitos à saúde associado ao IQAr Muito Ruim: Toda a população pode apresentar agravamento dos sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta e ainda falta de ar e respiração ofegante. Efeitos ainda mais graves à saúde de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas).'
                   tags:
@@ -650,7 +786,7 @@ zabbix_export:
                     last(/template-mqtt-devices-iot/co.iqar.hour[{#DEVICEID}]) <= {$IQAR.N2_MAX}
                     or
                     last(/template-mqtt-devices-iot/co.iqar.hour[{#DEVICEID}]) > {$IQAR.N3_MAX}
-                  name: '[{#DEVICEID}] - IQAr - CO: 🟠 N3 - RUIM'
+                  name: '[{#STATION} - {#DEVICEID}] - IQAr - CO: 🟠 N3 - RUIM'
                   priority: AVERAGE
                   description: 'Efeitos à saúde associado ao IQAr Ruim: Toda a população pode apresentar sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta. Pessoas de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas) podem apresentar efeitos mais sérios na saúde.'
                   tags:
@@ -669,7 +805,7 @@ zabbix_export:
                     last(/template-mqtt-devices-iot/co.iqar.hour[{#DEVICEID}]) <= {$IQAR.N1_MAX}
                     or
                     last(/template-mqtt-devices-iot/co.iqar.hour[{#DEVICEID}]) > {$IQAR.N2_MAX}
-                  name: '[{#DEVICEID}] - IQAr - CO: 🟡 N2 - MODERADA'
+                  name: '[{#STATION} - {#DEVICEID}] - IQAr - CO: 🟡 N2 - MODERADA'
                   priority: WARNING
                   description: 'Efeitos à saúde associado ao IQAr Moderado: Pessoas de grupossensíveis(crianças, idosos e pessoas com doençasrespiratórias e cardíacas) podem apresentar sintomas como tosse seca e cansaço. A população em geral não é afetada.'
                   tags:
@@ -685,7 +821,7 @@ zabbix_export:
                   expression: 'last(/template-mqtt-devices-iot/co.iqar.hour[{#DEVICEID}])>{$IQAR.N4_MAX}'
                   recovery_mode: RECOVERY_EXPRESSION
                   recovery_expression: 'last(/template-mqtt-devices-iot/co.iqar.hour[{#DEVICEID}]) <= {$IQAR.N4_MAX}'
-                  name: '[{#DEVICEID}] - IQAr - CO: 🟣 N5 - PÉSSIMA'
+                  name: '[{#STATION} - {#DEVICEID}] - IQAr - CO: 🟣 N5 - PÉSSIMA'
                   priority: DISASTER
                   description: 'Efeitos à saúde associado ao IQAr Péssima: Toda a população pode apresentar sérios riscos de manifestações de doenças respiratórias e cardiovasculares. Aumento de mortes prematuras em pessoas de grupos sensíveis.'
                   tags:
@@ -697,6 +833,35 @@ zabbix_export:
                       value: '{#STATION}'
                     - tag: Sensor
                       value: CO
+            - uuid: 2355ed62e34343ba8e406dd556ee8c23
+              name: '[{#DEVICEID}] - Qualidade do Ar Georreferenciada'
+              type: CALCULATED
+              key: 'iqar.device.geojson[{#DEVICEID}]'
+              delay: '1'
+              history: 365d
+              value_type: TEXT
+              params: |
+                concat(
+                  "{",
+                  "\"station\":","\"",{#STATION},"\",",
+                  "\"lat\":",{#LAT},",",
+                  "\"lon\":",{#LON},",",
+                  "\"iqar_max\":",last(//iqar.max[{#DEVICEID}]),
+                  "}")
+              description: |
+                Item consolidar em formato JSON o índice da qualidade do ar  (IQAr) e as coordenadas do dispositivo IoT. O valor retornado inclui as coordenadas de latitude e longitude obtidas pelas macros do discovery ({#LAT} e {#LON}), 
+                além do maior valor do IQAr máximo calculado para o dispositivo identificado por {#DEVICEID}. Esse item é utilizado para construção de mapa no Grafana.
+              preprocessing:
+                - type: DISCARD_UNCHANGED_HEARTBEAT
+                  parameters:
+                    - 10m
+              tags:
+                - tag: Aplicação
+                  value: Mapa
+                - tag: Dispositivo
+                  value: '{#DEVICEID}'
+                - tag: Localidade
+                  value: '{#STATION}'
             - uuid: 55b4c051614249f2889f782aef894f74
               name: '[{#DEVICEID}] - IQAr Máximo'
               type: CALCULATED
@@ -721,7 +886,7 @@ zabbix_export:
                     last(/template-mqtt-devices-iot/iqar.max[{#DEVICEID}]) <= {$IQAR.N3_MAX}
                     or
                     last(/template-mqtt-devices-iot/iqar.max[{#DEVICEID}]) > {$IQAR.N4_MAX}
-                  name: '🚨 [{#DEVICEID}] - IQAr Máximo: 🔴 N4 - MUITO RUIM'
+                  name: '🚨 [{#STATION} - {#DEVICEID}] - IQAr Máximo: 🔴 N4 - MUITO RUIM'
                   priority: HIGH
                   description: 'Efeitos à saúde associado ao IQAr Muito Ruim: Toda a população pode apresentar agravamento dos sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta e ainda falta de ar e respiração ofegante. Efeitos ainda mais graves à saúde de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas).'
                   tags:
@@ -740,7 +905,7 @@ zabbix_export:
                     last(/template-mqtt-devices-iot/iqar.max[{#DEVICEID}]) <= {$IQAR.N2_MAX}
                     or
                     last(/template-mqtt-devices-iot/iqar.max[{#DEVICEID}]) > {$IQAR.N3_MAX}
-                  name: '🚨 [{#DEVICEID}] - IQAr Máximo: 🟠 N3 - RUIM'
+                  name: '🚨 [{#STATION} - {#DEVICEID}]  - IQAr Máximo: 🟠 N3 - RUIM'
                   priority: AVERAGE
                   description: 'Efeitos à saúde associado ao IQAr Ruim: Toda a população pode apresentar sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta. Pessoas de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas) podem apresentar efeitos mais sérios na saúde.'
                   tags:
@@ -752,17 +917,19 @@ zabbix_export:
                       value: '🟠 N3 - RUIM'
                     - tag: Localidade
                       value: '{#STATION}'
-                - uuid: a8cd89a0875049a1b569c797141dfddc
+                - uuid: b905ba3695d84ae9a71f4eba98844dbb
                   expression: 'last(/template-mqtt-devices-iot/iqar.max[{#DEVICEID}])>{$IQAR.N1_MAX} and last(/template-mqtt-devices-iot/iqar.max[{#DEVICEID}])<={$IQAR.N2_MAX}'
                   recovery_mode: RECOVERY_EXPRESSION
                   recovery_expression: |
                     last(/template-mqtt-devices-iot/iqar.max[{#DEVICEID}]) <= {$IQAR.N1_MAX}
                     or
                     last(/template-mqtt-devices-iot/iqar.max[{#DEVICEID}]) > {$IQAR.N2_MAX}
-                  name: '🚨 [{#DEVICEID}] - IQAr Máximo: 🟡 N2 - MODERADA'
+                  name: '🚨 [{#STATION} - {#DEVICEID}] - IQAr Máximo: 🟡 N2 - MODERADA'
                   priority: WARNING
                   description: 'Efeitos à saúde associado ao IQAr Moderado: Pessoas de grupossensíveis(crianças, idosos e pessoas com doençasrespiratórias e cardíacas) podem apresentar sintomas como tosse seca e cansaço. A população em geral não é afetada.'
                   tags:
+                    - tag: Action
+                      value: registree-health
                     - tag: Dispositivo
                       value: '{#DEVICEID}'
                     - tag: IQAr
@@ -773,7 +940,7 @@ zabbix_export:
                   expression: 'last(/template-mqtt-devices-iot/iqar.max[{#DEVICEID}])>{$IQAR.N4_MAX}'
                   recovery_mode: RECOVERY_EXPRESSION
                   recovery_expression: 'last(/template-mqtt-devices-iot/iqar.max[{#DEVICEID}]) <= {$IQAR.N4_MAX}'
-                  name: '🚨 [{#DEVICEID}] - IQAr Máximo: 🟣 N5 - PÉSSIMA'
+                  name: '🚨 [{#STATION} - {#DEVICEID}] - IQAr Máximo: 🟣 N5 - PÉSSIMA'
                   priority: DISASTER
                   description: 'Efeitos à saúde associado ao IQAr Péssima: Toda a população pode apresentar sérios riscos de manifestações de doenças respiratórias e cardiovasculares. Aumento de mortes prematuras em pessoas de grupos sensíveis.'
                   tags:
@@ -819,12 +986,23 @@ zabbix_export:
               tags:
                 - tag: Dispositivo
                   value: '{#DEVICEID}'
-                - tag: Estação
-                  value: '{#STATION}'
                 - tag: Localidade
                   value: '{#STATION}'
                 - tag: topic_mqtt
                   value: '{#TOPIC_TEL}'
+              trigger_prototypes:
+                - uuid: 02a6888eac7045f58e2113085c4bcd79
+                  expression: 'nodata(/template-mqtt-devices-iot/mqtt.get["{$MQTT_SCHEME}://{$IPMQTTGATEWAY}:{$MQTT_PORT}","{#TOPIC_TEL}","{$MQTT_USER}","{$MQTT_PASS}"],{$SENSOR.MISS})=1'
+                  name: '[{#STATION} - {#DEVICEID}] - Device offline (sem telemetria há {$DEVICE.MISS})'
+                  priority: HIGH
+                  description: 'Não foram recebidas mensagens de telemetria do dispositivo {#DEVICEID} no período {$DEVICE.MISS}; verifique a conectividade de rede, a alimentação do equipamento, as credenciais de acesso ao broker MQTT e a disponibilidade do tópico {#TOPIC_TEL}.'
+                  tags:
+                    - tag: Action
+                      value: iot-device-monitor
+                    - tag: Dispositivo
+                      value: '{#DEVICEID}'
+                    - tag: Localidade
+                      value: '{#STATION}'
             - uuid: 66c92aa1e82b42f9873e28fe4a507328
               name: '[{#DEVICEID}] - IQAr - NO2'
               type: DEPENDENT
@@ -891,7 +1069,7 @@ zabbix_export:
                     last(/template-mqtt-devices-iot/no2.iqar.hour[{#DEVICEID}]) <= {$IQAR.N3_MAX}
                     or
                     last(/template-mqtt-devices-iot/no2.iqar.hour[{#DEVICEID}]) > {$IQAR.N4_MAX}
-                  name: '[{#DEVICEID}] - IQAr - NO2: 🔴 N4 - MUITO RUIM'
+                  name: '[{#STATION} - {#DEVICEID}] - IQAr - NO2: 🔴 N4 - MUITO RUIM'
                   priority: HIGH
                   description: 'Efeitos à saúde associado ao IQAr Muito Ruim: Toda a população pode apresentar agravamento dos sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta e ainda falta de ar e respiração ofegante. Efeitos ainda mais graves à saúde de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas).'
                   tags:
@@ -910,7 +1088,7 @@ zabbix_export:
                     last(/template-mqtt-devices-iot/no2.iqar.hour[{#DEVICEID}]) <= {$IQAR.N2_MAX}
                     or
                     last(/template-mqtt-devices-iot/no2.iqar.hour[{#DEVICEID}]) > {$IQAR.N3_MAX}
-                  name: '[{#DEVICEID}] - IQAr - NO2: 🟠 N3 - RUIM'
+                  name: '[{#STATION} - {#DEVICEID}] - IQAr - NO2: 🟠 N3 - RUIM'
                   priority: AVERAGE
                   description: 'Efeitos à saúde associado ao IQAr Ruim: Toda a população pode apresentar sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta. Pessoas de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas) podem apresentar efeitos mais sérios na saúde.'
                   tags:
@@ -929,7 +1107,7 @@ zabbix_export:
                     last(/template-mqtt-devices-iot/no2.iqar.hour[{#DEVICEID}]) <= {$IQAR.N1_MAX}
                     or
                     last(/template-mqtt-devices-iot/no2.iqar.hour[{#DEVICEID}]) > {$IQAR.N2_MAX}
-                  name: '[{#DEVICEID}] - IQAr - NO2: 🟡 N2 - MODERADA'
+                  name: '[{#STATION} - {#DEVICEID}] - IQAr - NO2: 🟡 N2 - MODERADA'
                   priority: WARNING
                   description: 'Efeitos à saúde associado ao IQAr Moderado: Pessoas de grupossensíveis(crianças, idosos e pessoas com doençasrespiratórias e cardíacas) podem apresentar sintomas como tosse seca e cansaço. A população em geral não é afetada.'
                   tags:
@@ -945,7 +1123,7 @@ zabbix_export:
                   expression: 'last(/template-mqtt-devices-iot/no2.iqar.hour[{#DEVICEID}])>{$IQAR.N4_MAX}'
                   recovery_mode: RECOVERY_EXPRESSION
                   recovery_expression: 'last(/template-mqtt-devices-iot/no2.iqar.hour[{#DEVICEID}]) <= {$IQAR.N4_MAX}'
-                  name: '[{#DEVICEID}] - IQAr - NO2: 🟣 N5 - PÉSSIMA'
+                  name: '[{#STATION} - {#DEVICEID}] - IQAr - NO2: 🟣 N5 - PÉSSIMA'
                   priority: DISASTER
                   description: 'Efeitos à saúde associado ao IQAr Péssima: Toda a população pode apresentar sérios riscos de manifestações de doenças respiratórias e cardiovasculares. Aumento de mortes prematuras em pessoas de grupos sensíveis.'
                   tags:
@@ -1023,7 +1201,7 @@ zabbix_export:
                     last(/template-mqtt-devices-iot/o3.iqar.hour[{#DEVICEID}]) <= {$IQAR.N3_MAX}
                     or
                     last(/template-mqtt-devices-iot/o3.iqar.hour[{#DEVICEID}]) > {$IQAR.N4_MAX}
-                  name: '[{#DEVICEID}] - IQAr - O3: 🔴 N4 - MUITO RUIM'
+                  name: '[{#STATION} - {#DEVICEID}] - IQAr - O3: 🔴 N4 - MUITO RUIM'
                   priority: HIGH
                   description: 'Efeitos à saúde associado ao IQAr Muito Ruim: Toda a população pode apresentar agravamento dos sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta e ainda falta de ar e respiração ofegante. Efeitos ainda mais graves à saúde de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas).'
                   tags:
@@ -1042,7 +1220,7 @@ zabbix_export:
                     last(/template-mqtt-devices-iot/o3.iqar.hour[{#DEVICEID}]) <= {$IQAR.N2_MAX}
                     or
                     last(/template-mqtt-devices-iot/o3.iqar.hour[{#DEVICEID}]) > {$IQAR.N3_MAX}
-                  name: '[{#DEVICEID}] - IQAr - O3: 🟠 N3 - RUIM'
+                  name: '[{#STATION} - {#DEVICEID}] - IQAr - O3: 🟠 N3 - RUIM'
                   priority: AVERAGE
                   description: 'Efeitos à saúde associado ao IQAr Ruim: Toda a população pode apresentar sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta. Pessoas de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas) podem apresentar efeitos mais sérios na saúde.'
                   tags:
@@ -1061,7 +1239,7 @@ zabbix_export:
                     last(/template-mqtt-devices-iot/o3.iqar.hour[{#DEVICEID}]) <= {$IQAR.N1_MAX}
                     or
                     last(/template-mqtt-devices-iot/o3.iqar.hour[{#DEVICEID}]) > {$IQAR.N2_MAX}
-                  name: '[{#DEVICEID}] - IQAr - O3: 🟡 N2 - MODERADA'
+                  name: '[{#STATION} - {#DEVICEID}] - IQAr - O3: 🟡 N2 - MODERADA'
                   priority: WARNING
                   description: 'Efeitos à saúde associado ao IQAr Moderado: Pessoas de grupossensíveis(crianças, idosos e pessoas com doençasrespiratórias e cardíacas) podem apresentar sintomas como tosse seca e cansaço. A população em geral não é afetada.'
                   tags:
@@ -1077,7 +1255,7 @@ zabbix_export:
                   expression: 'last(/template-mqtt-devices-iot/o3.iqar.hour[{#DEVICEID}])>{$IQAR.N4_MAX}'
                   recovery_mode: RECOVERY_EXPRESSION
                   recovery_expression: 'last(/template-mqtt-devices-iot/o3.iqar.hour[{#DEVICEID}]) <= {$IQAR.N4_MAX}'
-                  name: '[{#DEVICEID}] - IQAr - O3: 🟣 N5 - PÉSSIMA'
+                  name: '[{#STATION} - {#DEVICEID}] - IQAr - O3: 🟣 N5 - PÉSSIMA'
                   priority: DISASTER
                   description: 'Efeitos à saúde associado ao IQAr Péssima: Toda a população pode apresentar sérios riscos de manifestações de doenças respiratórias e cardiovasculares. Aumento de mortes prematuras em pessoas de grupos sensíveis.'
                   tags:
@@ -1155,7 +1333,7 @@ zabbix_export:
                     last(/template-mqtt-devices-iot/pm10.iqar.hour[{#DEVICEID}]) <= {$IQAR.N3_MAX}
                     or
                     last(/template-mqtt-devices-iot/pm10.iqar.hour[{#DEVICEID}]) > {$IQAR.N4_MAX}
-                  name: '[{#DEVICEID}] - IQAr - PM10: 🔴 N4 - MUITO RUIM'
+                  name: '[{#STATION} - {#DEVICEID}] - IQAr - PM10: 🔴 N4 - MUITO RUIM'
                   priority: HIGH
                   description: 'Efeitos à saúde associado ao IQAr Muito Ruim: Toda a população pode apresentar agravamento dos sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta e ainda falta de ar e respiração ofegante. Efeitos ainda mais graves à saúde de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas).'
                   tags:
@@ -1174,7 +1352,7 @@ zabbix_export:
                     last(/template-mqtt-devices-iot/pm10.iqar.hour[{#DEVICEID}]) <= {$IQAR.N2_MAX}
                     or
                     last(/template-mqtt-devices-iot/pm10.iqar.hour[{#DEVICEID}]) > {$IQAR.N3_MAX}
-                  name: '[{#DEVICEID}] - IQAr - PM10: 🟠 N3 - RUIM'
+                  name: '[{#STATION} - {#DEVICEID}] - IQAr - PM10: 🟠 N3 - RUIM'
                   priority: AVERAGE
                   description: 'Efeitos à saúde associado ao IQAr Ruim: Toda a população pode apresentar sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta. Pessoas de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas) podem apresentar efeitos mais sérios na saúde.'
                   tags:
@@ -1193,7 +1371,7 @@ zabbix_export:
                     last(/template-mqtt-devices-iot/pm10.iqar.hour[{#DEVICEID}]) <= {$IQAR.N1_MAX}
                     or
                     last(/template-mqtt-devices-iot/pm10.iqar.hour[{#DEVICEID}]) > {$IQAR.N2_MAX}
-                  name: '[{#DEVICEID}] - IQAr - PM10: 🟡 N2 - MODERADA'
+                  name: '[{#STATION} - {#DEVICEID}] - IQAr - PM10: 🟡 N2 - MODERADA'
                   priority: WARNING
                   description: 'Efeitos à saúde associado ao IQAr Moderado: Pessoas de grupossensíveis(crianças, idosos e pessoas com doençasrespiratórias e cardíacas) podem apresentar sintomas como tosse seca e cansaço. A população em geral não é afetada.'
                   tags:
@@ -1209,7 +1387,7 @@ zabbix_export:
                   expression: 'last(/template-mqtt-devices-iot/pm10.iqar.hour[{#DEVICEID}])>{$IQAR.N4_MAX}'
                   recovery_mode: RECOVERY_EXPRESSION
                   recovery_expression: 'last(/template-mqtt-devices-iot/pm10.iqar.hour[{#DEVICEID}]) <= {$IQAR.N4_MAX}'
-                  name: '[{#DEVICEID}] - IQAr - PM10: 🟣 N5 - PÉSSIMA'
+                  name: '[{#STATION} - {#DEVICEID}] - IQAr - PM10: 🟣 N5 - PÉSSIMA'
                   priority: DISASTER
                   description: 'Efeitos à saúde associado ao IQAr Péssima: Toda a população pode apresentar sérios riscos de manifestações de doenças respiratórias e cardiovasculares. Aumento de mortes prematuras em pessoas de grupos sensíveis.'
                   tags:
@@ -1287,7 +1465,7 @@ zabbix_export:
                     last(/template-mqtt-devices-iot/pm25.iqar.hour[{#DEVICEID}]) <= {$IQAR.N3_MAX}
                     or
                     last(/template-mqtt-devices-iot/pm25.iqar.hour[{#DEVICEID}]) > {$IQAR.N4_MAX}
-                  name: '[{#DEVICEID}] - IQAr - PM2.5: 🔴 N4 - MUITO RUIM'
+                  name: '[{#STATION} - {#DEVICEID}] - IQAr - PM2.5: 🔴 N4 - MUITO RUIM'
                   priority: HIGH
                   description: 'Efeitos à saúde associado ao IQAr Muito Ruim: Toda a população pode apresentar agravamento dos sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta e ainda falta de ar e respiração ofegante. Efeitos ainda mais graves à saúde de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas).'
                   tags:
@@ -1306,7 +1484,7 @@ zabbix_export:
                     last(/template-mqtt-devices-iot/pm25.iqar.hour[{#DEVICEID}]) <= {$IQAR.N2_MAX}
                     or
                     last(/template-mqtt-devices-iot/pm25.iqar.hour[{#DEVICEID}]) > {$IQAR.N3_MAX}
-                  name: '[{#DEVICEID}] - IQAr - PM2.5: 🟠 N3 - RUIM'
+                  name: '[{#STATION} - {#DEVICEID}] - IQAr - PM2.5: 🟠 N3 - RUIM'
                   priority: AVERAGE
                   description: 'Efeitos à saúde associado ao IQAr Ruim: Toda a população pode apresentar sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta. Pessoas de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas) podem apresentar efeitos mais sérios na saúde.'
                   tags:
@@ -1325,7 +1503,7 @@ zabbix_export:
                     last(/template-mqtt-devices-iot/pm25.iqar.hour[{#DEVICEID}]) <= {$IQAR.N1_MAX}
                     or
                     last(/template-mqtt-devices-iot/pm25.iqar.hour[{#DEVICEID}]) > {$IQAR.N2_MAX}
-                  name: '[{#DEVICEID}] - IQAr - PM2.5: 🟡 N2 - MODERADA'
+                  name: '[{#STATION} - {#DEVICEID}] - IQAr - PM2.5: 🟡 N2 - MODERADA'
                   priority: WARNING
                   description: 'Efeitos à saúde associado ao IQAr Moderado: Pessoas de grupossensíveis(crianças, idosos e pessoas com doençasrespiratórias e cardíacas) podem apresentar sintomas como tosse seca e cansaço. A população em geral não é afetada.'
                   tags:
@@ -1341,7 +1519,7 @@ zabbix_export:
                   expression: 'last(/template-mqtt-devices-iot/pm25.iqar.hour[{#DEVICEID}])>{$IQAR.N4_MAX}'
                   recovery_mode: RECOVERY_EXPRESSION
                   recovery_expression: 'last(/template-mqtt-devices-iot/pm25.iqar.hour[{#DEVICEID}]) <= {$IQAR.N4_MAX}'
-                  name: '[{#DEVICEID}] - IQAr - PM2.5: 🟣 N5 - PÉSSIMA'
+                  name: '[{#STATION} - {#DEVICEID}] - IQAr - PM2.5: 🟣 N5 - PÉSSIMA'
                   priority: DISASTER
                   description: 'Efeitos à saúde associado ao IQAr Péssima: Toda a população pode apresentar sérios riscos de manifestações de doenças respiratórias e cardiovasculares. Aumento de mortes prematuras em pessoas de grupos sensíveis.'
                   tags:
@@ -1419,7 +1597,7 @@ zabbix_export:
                     last(/template-mqtt-devices-iot/so2.iqar.hour[{#DEVICEID}]) <= {$IQAR.N3_MAX}
                     or
                     last(/template-mqtt-devices-iot/so2.iqar.hour[{#DEVICEID}]) > {$IQAR.N4_MAX}
-                  name: '[{#DEVICEID}] - IQAr - SO2: 🔴 N4 - MUITO RUIM'
+                  name: '[{#STATION} - {#DEVICEID}] - IQAr - SO2: 🔴 N4 - MUITO RUIM'
                   priority: HIGH
                   description: 'Efeitos à saúde associado ao IQAr Muito Ruim: Toda a população pode apresentar agravamento dos sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta e ainda falta de ar e respiração ofegante. Efeitos ainda mais graves à saúde de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas).'
                   tags:
@@ -1438,7 +1616,7 @@ zabbix_export:
                     last(/template-mqtt-devices-iot/so2.iqar.hour[{#DEVICEID}]) <= {$IQAR.N2_MAX}
                     or
                     last(/template-mqtt-devices-iot/so2.iqar.hour[{#DEVICEID}]) > {$IQAR.N3_MAX}
-                  name: '[{#DEVICEID}] - IQAr - SO2: 🟠 N3 - RUIM'
+                  name: '[{#STATION} - {#DEVICEID}] - IQAr - SO2: 🟠 N3 - RUIM'
                   priority: AVERAGE
                   description: 'Efeitos à saúde associado ao IQAr Ruim: Toda a população pode apresentar sintomas como tosse seca, cansaço, ardor nos olhos, nariz e garganta. Pessoas de grupos sensíveis (crianças, idosos e pessoas com doenças respiratórias e cardíacas) podem apresentar efeitos mais sérios na saúde.'
                   tags:
@@ -1457,7 +1635,7 @@ zabbix_export:
                     last(/template-mqtt-devices-iot/so2.iqar.hour[{#DEVICEID}]) <= {$IQAR.N1_MAX}
                     or
                     last(/template-mqtt-devices-iot/so2.iqar.hour[{#DEVICEID}]) > {$IQAR.N2_MAX}
-                  name: '[{#DEVICEID}] - IQAr - SO2: 🟡 N2 - MODERADA'
+                  name: '[{#STATION} - {#DEVICEID}] - IQAr - SO2: 🟡 N2 - MODERADA'
                   priority: WARNING
                   description: 'Efeitos à saúde associado ao IQAr Moderado: Pessoas de grupossensíveis(crianças, idosos e pessoas com doençasrespiratórias e cardíacas) podem apresentar sintomas como tosse seca e cansaço. A população em geral não é afetada.'
                   tags:
@@ -1473,7 +1651,7 @@ zabbix_export:
                   expression: 'last(/template-mqtt-devices-iot/so2.iqar.hour[{#DEVICEID}])>{$IQAR.N4_MAX}'
                   recovery_mode: RECOVERY_EXPRESSION
                   recovery_expression: 'last(/template-mqtt-devices-iot/so2.iqar.hour[{#DEVICEID}]) <= {$IQAR.N4_MAX}'
-                  name: '[{#DEVICEID}] - IQAr - SO2: 🟣 N5 - PÉSSIMA'
+                  name: '[{#STATION} - {#DEVICEID}] - IQAr - SO2: 🟣 N5 - PÉSSIMA'
                   priority: DISASTER
                   description: 'Efeitos à saúde associado ao IQAr Péssima: Toda a população pode apresentar sérios riscos de manifestações de doenças respiratórias e cardiovasculares. Aumento de mortes prematuras em pessoas de grupos sensíveis.'
                   tags:
@@ -1488,7 +1666,7 @@ zabbix_export:
           graph_prototypes:
             - uuid: 23ff4465b150462c8ad7360f6eebdcc3
               name: '{#STATION} - {#DEVICEID} - CO'
-              yaxismax: '0'
+              show_triggers: 'NO'
               graph_items:
                 - drawtype: GRADIENT_LINE
                   color: 00FF00
@@ -1519,6 +1697,7 @@ zabbix_export:
                     key: 'co.iqar.hour[{#DEVICEID}]'
             - uuid: 8c82df884e5e44dfa155b4bbaf5618bb
               name: '{#STATION} - {#DEVICEID} - IQAr'
+              show_triggers: 'NO'
               graph_items:
                 - drawtype: GRADIENT_LINE
                   color: 78909C
@@ -1564,7 +1743,7 @@ zabbix_export:
                     key: 'so2.iqar.hour[{#DEVICEID}]'
             - uuid: 3a00d880ba2c4d04a583db7f4af8945f
               name: '{#STATION} - {#DEVICEID} - NO2'
-              yaxismax: '0'
+              show_triggers: 'NO'
               graph_items:
                 - drawtype: GRADIENT_LINE
                   color: 00FF00
@@ -1588,7 +1767,7 @@ zabbix_export:
                     key: 'no2.iqar.hour[{#DEVICEID}]'
             - uuid: ed2b1e32817d4741a7d6bdfb0f343291
               name: '{#STATION} - {#DEVICEID} - O3'
-              yaxismax: '0'
+              show_triggers: 'NO'
               graph_items:
                 - drawtype: GRADIENT_LINE
                   color: 00FF00
@@ -1619,7 +1798,7 @@ zabbix_export:
                     key: 'o3.iqar.hour[{#DEVICEID}]'
             - uuid: 5a95dafd873c4a93b407320dff5f8920
               name: '{#STATION} - {#DEVICEID} - PM2.5'
-              yaxismax: '0'
+              show_triggers: 'NO'
               graph_items:
                 - drawtype: GRADIENT_LINE
                   color: 00FF00
@@ -1650,6 +1829,7 @@ zabbix_export:
                     key: 'pm25.iqar.hour[{#DEVICEID}]'
             - uuid: 556c7ed92daa470fac403332d8e5495a
               name: '{#STATION} - {#DEVICEID} - PM10'
+              show_triggers: 'NO'
               graph_items:
                 - drawtype: GRADIENT_LINE
                   color: 00FF00
@@ -1678,9 +1858,19 @@ zabbix_export:
                   item:
                     host: template-mqtt-devices-iot
                     key: 'pm10.iqar.hour[{#DEVICEID}]'
+            - uuid: 9677deffeb3f4c1c8595a6bb07e0047d
+              name: '{#STATION} - {#DEVICEID} - Pressão'
+              show_triggers: 'NO'
+              graph_items:
+                - drawtype: GRADIENT_LINE
+                  color: 00FF00
+                  calc_fnc: MAX
+                  item:
+                    host: template-mqtt-devices-iot
+                    key: 'airq.pressure.now[{#DEVICEID}]'
             - uuid: 150c6dc2e88b45b09937034df73124fc
               name: '{#STATION} - {#DEVICEID} - SO2'
-              yaxismax: '0'
+              show_triggers: 'NO'
               graph_items:
                 - drawtype: GRADIENT_LINE
                   color: 00FF00
@@ -1709,6 +1899,23 @@ zabbix_export:
                   item:
                     host: template-mqtt-devices-iot
                     key: 'so2.iqar.hour[{#DEVICEID}]'
+            - uuid: e30492c0d32743229ac36f80e2e0b95c
+              name: '{#STATION} - {#DEVICEID} - Temperatura e Umidade do Ar'
+              show_triggers: 'NO'
+              graph_items:
+                - drawtype: GRADIENT_LINE
+                  color: 00FF00
+                  calc_fnc: MAX
+                  item:
+                    host: template-mqtt-devices-iot
+                    key: 'airq.temperature.now[{#DEVICEID}]'
+                - sortorder: '1'
+                  color: 0040FF
+                  yaxisside: RIGHT
+                  calc_fnc: MAX
+                  item:
+                    host: template-mqtt-devices-iot
+                    key: 'airq.humidity.now[{#DEVICEID}]'
           master_item:
             key: 'mqtt.get["{$MQTT_SCHEME}://{$IPMQTTGATEWAY}:{$MQTT_PORT}","{$MQTT.TOPIC.TELEMETRY}","{$MQTT_USER}","{$MQTT_PASS}"]'
           preprocessing:
@@ -1759,3 +1966,6 @@ zabbix_export:
         - macro: '{$MQTT_USER}'
           value: zabbix
           description: 'Usuário MQTT Client'
+        - macro: '{$SENSOR.MISS}'
+          value: 6h
+          description: 'Tempo de tolerância sem dados'

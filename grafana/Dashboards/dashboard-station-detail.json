@@ -1,4 +1,53 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_ZABBIX-IOT",
+      "label": "zabbix-iot",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "alexanderzobnin-zabbix-datasource",
+      "pluginName": "Zabbix"
+    }
+  ],
+  "__elements": {},
+  "__requires": [
+    {
+      "type": "datasource",
+      "id": "alexanderzobnin-zabbix-datasource",
+      "name": "Zabbix",
+      "version": "5.2.0"
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "12.1.0"
+    },
+    {
+      "type": "panel",
+      "id": "stat",
+      "name": "Stat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "state-timeline",
+      "name": "State timeline",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "table",
+      "name": "Table",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "timeseries",
+      "name": "Time series",
+      "version": ""
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -19,12 +68,13 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 3,
+  "id": null,
   "links": [],
   "panels": [
     {
       "datasource": {
-        "uid": "zabbix-iot"
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ZABBIX-IOT}"
       },
       "description": "Classificação do Índice de Qualidade do Ar (IQAr), calculado a partir dos principais poluentes, segundo metodologia do Ministério do Meio Ambiente.",
       "fieldConfig": {
@@ -150,7 +200,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -203,88 +253,193 @@
     {
       "datasource": {
         "type": "alexanderzobnin-zabbix-datasource",
-        "uid": "aeu5iicgv7474f"
+        "uid": "${DS_ZABBIX-IOT}"
       },
       "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 24,
-        "x": 0,
-        "y": 2
-      },
-      "id": 13,
-      "options": {
-        "ackEventColor": "rgb(56, 219, 156)",
-        "ackField": true,
-        "ageField": true,
-        "allowDangerousHTML": false,
-        "customLastChangeFormat": false,
-        "descriptionAtNewLine": true,
-        "descriptionField": true,
-        "fontSize": "100%",
-        "highlightBackground": true,
-        "highlightNewEvents": false,
-        "highlightNewerThan": "1h",
-        "hostField": false,
-        "hostGroups": false,
-        "hostProxy": false,
-        "hostTechNameField": false,
-        "lastChangeFormat": "",
-        "layout": "list",
-        "markAckEvents": false,
-        "okEventColor": "rgb(56, 189, 113)",
-        "opdataField": false,
-        "pageSize": 10,
-        "problemTimeline": true,
-        "severityField": false,
-        "showDatasourceName": false,
-        "showTags": false,
-        "sortProblems": "lastchange",
-        "statusField": false,
-        "statusIcon": false,
-        "triggerSeverity": [
+        "defaults": {
+          "color": {
+            "mode": "fixed"
+          },
+          "custom": {
+            "align": "center",
+            "cellOptions": {
+              "applyToRow": false,
+              "mode": "gradient",
+              "type": "color-background",
+              "wrapText": true
+            },
+            "filterable": true,
+            "inspect": false
+          },
+          "mappings": [],
+          "noValue": "🟢 Sem ocorrências: índices dentro do aceitável 🟢",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": 0
+              },
+              {
+                "color": "yellow",
+                "value": 41
+              },
+              {
+                "color": "orange",
+                "value": 81
+              },
+              {
+                "color": "red",
+                "value": 121
+              },
+              {
+                "color": "purple",
+                "value": 201
+              }
+            ]
+          }
+        },
+        "overrides": [
           {
-            "color": "rgb(108, 108, 108)",
-            "priority": 0,
-            "severity": "Not classified",
-            "show": true
+            "matcher": {
+              "id": "byName",
+              "options": "IQAr"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "custom.width",
+                "value": 75
+              }
+            ]
           },
           {
-            "color": "rgb(120, 158, 183)",
-            "priority": 1,
-            "severity": "Information",
-            "show": true
+            "matcher": {
+              "id": "byName",
+              "options": "Alarme"
+            },
+            "properties": [
+              {
+                "id": "custom.width"
+              },
+              {
+                "id": "custom.align",
+                "value": "left"
+              }
+            ]
           },
           {
-            "color": "#FADE2A",
-            "priority": 2,
-            "severity": "Warning",
-            "show": true
+            "matcher": {
+              "id": "byName",
+              "options": "Qualidade"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 100
+              },
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "from": 0,
+                      "result": {
+                        "index": 0,
+                        "text": "Boa"
+                      },
+                      "to": 40
+                    },
+                    "type": "range"
+                  },
+                  {
+                    "options": {
+                      "from": 41,
+                      "result": {
+                        "index": 1,
+                        "text": "Moderada"
+                      },
+                      "to": 80
+                    },
+                    "type": "range"
+                  },
+                  {
+                    "options": {
+                      "from": 81,
+                      "result": {
+                        "index": 2,
+                        "text": "Ruim"
+                      },
+                      "to": 120
+                    },
+                    "type": "range"
+                  },
+                  {
+                    "options": {
+                      "from": 121,
+                      "result": {
+                        "index": 3,
+                        "text": "Muito Ruim"
+                      },
+                      "to": 200
+                    },
+                    "type": "range"
+                  },
+                  {
+                    "options": {
+                      "from": 201,
+                      "result": {
+                        "index": 4,
+                        "text": "Péssima"
+                      },
+                      "to": 400
+                    },
+                    "type": "range"
+                  }
+                ]
+              }
+            ]
           },
           {
-            "color": "#FF9830",
-            "priority": 3,
-            "severity": "Average",
-            "show": true
-          },
-          {
-            "color": "#F2495C",
-            "priority": 4,
-            "severity": "High",
-            "show": true
-          },
-          {
-            "color": "#B877D9",
-            "priority": 5,
-            "severity": "Disaster",
-            "show": true
+            "matcher": {
+              "id": "byName",
+              "options": "Efeitos à saúde"
+            },
+            "properties": [
+              {
+                "id": "custom.width"
+              }
+            ]
           }
         ]
       },
-      "pluginVersion": "5.2.0",
+      "gridPos": {
+        "h": 11,
+        "w": 12,
+        "x": 0,
+        "y": 2
+      },
+      "id": 14,
+      "options": {
+        "cellHeight": "md",
+        "footer": {
+          "countRows": false,
+          "enablePagination": true,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "12.1.0",
       "targets": [
         {
           "application": {
@@ -340,15 +495,58 @@
           "textFilter": "",
           "trigger": {
             "filter": "/IQAr/"
+          },
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ZABBIX-IOT}"
           }
         }
       ],
       "title": "$station | Alarme(s) Ativo(s)",
-      "type": "alexanderzobnin-zabbix-triggers-panel"
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "delimiter": ",",
+            "format": "json",
+            "jsonPaths": [
+              {
+                "alias": "IQAr",
+                "path": "items[0].lastvalue"
+              },
+              {
+                "alias": "Alarme",
+                "path": "name"
+              },
+              {
+                "alias": "Efeitos à saúde",
+                "path": "comments"
+              }
+            ],
+            "keepTime": false,
+            "replace": true,
+            "source": "Problems"
+          }
+        },
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "number",
+                "targetField": "IQAr"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "table"
     },
     {
       "datasource": {
-        "uid": "zabbix-iot"
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ZABBIX-IOT}"
       },
       "description": "Visualização em formato de linha do tempo (State timeline) que apresenta a evolução dos índices de qualidade do ar (IQAr) \ne dos principais poluentes monitorados pelo dispositivo selecionado. Cada linha representa uma métrica específica \n(IQAr Máximo, PM10, PM2.5, SO2, NO2, O3, CO), com valores codificados por cores conforme a escala de severidade. \nPermite identificar rapidamente padrões, variações e períodos críticos de exposição na localidade escolhida ($station).",
       "fieldConfig": {
@@ -399,11 +597,12 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
-        "w": 24,
-        "x": 0,
-        "y": 10
+        "h": 11,
+        "w": 12,
+        "x": 12,
+        "y": 2
       },
+      "hideTimeOverride": true,
       "id": 11,
       "options": {
         "alignValue": "center",
@@ -430,7 +629,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -483,7 +682,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -536,7 +735,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -589,7 +788,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -642,7 +841,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -695,7 +894,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -748,7 +947,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -795,12 +994,14 @@
           }
         }
       ],
+      "timeFrom": "12h",
       "title": "$station | Linha do Tempo do IQAr",
       "type": "state-timeline"
     },
     {
       "datasource": {
-        "uid": "zabbix-iot"
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ZABBIX-IOT}"
       },
       "description": "Gráfico de série temporal que apresenta a evolução do Índice de Qualidade do Ar (IQAr) e dos poluentes associados \nao longo do tempo para a localidade selecionada ($station). Os dados permitem analisar tendências, identificar \npicos de concentração e acompanhar variações em relação aos limites de referência, com estatísticas de valor \nmínimo, médio e máximo exibidas na tabela de apoio.",
       "fieldConfig": {
@@ -908,8 +1109,9 @@
         "h": 18,
         "w": 12,
         "x": 0,
-        "y": 18
+        "y": 13
       },
+      "hideTimeOverride": false,
       "id": 9,
       "options": {
         "legend": {
@@ -938,7 +1140,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -991,7 +1193,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -1044,7 +1246,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -1097,7 +1299,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -1150,7 +1352,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -1203,7 +1405,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -1256,7 +1458,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -1303,12 +1505,14 @@
           }
         }
       ],
+      "timeFrom": "24h",
       "title": "$station | Monitoramento do IQAr",
       "type": "timeseries"
     },
     {
       "datasource": {
-        "uid": "zabbix-iot"
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ZABBIX-IOT}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1378,7 +1582,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 18
+        "y": 13
       },
       "id": 7,
       "options": {
@@ -1447,6 +1651,10 @@
           "textFilter": "",
           "trigger": {
             "filter": ""
+          },
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ZABBIX-IOT}"
           }
         },
         {
@@ -1456,7 +1664,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -1508,7 +1716,8 @@
     },
     {
       "datasource": {
-        "uid": "zabbix-iot"
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ZABBIX-IOT}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1578,7 +1787,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 27
+        "y": 22
       },
       "id": 8,
       "options": {
@@ -1647,6 +1856,10 @@
           "textFilter": "",
           "trigger": {
             "filter": ""
+          },
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ZABBIX-IOT}"
           }
         }
       ],
@@ -1655,7 +1868,8 @@
     },
     {
       "datasource": {
-        "uid": "zabbix-iot"
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ZABBIX-IOT}"
       },
       "description": "Gráfico de série temporal que apresenta a evolução da concentração do poluente monitorado ao longo do tempo \nna localidade selecionada ($station). São exibidas as medições em tempo real e suas médias móveis (1h e 24h), \npermitindo identificar variações de curto e longo prazo, além de picos de concentração. A tabela inferior \nresume estatísticas de mínimo, média, máximo e último valor registrado, auxiliando na análise da qualidade \ndo ar e na comparação com limites de referência.",
       "fieldConfig": {
@@ -1742,7 +1956,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 36
+        "y": 31
       },
       "id": 1,
       "options": {
@@ -1811,6 +2025,10 @@
           "textFilter": "",
           "trigger": {
             "filter": ""
+          },
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ZABBIX-IOT}"
           }
         },
         {
@@ -1820,7 +2038,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -1873,7 +2091,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -1925,7 +2143,8 @@
     },
     {
       "datasource": {
-        "uid": "zabbix-iot"
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ZABBIX-IOT}"
       },
       "description": "Gráfico de série temporal que apresenta a evolução da concentração do poluente monitorado ao longo do tempo \nna localidade selecionada ($station). São exibidas as medições em tempo real e suas médias móveis (1h e 24h), \npermitindo identificar variações de curto e longo prazo, além de picos de concentração. A tabela inferior \nresume estatísticas de mínimo, média, máximo e último valor registrado, auxiliando na análise da qualidade \ndo ar e na comparação com limites de referência.",
       "fieldConfig": {
@@ -2012,7 +2231,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 36
+        "y": 31
       },
       "id": 3,
       "options": {
@@ -2081,6 +2300,10 @@
           "textFilter": "",
           "trigger": {
             "filter": ""
+          },
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ZABBIX-IOT}"
           }
         },
         {
@@ -2090,7 +2313,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -2143,7 +2366,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -2195,7 +2418,8 @@
     },
     {
       "datasource": {
-        "uid": "zabbix-iot"
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ZABBIX-IOT}"
       },
       "description": "Gráfico de série temporal que apresenta a evolução da concentração do poluente monitorado ao longo do tempo \nna localidade selecionada ($station). São exibidas as medições em tempo real e suas médias móveis (1h e 24h), \npermitindo identificar variações de curto e longo prazo, além de picos de concentração. A tabela inferior \nresume estatísticas de mínimo, média, máximo e último valor registrado, auxiliando na análise da qualidade \ndo ar e na comparação com limites de referência.",
       "fieldConfig": {
@@ -2282,7 +2506,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 45
+        "y": 40
       },
       "id": 4,
       "options": {
@@ -2351,6 +2575,10 @@
           "textFilter": "",
           "trigger": {
             "filter": ""
+          },
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ZABBIX-IOT}"
           }
         },
         {
@@ -2360,7 +2588,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -2413,7 +2641,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -2465,7 +2693,8 @@
     },
     {
       "datasource": {
-        "uid": "zabbix-iot"
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ZABBIX-IOT}"
       },
       "description": "Gráfico de série temporal que apresenta a evolução da concentração do poluente monitorado ao longo do tempo \nna localidade selecionada ($station). São exibidas as medições em tempo real e máxima de 1h, \npermitindo identificar variações de curto e longo prazo, além de picos de concentração. A tabela inferior \nresume estatísticas de mínimo, média, máximo e último valor registrado, auxiliando na análise da qualidade \ndo ar e na comparação com limites de referência.",
       "fieldConfig": {
@@ -2552,7 +2781,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 45
+        "y": 40
       },
       "id": 6,
       "options": {
@@ -2621,6 +2850,10 @@
           "textFilter": "",
           "trigger": {
             "filter": ""
+          },
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ZABBIX-IOT}"
           }
         },
         {
@@ -2630,7 +2863,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -2682,7 +2915,8 @@
     },
     {
       "datasource": {
-        "uid": "zabbix-iot"
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ZABBIX-IOT}"
       },
       "description": "Gráfico de série temporal que apresenta a evolução da concentração do poluente monitorado ao longo do tempo \nna localidade selecionada ($station). São exibidas as medições em tempo real e suas médias móveis (1h e 8h), \npermitindo identificar variações de curto e longo prazo, além de picos de concentração. A tabela inferior \nresume estatísticas de mínimo, média, máximo e último valor registrado, auxiliando na análise da qualidade \ndo ar e na comparação com limites de referência.",
       "fieldConfig": {
@@ -2769,7 +3003,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 54
+        "y": 49
       },
       "id": 5,
       "options": {
@@ -2838,6 +3072,10 @@
           "textFilter": "",
           "trigger": {
             "filter": ""
+          },
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ZABBIX-IOT}"
           }
         },
         {
@@ -2847,7 +3085,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -2900,7 +3138,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -2952,7 +3190,8 @@
     },
     {
       "datasource": {
-        "uid": "zabbix-iot"
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ZABBIX-IOT}"
       },
       "description": "Gráfico de série temporal que apresenta a evolução da concentração do poluente monitorado ao longo do tempo \nna localidade selecionada ($station). São exibidas as medições em tempo real e suas médias móveis (1h e 8h), \npermitindo identificar variações de curto e longo prazo, além de picos de concentração. A tabela inferior \nresume estatísticas de mínimo, média, máximo e último valor registrado, auxiliando na análise da qualidade \ndo ar e na comparação com limites de referência.",
       "fieldConfig": {
@@ -3030,7 +3269,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 54
+        "y": 49
       },
       "id": 2,
       "options": {
@@ -3099,6 +3338,10 @@
           "textFilter": "",
           "trigger": {
             "filter": ""
+          },
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ZABBIX-IOT}"
           }
         },
         {
@@ -3108,7 +3351,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -3161,7 +3404,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
+            "uid": "${DS_ZABBIX-IOT}"
           },
           "evaltype": "0",
           "functions": [],
@@ -3210,577 +3453,16 @@
       ],
       "title": "$station | Monitoramento de CO (ppm)",
       "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "uid": "zabbix-iot"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "axisSoftMin": 0,
-            "barAlignment": 0,
-            "barWidthFactor": 0.6,
-            "drawStyle": "line",
-            "fillOpacity": 32,
-            "gradientMode": "opacity",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineStyle": {
-              "fill": "solid"
-            },
-            "lineWidth": 1,
-            "pointSize": 1,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "always",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "area"
-            }
-          },
-          "fieldMinMax": false,
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": 0
-              },
-              {
-                "color": "yellow",
-                "value": 41
-              },
-              {
-                "color": "orange",
-                "value": 81
-              },
-              {
-                "color": "red",
-                "value": 121
-              },
-              {
-                "color": "purple",
-                "value": 201
-              }
-            ]
-          }
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byFrameRefID",
-              "options": "A"
-            },
-            "properties": [
-              {
-                "id": "custom.drawStyle",
-                "value": "line"
-              },
-              {
-                "id": "custom.pointSize",
-                "value": 5
-              },
-              {
-                "id": "custom.fillOpacity",
-                "value": 100
-              },
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#ffffff",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byFrameRefID",
-              "options": "B"
-            },
-            "properties": [
-              {
-                "id": "custom.lineStyle",
-                "value": {
-                  "dash": [
-                    5,
-                    3
-                  ],
-                  "fill": "dash"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byFrameRefID",
-              "options": "C"
-            },
-            "properties": [
-              {
-                "id": "custom.lineStyle",
-                "value": {
-                  "dash": [
-                    10,
-                    3
-                  ],
-                  "fill": "dash"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byFrameRefID",
-              "options": "D"
-            },
-            "properties": [
-              {
-                "id": "custom.lineStyle",
-                "value": {
-                  "dash": [
-                    15,
-                    3
-                  ],
-                  "fill": "dash"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byFrameRefID",
-              "options": "E"
-            },
-            "properties": [
-              {
-                "id": "custom.lineStyle",
-                "value": {
-                  "dash": [
-                    20,
-                    3
-                  ],
-                  "fill": "dash"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byFrameRefID",
-              "options": "F"
-            },
-            "properties": [
-              {
-                "id": "custom.lineStyle",
-                "value": {
-                  "dash": [
-                    5,
-                    1,
-                    5
-                  ],
-                  "fill": "dot"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byFrameRefID",
-              "options": "G"
-            },
-            "properties": [
-              {
-                "id": "custom.lineStyle",
-                "value": {
-                  "fill": "solid"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      "gridPos": {
-        "h": 17,
-        "w": 12,
-        "x": 0,
-        "y": 63
-      },
-      "id": 10,
-      "options": {
-        "legend": {
-          "calcs": [
-            "min",
-            "mean",
-            "max",
-            "last"
-          ],
-          "displayMode": "table",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "hideZeros": false,
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "12.1.0",
-      "targets": [
-        {
-          "application": {
-            "filter": ""
-          },
-          "countTriggersBy": "",
-          "datasource": {
-            "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
-          },
-          "evaltype": "0",
-          "functions": [],
-          "group": {
-            "filter": "iot-devices"
-          },
-          "hide": false,
-          "host": {
-            "filter": "/.*/"
-          },
-          "item": {
-            "filter": "\\[${device}\\] - IQAr - PM10"
-          },
-          "itemTag": {
-            "filter": "$station"
-          },
-          "macro": {
-            "filter": ""
-          },
-          "options": {
-            "count": false,
-            "disableDataAlignment": false,
-            "showDisabledItems": false,
-            "skipEmptyValues": false,
-            "useTrends": "default",
-            "useZabbixValueMapping": false
-          },
-          "proxy": {
-            "filter": ""
-          },
-          "queryType": "0",
-          "refId": "B",
-          "resultFormat": "time_series",
-          "schema": 12,
-          "table": {
-            "skipEmptyValues": false
-          },
-          "tags": {
-            "filter": ""
-          },
-          "textFilter": "",
-          "trigger": {
-            "filter": ""
-          }
-        },
-        {
-          "application": {
-            "filter": ""
-          },
-          "countTriggersBy": "",
-          "datasource": {
-            "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
-          },
-          "evaltype": "0",
-          "functions": [],
-          "group": {
-            "filter": "iot-devices"
-          },
-          "hide": false,
-          "host": {
-            "filter": "/.*/"
-          },
-          "item": {
-            "filter": "\\[${device}\\] - IQAr - PM2.5"
-          },
-          "itemTag": {
-            "filter": "$station"
-          },
-          "macro": {
-            "filter": ""
-          },
-          "options": {
-            "count": false,
-            "disableDataAlignment": false,
-            "showDisabledItems": false,
-            "skipEmptyValues": false,
-            "useTrends": "default",
-            "useZabbixValueMapping": false
-          },
-          "proxy": {
-            "filter": ""
-          },
-          "queryType": "0",
-          "refId": "C",
-          "resultFormat": "time_series",
-          "schema": 12,
-          "table": {
-            "skipEmptyValues": false
-          },
-          "tags": {
-            "filter": ""
-          },
-          "textFilter": "",
-          "trigger": {
-            "filter": ""
-          }
-        },
-        {
-          "application": {
-            "filter": ""
-          },
-          "countTriggersBy": "",
-          "datasource": {
-            "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
-          },
-          "evaltype": "0",
-          "functions": [],
-          "group": {
-            "filter": "iot-devices"
-          },
-          "hide": false,
-          "host": {
-            "filter": "/.*/"
-          },
-          "item": {
-            "filter": "\\[${device}\\] - IQAr - SO2"
-          },
-          "itemTag": {
-            "filter": "$station"
-          },
-          "macro": {
-            "filter": ""
-          },
-          "options": {
-            "count": false,
-            "disableDataAlignment": false,
-            "showDisabledItems": false,
-            "skipEmptyValues": false,
-            "useTrends": "default",
-            "useZabbixValueMapping": false
-          },
-          "proxy": {
-            "filter": ""
-          },
-          "queryType": "0",
-          "refId": "D",
-          "resultFormat": "time_series",
-          "schema": 12,
-          "table": {
-            "skipEmptyValues": false
-          },
-          "tags": {
-            "filter": ""
-          },
-          "textFilter": "",
-          "trigger": {
-            "filter": ""
-          }
-        },
-        {
-          "application": {
-            "filter": ""
-          },
-          "countTriggersBy": "",
-          "datasource": {
-            "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
-          },
-          "evaltype": "0",
-          "functions": [],
-          "group": {
-            "filter": "iot-devices"
-          },
-          "hide": false,
-          "host": {
-            "filter": "/.*/"
-          },
-          "item": {
-            "filter": "\\[${device}\\] - IQAr - NO2"
-          },
-          "itemTag": {
-            "filter": "$station"
-          },
-          "macro": {
-            "filter": ""
-          },
-          "options": {
-            "count": false,
-            "disableDataAlignment": false,
-            "showDisabledItems": false,
-            "skipEmptyValues": false,
-            "useTrends": "default",
-            "useZabbixValueMapping": false
-          },
-          "proxy": {
-            "filter": ""
-          },
-          "queryType": "0",
-          "refId": "E",
-          "resultFormat": "time_series",
-          "schema": 12,
-          "table": {
-            "skipEmptyValues": false
-          },
-          "tags": {
-            "filter": ""
-          },
-          "textFilter": "",
-          "trigger": {
-            "filter": ""
-          }
-        },
-        {
-          "application": {
-            "filter": ""
-          },
-          "countTriggersBy": "",
-          "datasource": {
-            "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
-          },
-          "evaltype": "0",
-          "functions": [],
-          "group": {
-            "filter": "iot-devices"
-          },
-          "hide": false,
-          "host": {
-            "filter": "/.*/"
-          },
-          "item": {
-            "filter": "\\[${device}\\] - IQAr - O3"
-          },
-          "itemTag": {
-            "filter": "$station"
-          },
-          "macro": {
-            "filter": ""
-          },
-          "options": {
-            "count": false,
-            "disableDataAlignment": false,
-            "showDisabledItems": false,
-            "skipEmptyValues": false,
-            "useTrends": "default",
-            "useZabbixValueMapping": false
-          },
-          "proxy": {
-            "filter": ""
-          },
-          "queryType": "0",
-          "refId": "F",
-          "resultFormat": "time_series",
-          "schema": 12,
-          "table": {
-            "skipEmptyValues": false
-          },
-          "tags": {
-            "filter": ""
-          },
-          "textFilter": "",
-          "trigger": {
-            "filter": ""
-          }
-        },
-        {
-          "application": {
-            "filter": ""
-          },
-          "countTriggersBy": "",
-          "datasource": {
-            "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "aeu5iicgv7474f"
-          },
-          "evaltype": "0",
-          "functions": [],
-          "group": {
-            "filter": "iot-devices"
-          },
-          "hide": false,
-          "host": {
-            "filter": "/.*/"
-          },
-          "item": {
-            "filter": "\\[${device}\\] - IQAr - CO"
-          },
-          "itemTag": {
-            "filter": "$station"
-          },
-          "macro": {
-            "filter": ""
-          },
-          "options": {
-            "count": false,
-            "disableDataAlignment": false,
-            "showDisabledItems": false,
-            "skipEmptyValues": false,
-            "useTrends": "default",
-            "useZabbixValueMapping": false
-          },
-          "proxy": {
-            "filter": ""
-          },
-          "queryType": "0",
-          "refId": "G",
-          "resultFormat": "time_series",
-          "schema": 12,
-          "table": {
-            "skipEmptyValues": false
-          },
-          "tags": {
-            "filter": ""
-          },
-          "textFilter": "",
-          "trigger": {
-            "filter": ""
-          }
-        }
-      ],
-      "title": "$station | Monitoramento do IQAr",
-      "type": "timeseries"
     }
   ],
-  "preload": false,
+  "refresh": "1m",
   "schemaVersion": 41,
   "tags": [],
   "templating": {
     "list": [
       {
         "allowCustomValue": true,
-        "current": {
-          "text": "Localidade: Hospital Infantil Maria Alice",
-          "value": "Localidade: Hospital Infantil Maria Alice"
-        },
+        "current": {},
         "definition": "",
         "description": "Variável utilizada para mapear de forma dinâmica as localidades dos dispositivos IoT de monitoramento da qualidade do ar. A identificação das localidades é realizada por meio da tag \"Localidade\" atribuída a cada item coletado. O valor desta tag é definido no Zabbix pela macro {#STATION}, que é extraída dos dados enviados pelo dispositivo em formato JSON ao gateway MQTT. Dessa forma, a localidade é configurada diretamente no dispositivo e repassada no payload, garantindo consistência na associação entre medições e estação de coleta.",
         "includeAll": false,
@@ -3801,10 +3483,7 @@
         "type": "query"
       },
       {
-        "current": {
-          "text": "device12",
-          "value": "device12"
-        },
+        "current": {},
         "definition": "",
         "description": "Variável dependente da variável $station, utilizada para mapear de forma dinâmica os dispositivos associados a cada localidade. \nA identificação dos dispositivos é feita a partir do item mqtt.telemetry.raw[{#DEVICEID}], no qual cada dispositivo possui um DeviceID definido diretamente na sua configuração. Dessa forma, ao selecionar uma localidade, apenas os dispositivos correspondentes \nsão listados.",
         "includeAll": false,
@@ -3834,5 +3513,6 @@
   "timezone": "browser",
   "title": "Monitoramento da Qualidade do Ar - Visualização por Localidade",
   "uid": "7c6146ee-da2e-4a56-834e-63ad63b0228e",
-  "version": 30
+  "version": 38,
+  "weekStart": ""
 }
