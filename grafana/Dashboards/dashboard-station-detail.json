@@ -1,53 +1,4 @@
 {
-  "__inputs": [
-    {
-      "name": "DS_ZABBIX-IOT",
-      "label": "zabbix-iot",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "alexanderzobnin-zabbix-datasource",
-      "pluginName": "Zabbix"
-    }
-  ],
-  "__elements": {},
-  "__requires": [
-    {
-      "type": "datasource",
-      "id": "alexanderzobnin-zabbix-datasource",
-      "name": "Zabbix",
-      "version": "5.2.0"
-    },
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "12.1.0"
-    },
-    {
-      "type": "panel",
-      "id": "stat",
-      "name": "Stat",
-      "version": ""
-    },
-    {
-      "type": "panel",
-      "id": "state-timeline",
-      "name": "State timeline",
-      "version": ""
-    },
-    {
-      "type": "panel",
-      "id": "table",
-      "name": "Table",
-      "version": ""
-    },
-    {
-      "type": "panel",
-      "id": "timeseries",
-      "name": "Time series",
-      "version": ""
-    }
-  ],
   "annotations": {
     "list": [
       {
@@ -68,13 +19,12 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": null,
+  "id": 3,
   "links": [],
   "panels": [
     {
       "datasource": {
-        "type": "alexanderzobnin-zabbix-datasource",
-        "uid": "${DS_ZABBIX-IOT}"
+        "uid": "zabbix-iot"
       },
       "description": "Classificação do Índice de Qualidade do Ar (IQAr), calculado a partir dos principais poluentes, segundo metodologia do Ministério do Meio Ambiente.",
       "fieldConfig": {
@@ -200,7 +150,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -253,7 +203,7 @@
     {
       "datasource": {
         "type": "alexanderzobnin-zabbix-datasource",
-        "uid": "${DS_ZABBIX-IOT}"
+        "uid": "aeu5iicgv7474f"
       },
       "fieldConfig": {
         "defaults": {
@@ -495,10 +445,6 @@
           "textFilter": "",
           "trigger": {
             "filter": "/IQAr/"
-          },
-          "datasource": {
-            "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
           }
         }
       ],
@@ -545,8 +491,7 @@
     },
     {
       "datasource": {
-        "type": "alexanderzobnin-zabbix-datasource",
-        "uid": "${DS_ZABBIX-IOT}"
+        "uid": "zabbix-iot"
       },
       "description": "Visualização em formato de linha do tempo (State timeline) que apresenta a evolução dos índices de qualidade do ar (IQAr) \ne dos principais poluentes monitorados pelo dispositivo selecionado. Cada linha representa uma métrica específica \n(IQAr Máximo, PM10, PM2.5, SO2, NO2, O3, CO), com valores codificados por cores conforme a escala de severidade. \nPermite identificar rapidamente padrões, variações e períodos críticos de exposição na localidade escolhida ($station).",
       "fieldConfig": {
@@ -629,7 +574,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -682,7 +627,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -735,7 +680,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -788,7 +733,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -841,7 +786,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -894,7 +839,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -947,7 +892,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -1000,8 +945,7 @@
     },
     {
       "datasource": {
-        "type": "alexanderzobnin-zabbix-datasource",
-        "uid": "${DS_ZABBIX-IOT}"
+        "uid": "zabbix-iot"
       },
       "description": "Gráfico de série temporal que apresenta a evolução do Índice de Qualidade do Ar (IQAr) e dos poluentes associados \nao longo do tempo para a localidade selecionada ($station). Os dados permitem analisar tendências, identificar \npicos de concentração e acompanhar variações em relação aos limites de referência, com estatísticas de valor \nmínimo, médio e máximo exibidas na tabela de apoio.",
       "fieldConfig": {
@@ -1140,7 +1084,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -1193,7 +1137,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -1246,7 +1190,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -1299,7 +1243,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -1352,7 +1296,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -1405,7 +1349,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -1458,7 +1402,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -1511,8 +1455,7 @@
     },
     {
       "datasource": {
-        "type": "alexanderzobnin-zabbix-datasource",
-        "uid": "${DS_ZABBIX-IOT}"
+        "uid": "zabbix-iot"
       },
       "fieldConfig": {
         "defaults": {
@@ -1651,10 +1594,6 @@
           "textFilter": "",
           "trigger": {
             "filter": ""
-          },
-          "datasource": {
-            "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
           }
         },
         {
@@ -1664,7 +1603,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -1716,8 +1655,7 @@
     },
     {
       "datasource": {
-        "type": "alexanderzobnin-zabbix-datasource",
-        "uid": "${DS_ZABBIX-IOT}"
+        "uid": "zabbix-iot"
       },
       "fieldConfig": {
         "defaults": {
@@ -1856,10 +1794,6 @@
           "textFilter": "",
           "trigger": {
             "filter": ""
-          },
-          "datasource": {
-            "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
           }
         }
       ],
@@ -1868,8 +1802,7 @@
     },
     {
       "datasource": {
-        "type": "alexanderzobnin-zabbix-datasource",
-        "uid": "${DS_ZABBIX-IOT}"
+        "uid": "zabbix-iot"
       },
       "description": "Gráfico de série temporal que apresenta a evolução da concentração do poluente monitorado ao longo do tempo \nna localidade selecionada ($station). São exibidas as medições em tempo real e suas médias móveis (1h e 24h), \npermitindo identificar variações de curto e longo prazo, além de picos de concentração. A tabela inferior \nresume estatísticas de mínimo, média, máximo e último valor registrado, auxiliando na análise da qualidade \ndo ar e na comparação com limites de referência.",
       "fieldConfig": {
@@ -2025,10 +1958,6 @@
           "textFilter": "",
           "trigger": {
             "filter": ""
-          },
-          "datasource": {
-            "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
           }
         },
         {
@@ -2038,7 +1967,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -2091,7 +2020,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -2143,8 +2072,7 @@
     },
     {
       "datasource": {
-        "type": "alexanderzobnin-zabbix-datasource",
-        "uid": "${DS_ZABBIX-IOT}"
+        "uid": "zabbix-iot"
       },
       "description": "Gráfico de série temporal que apresenta a evolução da concentração do poluente monitorado ao longo do tempo \nna localidade selecionada ($station). São exibidas as medições em tempo real e suas médias móveis (1h e 24h), \npermitindo identificar variações de curto e longo prazo, além de picos de concentração. A tabela inferior \nresume estatísticas de mínimo, média, máximo e último valor registrado, auxiliando na análise da qualidade \ndo ar e na comparação com limites de referência.",
       "fieldConfig": {
@@ -2300,10 +2228,6 @@
           "textFilter": "",
           "trigger": {
             "filter": ""
-          },
-          "datasource": {
-            "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
           }
         },
         {
@@ -2313,7 +2237,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -2366,7 +2290,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -2418,8 +2342,7 @@
     },
     {
       "datasource": {
-        "type": "alexanderzobnin-zabbix-datasource",
-        "uid": "${DS_ZABBIX-IOT}"
+        "uid": "zabbix-iot"
       },
       "description": "Gráfico de série temporal que apresenta a evolução da concentração do poluente monitorado ao longo do tempo \nna localidade selecionada ($station). São exibidas as medições em tempo real e suas médias móveis (1h e 24h), \npermitindo identificar variações de curto e longo prazo, além de picos de concentração. A tabela inferior \nresume estatísticas de mínimo, média, máximo e último valor registrado, auxiliando na análise da qualidade \ndo ar e na comparação com limites de referência.",
       "fieldConfig": {
@@ -2575,10 +2498,6 @@
           "textFilter": "",
           "trigger": {
             "filter": ""
-          },
-          "datasource": {
-            "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
           }
         },
         {
@@ -2588,7 +2507,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -2641,7 +2560,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -2693,8 +2612,7 @@
     },
     {
       "datasource": {
-        "type": "alexanderzobnin-zabbix-datasource",
-        "uid": "${DS_ZABBIX-IOT}"
+        "uid": "zabbix-iot"
       },
       "description": "Gráfico de série temporal que apresenta a evolução da concentração do poluente monitorado ao longo do tempo \nna localidade selecionada ($station). São exibidas as medições em tempo real e máxima de 1h, \npermitindo identificar variações de curto e longo prazo, além de picos de concentração. A tabela inferior \nresume estatísticas de mínimo, média, máximo e último valor registrado, auxiliando na análise da qualidade \ndo ar e na comparação com limites de referência.",
       "fieldConfig": {
@@ -2850,10 +2768,6 @@
           "textFilter": "",
           "trigger": {
             "filter": ""
-          },
-          "datasource": {
-            "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
           }
         },
         {
@@ -2863,7 +2777,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -2915,8 +2829,7 @@
     },
     {
       "datasource": {
-        "type": "alexanderzobnin-zabbix-datasource",
-        "uid": "${DS_ZABBIX-IOT}"
+        "uid": "zabbix-iot"
       },
       "description": "Gráfico de série temporal que apresenta a evolução da concentração do poluente monitorado ao longo do tempo \nna localidade selecionada ($station). São exibidas as medições em tempo real e suas médias móveis (1h e 8h), \npermitindo identificar variações de curto e longo prazo, além de picos de concentração. A tabela inferior \nresume estatísticas de mínimo, média, máximo e último valor registrado, auxiliando na análise da qualidade \ndo ar e na comparação com limites de referência.",
       "fieldConfig": {
@@ -3072,10 +2985,6 @@
           "textFilter": "",
           "trigger": {
             "filter": ""
-          },
-          "datasource": {
-            "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
           }
         },
         {
@@ -3085,7 +2994,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -3138,7 +3047,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -3190,8 +3099,7 @@
     },
     {
       "datasource": {
-        "type": "alexanderzobnin-zabbix-datasource",
-        "uid": "${DS_ZABBIX-IOT}"
+        "uid": "zabbix-iot"
       },
       "description": "Gráfico de série temporal que apresenta a evolução da concentração do poluente monitorado ao longo do tempo \nna localidade selecionada ($station). São exibidas as medições em tempo real e suas médias móveis (1h e 8h), \npermitindo identificar variações de curto e longo prazo, além de picos de concentração. A tabela inferior \nresume estatísticas de mínimo, média, máximo e último valor registrado, auxiliando na análise da qualidade \ndo ar e na comparação com limites de referência.",
       "fieldConfig": {
@@ -3338,10 +3246,6 @@
           "textFilter": "",
           "trigger": {
             "filter": ""
-          },
-          "datasource": {
-            "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
           }
         },
         {
@@ -3351,7 +3255,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -3404,7 +3308,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "${DS_ZABBIX-IOT}"
+            "uid": "aeu5iicgv7474f"
           },
           "evaltype": "0",
           "functions": [],
@@ -3455,18 +3359,21 @@
       "type": "timeseries"
     }
   ],
-  "refresh": "1m",
+  "preload": false,
   "schemaVersion": 41,
   "tags": [],
   "templating": {
     "list": [
       {
         "allowCustomValue": true,
-        "current": {},
+        "current": {
+          "text": "Localidade: Aquário Natal",
+          "value": "Localidade: Aquário Natal"
+        },
         "definition": "",
         "description": "Variável utilizada para mapear de forma dinâmica as localidades dos dispositivos IoT de monitoramento da qualidade do ar. A identificação das localidades é realizada por meio da tag \"Localidade\" atribuída a cada item coletado. O valor desta tag é definido no Zabbix pela macro {#STATION}, que é extraída dos dados enviados pelo dispositivo em formato JSON ao gateway MQTT. Dessa forma, a localidade é configurada diretamente no dispositivo e repassada no payload, garantindo consistência na associação entre medições e estação de coleta.",
         "includeAll": false,
-        "label": "Localidade",
+        "label": " ",
         "name": "station",
         "options": [],
         "query": {
@@ -3483,7 +3390,10 @@
         "type": "query"
       },
       {
-        "current": {},
+        "current": {
+          "text": "device11",
+          "value": "device11"
+        },
         "definition": "",
         "description": "Variável dependente da variável $station, utilizada para mapear de forma dinâmica os dispositivos associados a cada localidade. \nA identificação dos dispositivos é feita a partir do item mqtt.telemetry.raw[{#DEVICEID}], no qual cada dispositivo possui um DeviceID definido diretamente na sua configuração. Dessa forma, ao selecionar uma localidade, apenas os dispositivos correspondentes \nsão listados.",
         "includeAll": false,
@@ -3511,8 +3421,7 @@
   },
   "timepicker": {},
   "timezone": "browser",
-  "title": "Monitoramento da Qualidade do Ar - Visualização por Localidade",
+  "title": "Monitoramento da Qualidade do Ar - Visualização Detalhada por Localidade",
   "uid": "7c6146ee-da2e-4a56-834e-63ad63b0228e",
-  "version": 38,
-  "weekStart": ""
+  "version": 40
 }
