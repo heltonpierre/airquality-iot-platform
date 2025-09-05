@@ -148,6 +148,9 @@ zabbix_export:
                   name: '[{#STATION} - {#DEVICEID}] - Sensor CO - Sem dados válidos'
                   priority: WARNING
                   description: 'Não foram recebidos dados válidos do sensor de CO no período {$SENSOR.MISS}; verifique conectividade, alimentação e integridade do dispositivo.'
+                  dependencies:
+                    - name: '[{#STATION} - {#DEVICEID}] - Device offline (sem telemetria há {$SENSOR.MISS})'
+                      expression: 'nodata(/template-mqtt-devices-iot/mqtt.get["{$MQTT_SCHEME}://{$IPMQTTGATEWAY}:{$MQTT_PORT}","{#TOPIC_TEL}","{$MQTT_USER}","{$MQTT_PASS}"],{$SENSOR.MISS})=1'
                   tags:
                     - tag: Action
                       value: iot-device-monitor
@@ -208,6 +211,9 @@ zabbix_export:
                   name: '[{#STATION} - {#DEVICEID}] - Sensor de Umidade - Sem dados válidos'
                   priority: WARNING
                   description: 'Não foram recebidos dados válidos do sensor de Umidade do Ar no período {$SENSOR.MISS}; verifique conectividade, alimentação e integridade do dispositivo.'
+                  dependencies:
+                    - name: '[{#STATION} - {#DEVICEID}] - Device offline (sem telemetria há {$SENSOR.MISS})'
+                      expression: 'nodata(/template-mqtt-devices-iot/mqtt.get["{$MQTT_SCHEME}://{$IPMQTTGATEWAY}:{$MQTT_PORT}","{#TOPIC_TEL}","{$MQTT_USER}","{$MQTT_PASS}"],{$SENSOR.MISS})=1'
                   tags:
                     - tag: Action
                       value: iot-device-monitor
@@ -274,6 +280,9 @@ zabbix_export:
                   name: '[{#STATION} - {#DEVICEID}] - Sensor NO2 - Sem dados válidos'
                   priority: WARNING
                   description: 'Não foram recebidos dados válidos do sensor de NO2 no período {$SENSOR.MISS}; verifique conectividade, alimentação e integridade do dispositivo.'
+                  dependencies:
+                    - name: '[{#STATION} - {#DEVICEID}] - Device offline (sem telemetria há {$SENSOR.MISS})'
+                      expression: 'nodata(/template-mqtt-devices-iot/mqtt.get["{$MQTT_SCHEME}://{$IPMQTTGATEWAY}:{$MQTT_PORT}","{#TOPIC_TEL}","{$MQTT_USER}","{$MQTT_PASS}"],{$SENSOR.MISS})=1'
                   tags:
                     - tag: Action
                       value: iot-device-monitor
@@ -340,6 +349,9 @@ zabbix_export:
                   name: '[{#STATION} - {#DEVICEID}] - Sensor O3 - Sem dados válidos'
                   priority: WARNING
                   description: 'Não foram recebidos dados válidos do sensor de O3 no período {$SENSOR.MISS}; verifique conectividade, alimentação e integridade do dispositivo.'
+                  dependencies:
+                    - name: '[{#STATION} - {#DEVICEID}] - Device offline (sem telemetria há {$SENSOR.MISS})'
+                      expression: 'nodata(/template-mqtt-devices-iot/mqtt.get["{$MQTT_SCHEME}://{$IPMQTTGATEWAY}:{$MQTT_PORT}","{#TOPIC_TEL}","{$MQTT_USER}","{$MQTT_PASS}"],{$SENSOR.MISS})=1'
                   tags:
                     - tag: Action
                       value: iot-device-monitor
@@ -426,6 +438,9 @@ zabbix_export:
                   name: '[{#STATION} - {#DEVICEID}] - Sensor PM10 - Sem dados válidos'
                   priority: WARNING
                   description: 'Não foram recebidos dados válidos do sensor de PM10 no período {$SENSOR.MISS}; verifique conectividade, alimentação e integridade do dispositivo.'
+                  dependencies:
+                    - name: '[{#STATION} - {#DEVICEID}] - Device offline (sem telemetria há {$SENSOR.MISS})'
+                      expression: 'nodata(/template-mqtt-devices-iot/mqtt.get["{$MQTT_SCHEME}://{$IPMQTTGATEWAY}:{$MQTT_PORT}","{#TOPIC_TEL}","{$MQTT_USER}","{$MQTT_PASS}"],{$SENSOR.MISS})=1'
                   tags:
                     - tag: Action
                       value: iot-device-monitor
@@ -509,6 +524,9 @@ zabbix_export:
                   name: '[{#STATION} - {#DEVICEID}] - Sensor PM2.5 - Sem dados válidos'
                   priority: WARNING
                   description: 'Não foram recebidos dados válidos do sensor de PM2.5 no período {$SENSOR.MISS}; verifique conectividade, alimentação e integridade do dispositivo.'
+                  dependencies:
+                    - name: '[{#STATION} - {#DEVICEID}] - Device offline (sem telemetria há {$SENSOR.MISS})'
+                      expression: 'nodata(/template-mqtt-devices-iot/mqtt.get["{$MQTT_SCHEME}://{$IPMQTTGATEWAY}:{$MQTT_PORT}","{#TOPIC_TEL}","{$MQTT_USER}","{$MQTT_PASS}"],{$SENSOR.MISS})=1'
                   tags:
                     - tag: Action
                       value: iot-device-monitor
@@ -568,6 +586,9 @@ zabbix_export:
                   name: '[{#STATION} - {#DEVICEID}] - Sensor de Pressão - Sem dados válidos'
                   priority: WARNING
                   description: 'Não foram recebidos dados válidos do sensor de Pressão no período {$SENSOR.MISS}; verifique conectividade, alimentação e integridade do dispositivo.'
+                  dependencies:
+                    - name: '[{#STATION} - {#DEVICEID}] - Device offline (sem telemetria há {$SENSOR.MISS})'
+                      expression: 'nodata(/template-mqtt-devices-iot/mqtt.get["{$MQTT_SCHEME}://{$IPMQTTGATEWAY}:{$MQTT_PORT}","{#TOPIC_TEL}","{$MQTT_USER}","{$MQTT_PASS}"],{$SENSOR.MISS})=1'
                   tags:
                     - tag: Action
                       value: iot-device-monitor
@@ -634,6 +655,9 @@ zabbix_export:
                   name: '[{#STATION} - {#DEVICEID}] - Sensor SO2 - Sem dados válidos'
                   priority: WARNING
                   description: 'Não foram recebidos dados válidos do sensor de SO2 no período {$SENSOR.MISS}; verifique conectividade, alimentação e integridade do dispositivo.'
+                  dependencies:
+                    - name: '[{#STATION} - {#DEVICEID}] - Device offline (sem telemetria há {$SENSOR.MISS})'
+                      expression: 'nodata(/template-mqtt-devices-iot/mqtt.get["{$MQTT_SCHEME}://{$IPMQTTGATEWAY}:{$MQTT_PORT}","{#TOPIC_TEL}","{$MQTT_USER}","{$MQTT_PASS}"],{$SENSOR.MISS})=1'
                   tags:
                     - tag: Action
                       value: iot-device-monitor
@@ -694,6 +718,9 @@ zabbix_export:
                   name: '[{#STATION} - {#DEVICEID}] - Sensor de Temperatura - Sem dados válidos'
                   priority: WARNING
                   description: 'Não foram recebidos dados válidos do sensor de Temperatura no período {$SENSOR.MISS}; verifique conectividade, alimentação e integridade do dispositivo.'
+                  dependencies:
+                    - name: '[{#STATION} - {#DEVICEID}] - Device offline (sem telemetria há {$SENSOR.MISS})'
+                      expression: 'nodata(/template-mqtt-devices-iot/mqtt.get["{$MQTT_SCHEME}://{$IPMQTTGATEWAY}:{$MQTT_PORT}","{#TOPIC_TEL}","{$MQTT_USER}","{$MQTT_PASS}"],{$SENSOR.MISS})=1'
                   tags:
                     - tag: Action
                       value: iot-device-monitor
@@ -993,9 +1020,9 @@ zabbix_export:
               trigger_prototypes:
                 - uuid: 02a6888eac7045f58e2113085c4bcd79
                   expression: 'nodata(/template-mqtt-devices-iot/mqtt.get["{$MQTT_SCHEME}://{$IPMQTTGATEWAY}:{$MQTT_PORT}","{#TOPIC_TEL}","{$MQTT_USER}","{$MQTT_PASS}"],{$SENSOR.MISS})=1'
-                  name: '[{#STATION} - {#DEVICEID}] - Device offline (sem telemetria há {$DEVICE.MISS})'
+                  name: '[{#STATION} - {#DEVICEID}] - Device offline (sem telemetria há {$SENSOR.MISS})'
                   priority: HIGH
-                  description: 'Não foram recebidas mensagens de telemetria do dispositivo {#DEVICEID} no período {$DEVICE.MISS}; verifique a conectividade de rede, a alimentação do equipamento, as credenciais de acesso ao broker MQTT e a disponibilidade do tópico {#TOPIC_TEL}.'
+                  description: 'Não foram recebidas mensagens de telemetria do dispositivo {#DEVICEID} no período {$SENSOR.MISS}; verifique a conectividade de rede, a alimentação do equipamento, as credenciais de acesso ao broker MQTT e a disponibilidade do tópico {#TOPIC_TEL}.'
                   tags:
                     - tag: Action
                       value: iot-device-monitor
@@ -1003,6 +1030,8 @@ zabbix_export:
                       value: '{#DEVICEID}'
                     - tag: Localidade
                       value: '{#STATION}'
+                    - tag: Modo
+                      value: Offline
             - uuid: 66c92aa1e82b42f9873e28fe4a507328
               name: '[{#DEVICEID}] - IQAr - NO2'
               type: DEPENDENT
