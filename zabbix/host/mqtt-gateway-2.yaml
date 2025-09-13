@@ -5,8 +5,12 @@ zabbix_export:
       name: iot-devices
     - uuid: 3884ed1cf1694d02bddfe5313b7d794d
       name: monitoramento-do-ar
+    - uuid: 1b16a1c0a8b841d196997f3ad8b1d9be
+      name: Natal
     - uuid: 0856b55e78e94b8ab3df1c12f23120fb
       name: node-red
+    - uuid: 8b044510dcaf49dd9d80a32988e85c8c
+      name: 'Rio Grande do Norte'
   hosts:
     - host: mqtt-gateway-2
       name: mqtt-gateway-2
@@ -16,7 +20,9 @@ zabbix_export:
       groups:
         - name: iot-devices
         - name: monitoramento-do-ar
+        - name: Natal
         - name: node-red
+        - name: 'Rio Grande do Norte'
       interfaces:
         - ip: '{$IPMQTTGATEWAY}'
           interface_ref: if1
