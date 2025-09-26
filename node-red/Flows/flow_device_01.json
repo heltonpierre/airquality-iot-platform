@@ -433,7 +433,7 @@
                 "p": "payload"
             }
         ],
-        "repeat": "",
+        "repeat": "525600",
         "crontab": "",
         "once": true,
         "onceDelay": 1,
